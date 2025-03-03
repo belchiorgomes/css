@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Dropdow</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav ul{
+            list-style-type: none;
+            display: flex;
+            background-color: #333;
+            transition: all .4s ease-in-out;
+        }
+
+        nav ul li{
+            position: relative;
+            width: 100px;
+        }
+
+        nav ul li a{
+            display: block;
+            padding: 14px 20px;
+            text-decoration: none;
+            color: white;
+            transition: all .4s ease-in-out;
+        }
+
+        nav ul li a:hover{
+            background-color: #575757;
+        }
+
+        nav ul li ul{
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;    
+        }
+
+        nav ul li:hover ul{
+            display: block;
+        }
+
+        nav ul li ul li a{
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sobre</a>
+                <ul>
+                    <li><a href="#">Equipe</a></li>
+                    <li><a href="#">História</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Contato</a>
+        </ul>
+    </nav>
+</body>
+</html>

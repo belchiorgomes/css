@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efeito Parallax</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section{
+            max-width: 1000px;
+            width: 100%;
+            margin: 33px auto;
+            padding: 33px 0;
+            color: #777777;
+        }
+
+        h1, h2{
+            font-size: 2.8em;
+            color: #000;
+        }
+
+        p{
+            line-height: 1.6;
+            margin: 33px 0;
+        }
+
+        article:nth-of-type(1){
+            background-image: url(img/foto01.jpg);
+        }
+
+        article:nth-of-type(2){
+            background-image: url(img/foto02.jpg);
+        }
+
+        article:nth-of-type(3){
+            background-image: url(img/foto03.jpg);
+        }
+
+        article{
+            width: 100%;
+            height: 350px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Efeito Parallax em CSS</h1>
+    </section>
+
+    <article></article>
+
+    <section>
+        <h2>Parallax</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Quos cum odio ut obcaecati magnam. Libero illo mollitia fuga quas! 
+            Rerum hic ab velit quos soluta perferendis consequatur omnis tempore natus.
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Quos cum odio ut obcaecati magnam. Libero illo mollitia fuga quas! 
+            Rerum hic ab velit quos soluta perferendis consequatur omnis tempore natus.
+        </p>
+    </section>
+
+    <article></article>
+
+    <section>
+        <h2>CSS Parallax</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Quos cum odio ut obcaecati magnam. Libero illo mollitia fuga quas! 
+            Rerum hic ab velit quos soluta perferendis consequatur omnis tempore natus.
+        </p>
+    </section>
+
+    <article></article>
+
+    <section>
+        <h2>Efeito Parallax</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Quos cum odio ut obcaecati magnam. Libero illo mollitia fuga quas! 
+            Rerum hic ab velit quos soluta perferendis consequatur omnis tempore natus.
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Quos cum odio ut obcaecati magnam. Libero illo mollitia fuga quas! 
+            Rerum hic ab velit quos soluta perferendis consequatur omnis tempore natus.
+        </p>
+    </section>
+</body>
+</html>

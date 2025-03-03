@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudoclasse :firs-of-type</title>
+    <style>
+        /*
+            O :first-of-typeseletor corresponde a cada elemento que é o primeiro filho, 
+            de um tipo específico, de seu pai.
+
+            Dica: Isto é o mesmo que :nth-of-type(1).
+        */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            width: 500px;
+            padding: 12px;
+            border-radius: 8px;
+            background-color: #77288f;
+            display: flex;
+            gap: 8px;
+        }
+
+        .container .box{
+            flex-basis: 12%;
+            background-color: #481857;
+            padding: 33px;
+            border-radius: inherit;
+            text-align: center;
+            transition: all .6s ease-in-out;
+        }
+
+        .container:hover .box:first-of-type{
+            flex-basis: 134%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+</body>
+</html>

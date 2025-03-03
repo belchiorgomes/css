@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu lateral Dropdown</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav{
+            width: 100px;
+            height: 100vh;
+            background-color: #015e5e;
+        }
+
+        nav ul{
+            list-style-type: none;
+        }
+
+        nav ul li{
+            position: relative;
+        }
+
+        nav ul li a{
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            color: #fff;
+            padding: 12px 22px;
+            transition: all .6s ease-in-out;
+        }
+
+        nav ul li a:hover{
+            background-color: #009494;
+        }
+
+        nav ul li ul{
+            position: absolute;
+            top: 0;
+            transform: translateX(0);
+            background-color: #015e5e;
+            transition: all .6s ease-in-out;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        nav ul li:hover ul{
+            transform: translateX(100px);
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Menu</a>
+                <ul>
+                    <li><a href="#">SubMenu</a>
+                    <li><a href="#">SubMenu</a>
+                    <li><a href="#">SubMenu</a>
+                </ul>
+            </li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Menu</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

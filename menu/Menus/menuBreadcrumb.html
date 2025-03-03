@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de Pão de Forma (Breadcrumb)</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .breadcrumb{
+            list-style-type: none;
+            padding: 10px 0;
+            background-color: #f8f8f8;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb li{
+            margin: 0 5px;
+        }
+
+        .breadcrumb li a{
+            text-decoration: none;
+            color: #0275d8;
+        }
+
+        .breadcrumb li + li::before{
+            content: "/";
+            padding: 0 5px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Categoria</a></li>
+        <li><a href="#">Subcategoria</a></li>
+        <li>Produto</li>
+    </ul>
+</body>
+</html>

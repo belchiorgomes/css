@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidade de medidas no container Grid</title>
+    <style>
+        .container{
+            width: 350px;
+            height: 350px;
+            border: 2px solid #000;
+            gap: 10px;
+
+        }
+
+        .box{
+            background-color: coral;
+        }
+
+        .px{
+            display: grid;
+            grid-template-columns: repeat(2, 150px);
+            grid-template-rows: repeat(2, 150px);
+        }
+
+        .porcentagem{
+            display: grid;
+            grid-template-columns: repeat(2, 30%);
+            grid-template-rows: repeat(2, 30%);
+        }
+    </style>
+</head>
+<body>
+    <h3>Pix(px)</h3>
+    <div class="container px">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+    </div>
+
+    <h3>Porcentagem(%)</h3>
+    <div class="container porcentagem">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+    </div>
+</body>
+</html>

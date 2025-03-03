@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdow</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #3a2e66;
+        }
+
+        .btn{
+            position: relative;
+            width: 300px;
+        }
+
+        .btn input{
+            display: none;
+        }
+
+        .btn label{
+            position: relative;
+            display: block;
+            width: 100%;
+            padding: 12px 22px;
+            border-radius: 4px;
+            background-color: #d83417;
+            color: #fff;
+            z-index: 999;
+            box-shadow: 0 0 8px #461007;
+        }
+
+        .btn ul{
+            position: absolute;
+            /*top: 0;*/
+            transform: translateY(0);
+            width: 100%;
+            overflow: hidden;
+            list-style-type: none;
+            background-color: #d83417;
+            border-radius: 4px;
+            opacity: 0;
+            transition: all .6s ease-in-out;
+        }
+
+        .btn ul::after{
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            content: "";
+            transform: rotate(45deg);
+            width: 20px;
+            height: 20px;
+            background-color: #d83417;
+            z-index: -1;
+        }
+
+        .btn ul li a{
+            display: block;
+            padding: 12px 22px;
+            text-decoration: none;
+            font-weight: 600px;
+            font-size: 18px;
+            color: #fff;
+            transition: all .2s ease-in-out;
+        }
+
+        .btn label:hover,
+        .btn ul li a:hover{
+            background-color: #ac2912;
+        }
+
+        input:checked ~ ul{
+            height: auto;
+            transform: translateY(30px);
+            opacity: 1;
+            overflow: visible;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn">
+        <input type="checkbox" name="drop" id="drop">
+        <label for="drop">Call To Action</label>
+
+        <ul>
+            <li><a href="#">New Project</a></li>
+            <li><a href="#">View Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </div>
+</body>
+</html>

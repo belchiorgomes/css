@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/90bbb72460.js" crossorigin="anonymous"></script>
+    <title>Animação de pulso em css</title>
+    <style>
+       *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+       }
+
+       body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(45deg, #110041, #3743e7);
+       }
+
+       .container{
+            position: relative;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-image: linear-gradient(-45deg, #110041, #3743e7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+       }
+
+       i{
+            display: block;
+            font-size: 32px;
+            font-weight: bolder;
+            color: #fff;
+            transition: all .2s ease-in-out;
+       }
+
+       .container::before,
+       .container::after{
+            position: absolute;
+            content: "";
+            inset: 0;
+            box-shadow: 0 0 8px #0e0035,
+                        0 0 12px #0e0033;
+            border-radius: 50%;
+            z-index: -1;
+            opacity: .4;
+            transition: all .6s ease-out;
+       }
+
+       .container::after{
+            animation-delay: 1s;
+       }
+
+       .container:hover::before,
+       .container:hover::after{
+            animation: animation 2s ease-out infinite;
+       }
+
+       .container:hover i{
+            animation: animationBell 2s ease-out alternate infinite;
+       }
+
+       @keyframes animation{
+            100%{
+                transform: scale(2.4);
+                opacity: 0;
+            }
+       }
+
+       @keyframes animationBell{
+            0%{
+                transform: rotate(0);
+            }
+
+            50%{
+                transform: rotate(-30deg);
+            }
+
+            100%{
+                transform: rotate(30deg);
+            }
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <i class="fa-solid fa-bell"></i>
+    </div>
+</body>
+</html>

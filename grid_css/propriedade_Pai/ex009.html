@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-template</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100%;
+            height: 100vh;
+        }
+
+        .container{
+            overflow: hidden;
+            resize: both;
+            width: 100%;
+            height: 100%;
+            padding: 12px;
+            background-color: antiquewhite;
+            display: grid;
+            gap: 8px;
+            grid-template-columns: repeat(auto-fill, 200px);
+            grid-template-rows: repeat(2, 200px);
+            grid-auto-rows: 1fr;
+            /*grid-template-areas: 
+                "box01 box01 box03"
+                "box02 box02 box03"
+                "box04 box04 box04";*/
+        }
+
+        .box{
+            border-radius: 8px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box01" style="--elemento:box01">1</div>
+        <div class="box box02" style="--elemento:box02">2</div>
+        <div class="box box03" style="--elemento:box03">3</div>
+        <div class="box box04" style="--elemento:box04">4</div>
+        <div class="box box05">5</div>
+        <div class="box box06">6</div>
+        <div class="box box07">7</div>
+        <div class="box box08">8</div>
+    </div>
+</body>
+</html>

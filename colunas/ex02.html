@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Columns CSS</title>
+    <style>
+        body{
+            background-color: #fde7fd;
+        }
+
+        .container{
+            /*
+            column-count: 3;
+            column-width: 350px;
+            */
+
+            columns: 400px 2;
+        }
+
+        .intro{
+            column-span: all;
+        }
+
+        h1{
+            font-size: 3.8em;
+            font-weight: bolder;
+            color: brown;
+        }
+
+        p{
+            font-size: 1.8em;
+            line-height: 1.1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Columns CSS</h1>
+        <p class="intro">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Doloribus animi, repellat tempora voluptates quisquam officiis. 
+            Cupiditate non soluta molestiae. Repellat saepe sapiente architecto. 
+            Tenetur veniam esse soluta sunt beatae quisquam.
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Doloribus animi, repellat tempora voluptates quisquam officiis. 
+            Cupiditate non soluta molestiae. Repellat saepe sapiente architecto. 
+            Tenetur veniam esse soluta sunt beatae quisquam.
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Doloribus animi, repellat tempora voluptates quisquam officiis. 
+            Cupiditate non soluta molestiae. Repellat saepe sapiente architecto. 
+            Tenetur veniam esse soluta sunt beatae quisquam.
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Doloribus animi, repellat tempora voluptates quisquam officiis. 
+            Cupiditate non soluta molestiae. Repellat saepe sapiente architecto. 
+            Tenetur veniam esse soluta sunt beatae quisquam.
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Doloribus animi, repellat tempora voluptates quisquam officiis. 
+            Cupiditate non soluta molestiae. Repellat saepe sapiente architecto. 
+            Tenetur veniam esse soluta sunt beatae quisquam.
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-auto-flow</title>
+    <style>
+        .container{
+            border: 2px solid #000;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-auto-rows: 200px;
+            grid-auto-flow: column;
+            gap: 10px;
+        }
+
+        .box{
+            background-color: #02e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">item 01</div>
+        <div class="box">item 02</div>
+        <div class="box">item 03</div>
+        <div class="box">item 04</div>
+        <div class="box">item 05</div>
+    </div>
+</body>
+</html>

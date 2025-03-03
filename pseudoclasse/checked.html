@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudoclasse :checked</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #131010;
+        }
+
+        input{
+            display: none;
+        }
+
+        label{
+            width: 250px;
+            height: auto;
+            padding: 24px;
+            border-radius: 8px;
+            color: #fff;
+            box-shadow: 0 0 8px #000,
+                        0 0 12px #000;
+                        transition: all .6s ease-in-out;
+        }
+
+        input:checked ~ label{
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" name="btn" id="btn">
+    <label for="btn">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Non error nesciunt tenetur eos autem quisquam, 
+        dignissimos iusto sapiente ut repellendus beatae quo, 
+        consectetur dicta ab doloribus numquam laborum libero aliquam.
+    </label>
+</body>
+</html>

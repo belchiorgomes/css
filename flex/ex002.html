@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedade filho do flex</title>
+    <style>
+        .container{
+            width: 700px;
+            padding: 20px;
+            border-radius: 12px;
+            background-color: #424242;
+            overflow: auto;
+            resize: both;
+
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .container .box{
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 18px;
+            background-color: #868686;
+        }
+
+        .container .box_01{
+            order: 1;
+            flex-grow: 1;
+        }
+
+        .container .box_02{
+            order: 0;
+            width: 100px;
+            flex-shrink: 0;
+        }
+
+        .container .box_03{
+            order: 2;
+            flex-basis: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box_01">1</div>
+        <div class="box box_02">2</div>
+        <div class="box box_03">3</div>
+    </div>
+</body>
+</html>

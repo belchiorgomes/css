@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-auto-rows</title>
+    <style>
+        .container{
+            width: 600px;
+            height: auto;
+            border: 2px solid #000;
+            box-sizing: border-box;
+            padding: 8px;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 300px);
+            grid-auto-rows: min-content;
+            gap: 8px;
+        }
+
+        .box{
+            background-color: #e71bd6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">item 01</div>
+        <div class="box">item 02</div>
+        <div class="box">item 03</div>
+        <div class="box">item 04</div>
+        <div class="box">
+            <h3>item 05</h3>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            Quia deserunt deleniti quis voluptas quo delectus! 
+            Perspiciatis aliquam exercitationem, 
+            sunt sequi pariatur deleniti iure error harum perferendis quae est fuga. Cumque?
+        </div>
+        
+    </div>
+</body>
+</html>

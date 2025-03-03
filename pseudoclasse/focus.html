@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudoclasse :focus</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #005353;
+        }
+
+        .box{
+            position: relative;
+            width: 250px;
+            border-radius: 8px;
+        }
+
+        .box input{
+            position: relative;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            border: 2px solid #c2c2c2;
+            outline: none;
+            background-color: transparent;
+        }
+
+        .box label{
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all .6s ease-in-out;
+            color: #fff;
+            font-weight: bolder;
+        }
+
+        .box input:focus{
+            border-color: #005353;
+            box-shadow: 0 0 8px #01f8f8;
+        }
+
+        .box input:focus ~ label{
+            transform: translateY(-40px);
+            color: #01f8f8;
+            text-shadow: 0 0 8px #01f8f8;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="text" name="name" id="name">
+        <label for="name">Your Name please!</label>
+    </div>
+</body>
+</html>

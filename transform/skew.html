@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform skew css</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .container{
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(65deg, #150072, #4500a0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 45px;
+        }
+
+        .container .box{
+            flex: 0 0 200px;
+            height: 200px;
+            background-color: tomato;
+            box-shadow: 0 0 8px #0e004b,
+                        0 0 12px #0e004b;
+            border-radius: 8px;
+            line-height: 200px;
+            text-align: center;
+            transition: all .6s ease-in-out;
+        }
+
+        .container .box:nth-child(1):hover{
+            transform: skew(12deg, 30deg)
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h3>box 1</h3>
+        </div>
+    </div>
+</body>
+</html>

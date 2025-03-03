@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input checkbox</title>
+</head>
+<body>
+    <form action="arquivo.php" method="get">
+        <div>
+            <label for="nome">Digite seu nome:</label><br>
+            <input type="text" name="nome" id="nome" required autocomplete="on">
+        </div>
+
+        <div>
+            <label for="email">Email:</label><br>
+            <input type="email" name="email" id="email" required autocomplete="on">
+        </div>
+
+        <div>
+            <p><label>Escolhe seu curso:</label></p>
+            <p>
+                <label for="ads"><input type="checkbox" name="curso_01" id="ads" value="ads">Analise e desenvolvimento de sistema</label>
+            </p>
+
+            <p>
+                <label for="eng"><input type="checkbox" name="curso_02" id="eng" value="eng" disabled>Engenharia de sistema</label>
+            </p>
+        </div>
+
+        <div>
+            <label for="aceita"><input type="checkbox" name="aceita_termo" value="sim" id="aceita" checked>Você aceita o termo de uso</label><br>
+        </div>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

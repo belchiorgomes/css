@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 800px;
+            height: 500px;
+            border-radius: 8px;
+            background-color: aqua;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        .container .box{
+            width: 200px;
+            height: 200px;
+            border-radius: 8px;
+            background-color: coral;
+
+            justify-self: center;
+            align-self: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">item 01</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu dropdown</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #201646;
+        }
+
+        nav{
+            background-color: #c3c3c3;
+            width: 900px;
+            margin: 18px auto;
+            border-radius: 18px;
+        }
+
+        ul{
+            list-style-type: none;
+            display: flex;
+        }
+
+        ul li{
+            width: 25%;
+            transition: all .6s ease-in-out;
+        }
+
+        ul li:nth-child(1){
+            border-radius: 18px 0 0 18px;
+        }
+
+        ul li:nth-child(4){
+            border-radius: 0 18px 18px 0;
+        }
+
+        ul li a{
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            color: #000;
+            font-size: 18px;
+            font-weight: 600px;
+            padding: 12px 18px;
+            transition: all .6s ease-in-out;
+        }
+
+        ul li:hover{
+            background-color: #554794;
+        }
+
+        ul li a:hover{
+            color: #fff;
+        }
+
+        .dropdown{
+            position: relative;
+        }
+
+        .dropdown .dropdowChild{
+            position: absolute;
+            width: 100%;
+            height: 0;
+            background-color: #c3c3c3;
+            overflow: hidden;
+            transition: all .6s ease-in-out;
+        }
+
+        .dropdown:hover .dropdowChild{
+            height: 300%;
+        }
+
+        .dropdown .dropdowChild a{
+            background-color: #c3c3c3;
+        }
+
+        .dropdown .dropdowChild a:hover{
+            background-color: #554794;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li class="dropdown"><a href="#">Tutoriais</a>
+                <div class="dropdowChild">
+                    <a href="#">Photoshop</a>
+                    <a href="#">Illustrator</a>
+                    <a href="#">Web Design</a>
+                </div>
+            </li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Inspiration</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

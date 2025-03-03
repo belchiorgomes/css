@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag Select</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container_form{
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(45deg, #db405a, #da7d8c);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form{
+            width: 400px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 8px #db405a,
+                        0 0 12px #db405a;
+            padding: 14px;
+            display: flex;
+            gap: 33px;
+        }
+
+        .select{
+            width: auto;
+        }
+
+        select{
+            outline: none;
+            border: none;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container_form">
+        <form action="arquivo.php" method="get">
+            <div class="label">
+                <label for="opcoes">Escolha a sua opção!!!</label>
+            </div>
+            <div class="select">
+                <select name="opcoes" id="opcoes">
+                    <option value="op01">opção 01</option>
+                    <option value="op02">opção 02</option>
+                    <option value="op03">opção 03</option>
+                    <option value="op04" selected>opção 04</option>
+                    <option value="op05">opção 05</option>
+                    <option value="op06" disabled>opção 06</option>
+                </select>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

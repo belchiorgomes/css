@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Column CSS</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #000;
+        }
+
+        h1, h2, p{
+            color: #fff;
+        }
+
+        p{
+            padding: 12px 18px;
+        }
+
+        .container{
+            padding: 35px 23px;
+        }
+
+        article{
+            max-width: 900px;
+            width: 100%;
+            background-color: #2e2e2e;
+            border-radius: 18px;
+            margin: 45px auto;
+            padding: 23px;
+            columns: 400px  2;
+            column-rule: solid #c3c3c3;
+        }
+
+        article > *{
+            margin-top: 0;
+        }
+
+        section{
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tutorial Column CSS</h1>
+            <article>
+                <section class="section01">
+                    <h2>Titulo 1</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Doloribus animi, repellat tempora voluptates quisquam officiis. 
+                        Cupiditate non soluta molestiae. Repellat saepe sapiente architecto. 
+                        Tenetur veniam esse soluta sunt beatae quisquam.
+                    </p><br>
+    
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Doloribus animi, repellat tempora voluptates quisquam officiis. 
+                        Cupiditate non soluta molestiae. Repellat saepe sapiente architecto. 
+                        Tenetur veniam esse soluta sunt beatae quisquam.
+                    </p>
+
+                    <h2>Titulo 2</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Doloribus animi, repellat tempora voluptates quisquam officiis. 
+                        Cupiditate non soluta molestiae. Repellat saepe sapiente architecto. 
+                        Tenetur veniam esse soluta sunt beatae quisquam.
+                    </p>
+                </section>
+
+                <h2>Titulo 3</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Doloribus animi, repellat tempora voluptates quisquam officiis. 
+                        Cupiditate non soluta molestiae. Repellat saepe sapiente architecto. 
+                        Tenetur veniam esse soluta sunt beatae quisquam.
+                    </p>
+
+
+            </article>
+        
+            <h2>Titulo 4</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Doloribus animi, repellat tempora voluptates quisquam officiis. 
+                Cupiditate non soluta molestiae. Repellat saepe sapiente architecto. 
+                Tenetur veniam esse soluta sunt beatae quisquam.
+            </p>
+    </div>
+</body>
+</html>

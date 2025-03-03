@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Scroll</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h2{
+            font-size: 3.4em;
+            margin-bottom: 44px;
+            text-transform: uppercase;
+        }
+
+        p{
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        section{
+            min-height: 100vh;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .scroll03{
+            opacity: 0;
+            filter: blur(8px);
+            transform: translateX(-100%);
+            transition: all 2s ease-in-out;
+        }
+
+        .show{
+            opacity: 1;
+            filter: blur(0);
+            transform: translateX(0);
+            transition: all 2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <section class="scroll03">
+        <h2>Animation Scroll</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Suscipit, laboriosam ipsam! Ipsa ex reiciendis labore! 
+            Totam dicta nulla dolore placeat saepe fuga, 
+            necessitatibus ut maiores incidunt nihil dignissimos at reprehenderit.
+        </p>
+    </section>
+
+    <section class="scroll03">
+        <h2>Animation Scroll</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Suscipit, laboriosam ipsam! Ipsa ex reiciendis labore! 
+            Totam dicta nulla dolore placeat saepe fuga, 
+            necessitatibus ut maiores incidunt nihil dignissimos at reprehenderit.
+        </p>
+    </section>
+
+    <section class="scroll03">
+        <h2>Animation Scroll</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Suscipit, laboriosam ipsam! Ipsa ex reiciendis labore! 
+            Totam dicta nulla dolore placeat saepe fuga, 
+            necessitatibus ut maiores incidunt nihil dignissimos at reprehenderit.
+        </p>
+    </section>
+
+    <script>
+        const elements = document.querySelectorAll('.scroll03')
+        
+        const myscroll = new IntersectionObserver( (scroll) => {
+            scroll.forEach((elementScroll) => {
+                if(elementScroll){
+                    elementScroll.target.classList.add('show')
+                }else{
+                    elementScroll.target.classList.remove('show')
+                }
+            })
+        })
+
+        elements.forEach((element) => myscroll.observe(element))
+    </script>
+</body>
+</html>

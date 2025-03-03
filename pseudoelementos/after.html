@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudoelementos ::after</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p{
+            position: relative;
+            padding: 13px 42px;
+            border-radius: 12px;
+            box-shadow: 0 0 8px #c2c2c2,
+                        0 0 12px #c2c2c2;
+        }
+
+        p::after{
+            position: absolute;
+            content: "Lorem ipsum dolor sit amet consectetur adipisicing elitSequi voluptate inventore sapiente culpa ad odio voluptatum quisquam tenetur minima quis facere rem corrupti, tempora odit laborum vitae iure quod Voluptates";
+            transform: translateX(0px);
+            transform: translateY(0px);
+            width: 300px;
+            height: auto;
+            padding: 12px;
+            border-radius: 12px;
+            box-shadow: 0 0 8px #c2c2c2,
+                        0 0 12px #c2c2c2;
+            opacity: 0;
+            transition: all .6s ease-in-out;
+            z-index: 2;
+        }
+
+        p:hover::after{
+            transform: translateX(50px);
+            transform: translateY(-50px);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <p>lorem...</p>
+</body>
+</html>

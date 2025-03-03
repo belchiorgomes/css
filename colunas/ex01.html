@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section{
+            padding: 18px;
+            column-count: 3;
+            column-gap: 30px;
+            /*
+            column-rule-style: dotted;
+            column-rule-width: 3px;
+            column-rule-color: tomato;
+            */
+
+            column-rule: 1px solid gray;
+            column-width: 200px;
+        }
+
+        h1{
+            padding: 8px;
+            border-radius: 8px;
+            background-color: tomato;
+            color: #000;
+            column-span: all;
+            column-fill: balance;
+        }
+
+        p{
+            padding: 8px;
+            border: 2px solid gray;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Titulo</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Explicabo consectetur nihil esse ea modi hic culpa tempora 
+            corporis voluptatibus! Quaerat magni aut reiciendis perspiciatis 
+            neque tempore repudiandae, saepe recusandae non.
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Explicabo consectetur nihil esse ea modi hic culpa tempora 
+            corporis voluptatibus! Quaerat magni aut reiciendis perspiciatis 
+            neque tempore repudiandae, saepe recusandae non.
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Explicabo consectetur nihil esse ea modi hic culpa tempora 
+            corporis voluptatibus! Quaerat magni aut reiciendis perspiciatis 
+            neque tempore repudiandae, saepe recusandae non.
+        </p>
+    </section>
+</body>
+</html>
