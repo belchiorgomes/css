@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating an inverted border using CSS</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        .container{
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: #ff00b3;
+            border-radius: 1.6rem;
+        }
+
+        .container .box1, .box2{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            border-top-left-radius: 1.6rem;
+            border-bottom-right-radius: 1.6rem;
+        }
+
+        .container .box2{
+            bottom: 0;
+            right: 0;
+        }
+
+        .container .box1::after, .container .box1::before{
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+        }
+
+        .container .box1::after{
+            bottom: -20px;
+            left: 0;
+            border-top-left-radius: 1.6rem;
+            box-shadow: -8px -4px 0 black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+</body>
+</html>
