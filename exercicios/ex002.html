@@ -36,24 +36,61 @@
             border-bottom-right-radius: 1.6rem;
         }
 
+        .container .box1{
+            top: 0;
+            left: 0;
+        }
+
         .container .box2{
             bottom: 0;
             right: 0;
         }
 
-        .container .box1::after, .container .box1::before{
+        .container .box1::after{
             position: absolute;
+            bottom: -20px;
             content: "";
             width: 20px;
             height: 20px;
             background-color: transparent;
+            border-top-left-radius: 2.3rem;
+            box-shadow: -7px -4px black;
         }
 
-        .container .box1::after{
-            bottom: -20px;
-            left: 0;
+        .container .box1::before{
+            position: absolute;
+            content: "";
+            top: 0;
+            right: -20px;
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
             border-top-left-radius: 1.6rem;
-            box-shadow: -8px -4px 0 black;
+            box-shadow: -6px -8px 4px black;
+        }
+
+        .container .box2::after{
+            position: absolute;
+            bottom: 0px;
+            left: -20px;
+            content: "";
+            width: 20px;
+            height: 40px;
+            background-color: transparent;
+            border-bottom-right-radius: 80px;
+            box-shadow: 0px 18px black;
+        }
+
+        .container .box2::before{
+            position: absolute;
+            content: "";
+            top: -40px;
+            right: 0;
+            width: 20px;
+            height: 40px;
+            background-color: transparent;
+            border-bottom-right-radius: 80px;
+            box-shadow: 1px 18px black;
         }
     </style>
 </head>
