@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/90bbb72460.js" crossorigin="anonymous"></script>
     <title>Creating an inverted border using CSS</title>
     <style>
         *{
@@ -44,33 +45,47 @@
         }
 
         .container .box a{
-            display: inline-block;
-            width: 80%;
-            height: 80%;
+            display: block;
             text-align: center;
             text-decoration: none;
             line-height: 120px;
+            font-size: 2.3rem;
             border-radius: 50%;
-            background-color: white;
+        }
+
+        .container .box a i{
+            color: white;
         }
 
         .container .box::after{
             position: absolute;
             content: "";
             top: 0;
-            left: -20px;
-            width: 20px;
+            left: -30px;
+            width: 30px;
             height: 40px;
             background-color: transparent;
-            border-top-right-radius: 80px;
-            box-shadow: 5px 0px black;
+            border-top-right-radius: 70px;
+            box-shadow: 0px -16px black;
+        }
+
+        .container .box::before{
+            position: absolute;
+            content: "";
+            bottom: -40px;
+            right: 0;
+            width: 30px;
+            height: 40px;
+            background-color: transparent;
+            border-radius: 50px 120px 0 0;
+            box-shadow: 8px -8px black;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="box">
-            <a href="#">0</a>
+            <a href="#"><i class="fa-solid fa-house-user"></i></a>
         </div>
     </div>
 </body>
