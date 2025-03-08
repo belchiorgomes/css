@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrosel de Imagem</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #c2c2c2;
+        }
+
+        .container_carrossel{
+            position: relative;
+            width: 550px;
+            aspect-ratio: 16 / 9;
+            border: 8px solid #fff;
+            border-radius: 23px;
+            overflow: hidden;
+        }
+
+        .container_carrossel img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .container_carrossel .container_btn{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 50px;
+            background-color: coral;
+            border: inherit;
+            border-radius: 23px 23px 0 0;
+        }
+
+        .container_carrossel .container_btn::after{
+            position: absolute;
+            bottom: -10px;
+            left: -29px;
+            content: "";
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            border-radius: 50%;
+            box-shadow: 3px 5px white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container_carrossel">
+        <img src="imagem/img01.jpg" alt="Planetas">
+        <div class="container_btn"></div>
+    </div>
+</body>
+</html>
