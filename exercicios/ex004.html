@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/90bbb72460.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Carrosel de Imagem</title>
     <style>
         *{
@@ -17,77 +18,66 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #c2c2c2;
+            background-color: #c3c3c3;
         }
 
-        .container_carrossel{
+        .container{
             position: relative;
-            width: 550px;
+            width: 650px;
             aspect-ratio: 16 / 9;
-            border: 8px solid #fff;
-            border-radius: 23px;
+            border: 5px solid white;
+            border-radius: 1.6rem;
             overflow: hidden;
+            transition: all 0.6s ease-in-out;
         }
 
-        .container_carrossel img{
+        .container:hover{
+            transform: scale(1.2);
+        }
+
+        .container .imgContainer{
+            display: flex;
+            position: absolute;
             width: 100%;
             height: 100%;
+        }
+
+        .container .imgContainer img{
+            flex: 0 0 100%;
             object-fit: cover;
         }
 
-        .container_carrossel .container_btn{
+        .container .btnContainer{
+            display: flex;
+            gap: 20px;
             position: absolute;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            padding: 12px;
-            border: inherit;
-            border-radius: 23px 23px 0 0;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .container_carrossel .container_btn::after{
-            position: absolute;
-            bottom: -10px;
-            left: -29px;
-            content: "";
-            width: 20px;
-            height: 20px;
+            z-index: 999;
             background-color: transparent;
-            border-radius: 50%;
-            box-shadow: 3px 5px white;
+            padding: 1rem;
         }
 
-        .container_carrossel .container_btn::before{
-            position: absolute;
-            bottom: -8px;
-            right: -38px;
-            content: "";
-            width: 30px;
-            height: 30px;
-            background-color: transparent;
-            border-radius: 50%;
-            box-shadow: -7px 9px white;
-        }
-
-        .container_carrossel .container_btn .btn{
-            padding: 12px;
-            border-radius: 50%;
-        }
-
-        .container_carrossel .container_btn .btn i{
-            font-size: 1.3rem;
-            color: white;
+        .container .btnContainer .btn{
+            display: block;
+            font-size: 1.5rem;
         }
     </style>
 </head>
 <body>
-    <div class="container_carrossel">
-        <img src="imagem/img01.jpg" alt="Planetas">
-        <div class="container_btn">
-            <div class="btn"><i class="fa-solid fa-circle-left"></i></div>
-            <div class="btn"><i class="fa-solid fa-circle-right"></i></div>
+    <div class="container">
+        <div class="imgContainer">
+            <img src="imagem/img03.jpg" alt="Imagem 1">
+            <img src="imagem/img04.jpg" alt="Imagem 2">
+            <img src="imagem/img05.jpg" alt="Imagem 3">
+            <img src="imagem/img06.jpg" alt="Imagem 4">
+            <img src="imagem/img07.jpg" alt="Imagem 6">
+        </div>
+
+        <div class="btnContainer">
+            <div class="btn" id="prev"><i class="bi bi-arrow-left-square-fill"></i></div>
+            <div class="btn" id="next"><i class="bi bi-arrow-right-square-fill"></i></div>
         </div>
     </div>
 </body>
