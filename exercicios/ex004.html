@@ -63,6 +63,10 @@
             display: block;
             font-size: 1.5rem;
         }
+
+        .container .btnContainer .btn i{
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -80,5 +84,26 @@
             <div class="btn" id="next"><i class="bi bi-arrow-right-square-fill"></i></div>
         </div>
     </div>
+
+    <script>
+        const imgContainer = document.querySelector('.imgContainer');
+        const prevBtn = document.getElementById('prev');
+        const nextBtn = document.getElementById('next');
+
+        let counter = 0;
+        const imgWidth = document.querySelector('.container').offsetWidth;
+
+        nextBtn.addEventListener('click', () => {
+            if (counter >= imgContainer.children.length - 1) return;
+            counter++;
+            imgContainer.style.transform = `translateX(-${imgWidth * counter}px)`;
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (counter <= 0) return;
+            counter--;
+            imgContainer.style.transform = `translateX(-${imgWidth * counter}px)`;
+        });
+    </script>
 </body>
 </html>
