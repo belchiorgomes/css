@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel de imagem</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #c3c3c3;
+        }
+
+        .carrossel{
+            position: relative;
+            width: 600px;
+            aspect-ratio: 16 / 9;
+            border: 5px solid white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+        }
+
+        .carrossel > .carrossel_imagem{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        .carrossel > .carrossel_imagem img{
+            flex: 0 0 100%;
+            object-fit: cover;
+        }
+
+        .carrossel > .btn{
+            position: absolute;
+            left: 50%;
+            bottom: 12px;
+            transform: translateX(-50%);
+        }
+
+        .carrossel > .btn button{
+            width: 40px;
+            height: 40px;
+            border: 2px solid white;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="carrossel">
+        <div class="carrossel_imagem">
+            <img src="imagem/img03.jpg" alt="Imagem">
+            <img src="imagem/img04.jpg" alt="Imagem">
+            <img src="imagem/img05.jpg" alt="Imagem">
+            <img src="imagem/img06.jpg" alt="Imagem">
+        </div>
+
+        <div class="btn">
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const carrossel = document.querySelector('.carrossel');
+        const imagens = document.querySelector('.carrossel_imagem');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        const imagensArray = document.querySelectorAll('.carrossel_imagem img');
+    
+        let contador = 0;
+        const larguraImagem = imagensArray[0].clientWidth; // Obtém a largura da primeira imagem
+    
+        function atualizarCarrossel() {
+            imagens.style.transform = `translateX(-${contador * larguraImagem}px)`;
+        }
+    
+        nextButton.addEventListener('click', () => {
+            contador++;
+            if (contador >= imagensArray.length) {
+                contador = 0;
+            }
+            atualizarCarrossel();
+        });
+    
+        prevButton.addEventListener('click', () => {
+            contador--;
+            if (contador < 0) {
+                contador = imagensArray.length - 1;
+            }
+            atualizarCarrossel();
+        });
+    
+    </script>
+</body>
+</html>
