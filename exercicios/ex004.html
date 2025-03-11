@@ -89,20 +89,37 @@
         const imgContainer = document.querySelector('.imgContainer');
         const prevBtn = document.getElementById('prev');
         const nextBtn = document.getElementById('next');
-
+        const images = document.querySelectorAll('.imgContainer img');
         let counter = 0;
-        const imgWidth = document.querySelector('.container').offsetWidth;
+        const size = images[0].clientWidth;
+
+        imgContainer.style.transform = `translateX(${-size * counter}px)`;
 
         nextBtn.addEventListener('click', () => {
-            if (counter >= imgContainer.children.length - 1) return;
+            if (counter >= images.length - 1) return;
+            imgContainer.style.transition = 'transform 0.4s ease-in-out';
             counter++;
-            imgContainer.style.transform = `translateX(-${imgWidth * counter}px)`;
+            imgContainer.style.transform = `translateX(${-size * counter}px)`;
         });
 
         prevBtn.addEventListener('click', () => {
             if (counter <= 0) return;
+            imgContainer.style.transition = 'transform 0.4s ease-in-out';
             counter--;
-            imgContainer.style.transform = `translateX(-${imgWidth * counter}px)`;
+            imgContainer.style.transform = `translateX(${-size * counter}px)`;
+        });
+
+        imgContainer.addEventListener('transitionend', () => {
+            if (images[counter].id === 'lastClone') {
+                imgContainer.style.transition = 'none';
+                counter = images.length - 2;
+                imgContainer.style.transform = `translateX(${-size * counter}px)`;
+            }
+            if (images[counter].id === 'firstClone') {
+                imgContainer.style.transition = 'none';
+                counter = images.length - counter;
+                imgContainer.style.transform = `translateX(${-size * counter}px)`;
+            }
         });
     </script>
 </body>
