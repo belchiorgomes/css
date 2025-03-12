@@ -28,21 +28,20 @@
             overflow: hidden;
         }
 
-        .container .containerImagem{
+        .container > .containerImagem{
             position: absolute;
             width: 100%;
             height: 100%;
             display: flex;
         }
 
-        .container .containerImagem img{
+        .container > .containerImagem img{
             flex: 0 0 100%;
             object-fit: cover;
         }
 
         .container .container_btn{
             position: absolute;
-            z-index: 999;
             bottom: 12px;
             left: 50%;
             transform: translateX(-50%);
@@ -74,18 +73,34 @@
     </div>
 
     <script>
-        const container = document.querySelector(".container");
-        const imagem = document.querySelector(".containerImagem");
-        const btnPrev = document.querySelector(".prev");
-        const btnNext = document.querySelector(".next");
-        const imagensArray = document.querySelectorAll(".containerImagem img");
+        const container = document.querySelector('.container');
+        const imagem = document.querySelector('.containerImagem');
+        const btnPrev = document.querySelector('.prev');
+        const btnNext = document.querySelector('.next');
+        const imagensArray = document.querySelectorAll('.containerImagem img');
 
         let contador = 0;
         const tamanhoImagem = imagensArray[0].clientWidth;
 
         function atualizarCarrossel(){
-            imagem.style.transform = `translateX(-)`
+            imagem.style.transform = `translateX(-${contador * tamanhoImagem}px)`;
         }
+
+        btnNext.addEventListener('click', () => {
+            contador++;
+            if(contador >= imagensArray.length){
+                contador = 0;
+            }
+            atualizarCarrossel();
+        });
+
+        btnPrev.addEventListener('click', () => {
+            contador--;
+            if(contador < 0){
+                contador = imagensArray.length - 1;
+            }
+            atualizarCarrossel();
+        });
     </script>
 </body>
 </html>
