@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel de Imagem</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            background-color: #c3c3c3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            position: relative;
+            width: 600px;
+            aspect-ratio: 16 / 9;
+            border: 5px solid white;
+            border-radius: 28px;
+            overflow: hidden;
+        }
+
+        .container .containerImagem{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        .container .containerImagem img{
+            flex: 0 0 100%;
+            object-fit: cover;
+        }
+
+        .container .container_btn{
+            position: absolute;
+            z-index: 999;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .container .container_btn button{
+            border: none;
+            outline: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-inline: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="containerImagem">
+            <img src="imagem/img03.jpg" alt="imagem">
+            <img src="imagem/img04.jpg" alt="imagem">
+            <img src="imagem/img05.jpg" alt="imagem">
+            <img src="imagem/img06.jpg" alt="imagem">
+        </div>
+
+        <div class="container_btn">
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const container = document.querySelector(".container");
+        const imagem = document.querySelector(".containerImagem");
+        const btnPrev = document.querySelector(".prev");
+        const btnNext = document.querySelector(".next");
+        const imagensArray = document.querySelectorAll(".containerImagem img");
+
+        let contador = 0;
+        const tamanhoImagem = imagensArray[0].clientWidth;
+
+        function atualizarCarrossel(){
+            imagem.style.transform = `translateX(-)`
+        }
+    </script>
+</body>
+</html>
