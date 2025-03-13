@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar cor de elemento</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all .6s ease-in-out;
+        }
+
+        #btn{
+            border: none;
+            outline: none;
+            background-color: #000;
+            padding: 1.8rem;
+            border-radius: 1.3rem;
+            color: #fff;
+            width: 150px;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 3.3px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Botao</button>
+
+    <script>
+        const btn = document.getElementById('btn');
+        const pagina = document.querySelector('body');
+        const cores = ['#0FC2C0', '#0CABA8', '#008F8C', '#015958', '#023535'];
+
+        // Gera uma cor aleatoria
+
+        /*
+        function mudarCor(){
+            const alterarCor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+
+            pagina.style.backgroundColor = alterarCor;
+        }
+        */
+
+        function mudarCor(){
+            const paletaCores = Math.floor(Math.random() *cores.length);
+            const coresAleatorias = cores[paletaCores];
+            pagina.style.backgroundColor = coresAleatorias
+        }
+
+        btn.addEventListener('click', mudarCor);
+    </script>
+</body>
+</html>

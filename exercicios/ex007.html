@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Mudar cor de fundo</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root{
+            --cor1: #0FC2C0;
+            --cor2: #0CABA8;
+            --cor3: #008F8C;
+            --cor4: #015958;
+            --cor5: #023535;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        a{
+            display: block;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background-color: #000;
+            border-radius: 12px;
+            margin-left: 30px;
+            color: #fff;
+            font-size: 2.5rem;
+        }
+
+        @keyframes mudarCor{
+            0%{background-color: var(--cor1);}
+            25%{background-color: var(--cor2);}
+            50%{background-color: var(--cor3);}
+            75%{background-color: var(--cor4);}
+            100%{background-color: var(--cor5);}
+        }
+
+        .animacao{
+            animation: mudarCor 4s infinite;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" id="btn">
+        <i class="bi bi-palette"></i>
+    </a>
+
+    <script>
+        const btn = document.getElementById('btn');
+        const pagina = document.querySelector('body');
+        
+        function mudarCor(){
+            pagina.classList.toggle('animacao');
+        }
+
+        btn.addEventListener('click', mudarCor);
+    </script>
+</body>
+</html>
