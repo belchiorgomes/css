@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibir um balão de mensagem</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        #btn{
+            width: 150px;
+            padding: 12px 18px;
+            border-radius: 12px;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            font-weight: bolder;
+        }
+
+        .balao{
+            position: relative;
+            display: none;
+            margin-left: 200px;
+            width: 250px;
+            padding: 12px 18px;
+            border-radius: 12px 12px 12px 0;
+            color: #fff;
+            background-color: #000;
+            text-align: center;
+            transition: all .6s ease-in-out;
+        }
+
+        .balao::after{
+            position: absolute;
+            content: "";
+            bottom: -30px;
+            left: 0;
+            width: 20px;
+            height: 30px;
+            background-color: transparent;
+            border-top-left-radius: 20px;
+            box-shadow: 0px -16px #000;
+        }
+    </style>
+</head>
+<body>
+    <buttom id="btn">Click</buttom>
+    <div class="balao">Olá, sou uma mensagem</div>
+
+    <script>
+        const btn = document.querySelector('#btn');
+        const balao = document.querySelector('.balao');
+
+        function exibiBalao(){
+            balao.style.display = 'block';
+        }
+
+        function esconderBalao(){
+            balao.style.display = 'none';
+        }
+
+        btn.addEventListener('click', exibiBalao);
+    </script>
+</body>
+</html>
