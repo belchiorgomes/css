@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu com Tabs</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+        }
+
+        .containe_tab{
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn_tabs{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            height: 80px;
+            background-color: #000;
+        }
+
+        .btn_tabs .tab_button{
+            flex: 0 0 200px;
+            margin-inline-start: 12px;
+            height: 50px;
+        }
+
+        .containe_tab .conteudo_tab{
+            width: 100%;
+            height: calc(100vh - 80px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .containe_tab .conteudo_tab .conteudo{
+            display: none;
+        }
+
+        .containe_tab .conteudo_tab .active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="containe_tab">
+        <div class="btn_tabs">
+            <button class="tab_button active" data-tab="tab1">Tab 01</button>
+            <button class="tab_button" data-tab="tab2">Tab 02</button>
+            <button class="tab_button" data-tab="tab3">Tab 03</button>
+        </div>
+
+        <div class="conteudo_tab">
+            <div id="tab1" class="conteudo active">
+                <p>Conteudo da aba 01</p>
+            </div>
+            <div id="tab2" class="conteudo">
+                <p>Conteudo da aba 02</p>
+            </div>
+            <div id="tab3" class="conteudo">
+                <p>Conteudo da aba 03</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //document.addEventListener('DOMContentLoaded', () => {
+        const tabButtons = document.querySelectorAll('.tab_button');
+        const tabContents = document.querySelectorAll('.conteudo');
+
+        const ativarAba = (tabId) => {
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        };
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => ativarAba(button.dataset.tab));
+        });
+        //});
+    </script>
+</body>
+</html>
