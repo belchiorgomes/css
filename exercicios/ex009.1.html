@@ -24,83 +24,85 @@
             align-items: center;
         }
 
-        .container .containe_btn{
-            flex: 0 0 30%;
-            margin: 0 auto;
+        .container .container_tab{
+            flex: 0 0 40%;
         }
 
-        .container .containe_btn .btn{
-            width: 100px;
-            height: auto;
-            padding: 12px 18px;
-            background-color: #0c0c0c;
+        .container .container_tab .container_button{
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1.8rem;
+        }
+
+        .container .container_tab .container_button .btn{
+            flex: 0 0 30px;
             border: none;
+            border-radius: 1.8rem;
             outline: none;
-            border-radius: 18px;
-            text-align: center;
+            background-color: #202020;
             color: #fff;
+            padding: 12px 18px;
+            text-align: center;
+            font-weight: bolder;
+            transition: all .6s ease-in-out;
         }
 
-        .container .containte_conteudo{
-            flex: 0 0 70%;
+        .container .container_tab .container_button .active{
+            transform: scale(1.5);
+            box-shadow: 2px 2px 8px #202020;
         }
 
-        .container .containte_conteudo .conteudo{
-            padding: 1.4rem;
-            width: 300px;
-            display: none;
+        .container .container_conteudo{
+            flex: 0 0 60%;
         }
 
-        .container .containte_conteudo .active{
-            display: block;
+        .container .container_conteudo .conteudo_tab{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container .container_conteudo .conteudo_tab .conteudo{
+            position: absolute;
+            flex: 0 0 200px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="containe_btn">
-            <button class="btn active" data-tab="tab01">Tab 1</button>
-            <button class="btn" data-tab="tab02">Tab 2</button>
-            <button class="btn" data-tab="tab03">Tab 3</button>
+        <div class="container_tab">
+            <div class="container_button">
+                <button class="btn active" tada-tab="tab01">button 01</button>
+                <button class="btn" tada-tab="tab02">button 02</button>
+                <button class="btn" tada-tab="tab03">button 03</button>
+            </div>
         </div>
 
-        <div class="containte_conteudo">
-            <div class="conteudo active" id="tab01">
-                <h1>Tab 01</h1>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero qui repudiandae accusantium distinctio dolore magnam eos veritatis quia maxime, nemo fugiat aperiam expedita praesentium corporis tenetur unde placeat rerum ullam.
-                </p>
-            </div>
-            <div class="conteudo" id="tab02">
-                <h1>Tab 02</h1>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero qui repudiandae accusantium distinctio dolore magnam eos veritatis quia maxime, nemo fugiat aperiam expedita praesentium corporis tenetur unde placeat rerum ullam.
-                </p>
-            </div>
-            <div class="conteudo" id="tab03">
-                <h1>Tab 03</h1>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero qui repudiandae accusantium distinctio dolore magnam eos veritatis quia maxime, nemo fugiat aperiam expedita praesentium corporis tenetur unde placeat rerum ullam.
-                </p>
+        <div class="container_conteudo">
+            <div class="conteudo_tab">
+                <div class="conteudo active" id="tab01">
+                    <h1>Conteudo 01</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eum perferendis nihil, optio necessitatibus accusantium sed voluptatibus vero dolores quis officiis? Error quis magnam dolorem sed ad nulla ullam unde.
+                    </p>
+                </div>
+                <div class="conteudo" id="tab02">
+                    <h1>Conteudo 02</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eum perferendis nihil, optio necessitatibus accusantium sed voluptatibus vero dolores quis officiis? Error quis magnam dolorem sed ad nulla ullam unde.
+                    </p>
+                </div>
+                <div class="conteudo" id="tab03">
+                    <h1>Conteudo 03</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eum perferendis nihil, optio necessitatibus accusantium sed voluptatibus vero dolores quis officiis? Error quis magnam dolorem sed ad nulla ullam unde.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-
-    <script>
-        const btnTab = document.querySelectorAll('.btn');
-        const conteudoTab = document.querySelectorAll('.conteudo');
-
-        const ativaAba = (tabid) =>{
-            btnTab.forEach(btn => {btn.classList.remove('active')});
-            conteudoTab.forEach(conteudo => {conteudo.classList.remove('active')});
-
-            document.querySelector(`[data-tab="${tabid}"]`).classList.add('active');
-            document.getElementById(tabid).classList.add('active');
-        };
-
-        btnTab.forEach(button => {
-            button.addEventListener('click', () => ativaAba(button.dataset.tab));
-        });
-    </script>
 </body>
 </html>
