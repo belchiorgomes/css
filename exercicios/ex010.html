@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu tab</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            width: 800px;
+            height: 450px;
+            border-radius: 25px;
+            box-shadow: 2px 2px 8px #00000091;
+            display: flex;
+        }
+
+        .container .container_button{
+            flex: 0 0 20%;
+            height: 100%;
+        }
+
+        .container .container_button .btn_tabs{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 12px;
+        }
+
+        .container .container_button .btn_tabs .btn{
+            width: 120px;
+            height: 40px;
+            text-align: left;
+            background-color: aqua;
+            border: none;
+            border-radius: 8px 0 0 8px;
+            padding: 12px 18px;
+        }
+
+        .container .containter_conteudo{
+            flex: 0 0 80%;
+        }
+
+        .container .containter_conteudo .conteudo_tabs{
+            display: flex;
+        }
+
+        .container .containter_conteudo .conteudo_tabs .conteudo{
+            position: relative;
+            width: 100%;
+            height: 450px;
+            padding: 18px;
+            display: flex;
+            flex-flow: column wrap;
+            margin-inline-start: 1.8rem;
+        }
+
+        .container .containter_conteudo .conteudo_tabs .conteudo .img{
+            width: 350px;
+            aspect-ratio: 16 / 9;
+        }
+
+        .container .containter_conteudo .conteudo_tabs .conteudo .img img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 2px 2px 8px #00000091;
+        }
+
+        .container .containter_conteudo .conteudo_tabs .conteudo .text{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container_button">
+            <div class="btn_tabs">
+                <button class="btn" date-tab="tab01">Roma</button>
+                <button class="btn" date-tab="tab02">Roma</button>
+                <button class="btn" date-tab="tab03">Roma</button>
+            </div>
+        </div>
+
+        <div class="containter_conteudo">
+            <div class="conteudo_tabs">
+                <div class="conteudo">
+                    <div class="img">
+                        <img src="imagem/img08.jpg" alt="Roma">
+                    </div>
+                    <div class="text">
+                        <h1>Roma</h1>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt hic aliquam ipsum, similique laudantium ad repellendus esse alias quam dicta obcaecati! Nesciunt veniam sequi quis neque dolore officiis voluptatem pariatur!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
