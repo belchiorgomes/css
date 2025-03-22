@@ -44,17 +44,43 @@
         }
 
         .container .container_button .btn_tabs .btn{
+            position: relative;
             width: 120px;
             height: 40px;
             text-align: left;
-            background-color: aqua;
+            background-color: #ffd7a2;
+            color: #fff;
+            font-weight: bolder;
             border: none;
             border-radius: 8px 0 0 8px;
             padding: 12px 18px;
         }
 
+        .container .container_button .btn_tabs .btn::after{
+            position: absolute;
+            top: -15px;
+            right: 0;
+            content: "";
+            width: 20px;
+            height: 15px;
+            background-color: transparent;
+            border-bottom-right-radius: 18px;
+            box-shadow: 6px 4px #ffd7a2;
+        }
+
+        .container .container_button .btn_tabs .btn::before{
+            position: absolute;
+            bottom: -15px;
+            right: 0;
+            content: "";
+            width: 20px;
+            height: 15px;
+            background-color: black;
+        }
+
         .container .containter_conteudo{
             flex: 0 0 70%;
+            background-color: #ffd7a2;
         }
 
         .container .containter_conteudo .conteudo_tabs{
