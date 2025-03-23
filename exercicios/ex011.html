@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de navegação com indicador</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffb5e9;
+        }
+
+        nav{
+            background-color: #fff;
+            width: 500px;
+            height: 50px;
+            border-radius: 20px;
+        }
+
+        nav .menu{
+            position: relative;
+            height: inherit;
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+
+        nav .menu .menu-item{
+            flex: 0 0 120px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li class="menu-item"><a href="#">Home</a></li>
+            <li class="menu-item"><a href="#">Sobre</a></li>
+            <li class="menu-item"><a href="#">Serviços</a></li>
+            <li class="menu-item"><a href="#">Contato</a></li>
+        </ul>
+        <div class="menu-indicador"></div>
+    </nav>
+</body>
+</html>
