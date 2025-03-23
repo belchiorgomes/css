@@ -20,24 +20,43 @@
         }
 
         nav{
-            background-color: #fff;
+            position: relative;
+        }
+
+        .menu{
+            list-style-type: none;
             width: 500px;
             height: 50px;
-            border-radius: 20px;
-        }
-
-        nav .menu{
-            position: relative;
-            height: inherit;
-            list-style-type: none;
+            background-color: #fff;
+            border-radius: 22px;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
         }
 
-        nav .menu .menu-item{
-            flex: 0 0 120px;
+        .menu .menu-item{
+            margin-inline: 20px;
+            width: 120px;
+            line-height: 50px;
+            z-index: 999;
+        }
+
+        .menu .menu-item a{
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: #000;
+            height: 50%;
+        }
+
+        nav .menu-indicador{
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            width: 120px;
+            height: 40px;
+            border-radius: 22px;
+            background-color: red;
+            transition: all .6s ease-in-out;
         }
     </style>
 </head>
@@ -51,5 +70,27 @@
         </ul>
         <div class="menu-indicador"></div>
     </nav>
+
+    <script>
+        const nav = document.querySelector('nav');
+        const list = document.querySelectorAll('li');
+        const indicator = document.querySelector('.menu-indicador');
+
+        function indicatorFunc(item) {
+        indicator.style.left = item.offsetLeft + 'px';
+        indicator.style.width = item.offsetWidth + 'px';
+        }
+
+        list.forEach(item => {
+        item.addEventListener('click', (e) => {
+            list.forEach(navItem => navItem.classList.remove('active'));
+            e.target.parentElement.classList.add('active');
+            indicatorFunc(e.target.parentElement);
+        });
+        });
+
+        // Inicializa o indicador no primeiro item
+        indicatorFunc(document.querySelector('.active'));
+    </script>
 </body>
 </html>
