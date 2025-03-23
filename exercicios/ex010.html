@@ -32,6 +32,7 @@
             flex: 0 0 30%;
             height: 100%;
             background-color: #01a501;
+            transition: all .8s ease-in-out;
         }
 
         .container .container_button .btn_tabs{
@@ -41,7 +42,7 @@
             flex-flow: column wrap;
             justify-content: center;
             align-items: flex-end;
-            gap: 1.5rem;
+            gap: .8rem;
         }
 
         .container .container_button .btn_tabs .btn{
@@ -60,7 +61,6 @@
         .container .container_button .btn_tabs .active{
             background-color: #ffd7a2;
             color: black;
-
         }
 
         .container .container_button .btn_tabs .active::after{
@@ -99,7 +99,7 @@
 
         .container .containter_conteudo .conteudo_tabs .conteudo{
             position: absolute;
-            transform: translateY(460px);
+            transform: translateY(460px) scale(0);
             width: 100%;
             height: 450px;
             padding: 18px;
@@ -107,10 +107,12 @@
             flex-flow: column wrap;
             margin-inline-start: 1.8rem;
             gap: 1.3rem;
+            transition-delay: 3s;
+            transition: all .6s ease-in-out;
         }
 
         .container .containter_conteudo .conteudo_tabs .active{
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
             transition: all .6s ease-in-out;
         }
 
@@ -136,15 +138,15 @@
     <div class="container">
         <div class="container_button">
             <div class="btn_tabs">
-                <button class="btn active" date-tab="tab01">Roma</button>
-                <button class="btn" date-tab="tab02">Australia</button>
-                <button class="btn" date-tab="tab03">Noruega</button>
+                <button class="btn active" data-tab="tab01">Roma</button>
+                <button class="btn" data-tab="tab02">Australia</button>
+                <button class="btn" data-tab="tab03">Noruega</button>
             </div>
         </div>
 
         <div class="containter_conteudo">
             <div class="conteudo_tabs">
-                <div class="conteudo active">
+                <div class="conteudo active" id="tab01">
                     <div class="img">
                         <img src="imagem/img08.jpg" alt="Roma">
                     </div>
@@ -156,7 +158,7 @@
                     </div>
                 </div>
 
-                <div class="conteudo">
+                <div class="conteudo" id="tab02">
                     <div class="img">
                         <img src="imagem/img09.jpg" alt="Australia">
                     </div>
@@ -168,7 +170,7 @@
                     </div>
                 </div>
 
-                <div class="conteudo">
+                <div class="conteudo" id="tab03">
                     <div class="img">
                         <img src="imagem/img10.jpg" alt="Noruega">
                     </div>
@@ -191,7 +193,7 @@
             btnButton.forEach(btn => btn.classList.remove('active'));
             conteudoTabs.forEach(abas => abas.classList.remove('active'));
 
-            document.querySelector(`[data-tab='${tabId}']`).classList.add('active');
+            document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
             document.getElementById(tabId).classList.add('active');
         };
 
