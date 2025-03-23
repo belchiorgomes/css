@@ -182,5 +182,22 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const btnButton = document.querySelectorAll('.btn');
+        const conteudoTabs = document.querySelectorAll('.conteudo');
+
+        const alterarTabs = (tabId) => {
+            btnButton.forEach(btn => btn.classList.remove('active'));
+            conteudoTabs.forEach(abas => abas.classList.remove('active'));
+
+            document.querySelector(`[data-tab='${tabId}']`).classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        };
+
+        btnButton.forEach(button => {
+            button.addEventListener('click', () => alterarTabs(button.dataset.tab));
+        });
+    </script>
 </body>
 </html>
