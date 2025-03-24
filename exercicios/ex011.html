@@ -51,14 +51,13 @@
         }
 
         menuLinks.forEach(link => {
-            link.addEventListener('click', function(event) {
+            link.addEventListener('click', function() {
+                atualizarIndicador(this);
                 menuLinks.forEach(link => link.classList.remove('active'));
                 this.classList.add('active');
-                atualizarIndicador(this);
             });
         });
 
-        // Inicializa o indicador na página carregada
         atualizarIndicador(document.querySelector('.menu a.active'));
     </script>
 </body>
