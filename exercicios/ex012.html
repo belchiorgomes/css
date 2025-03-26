@@ -4,11 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sidebar Menu Using Html CSS & Javascript | Curved Outside in Active Tab</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            background-color: #fff;
+        }
+
+        .navegacao{
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            bottom: 20px;
+            background-color: #ff009d;
+            border-radius: 12px;
+            border-left: 5px solid #ff009d;
+        }
+
+        .navegacao ul{
+            position: relative;
+            top: 30px;
+            left: 20px;
+            width: 250px;
+            height: 100%;
+            list-style-type: none;
+            transition: all .6s ease-in-out;
+        }
+
+        .navegacao ul .lista{
+            position: relative;
+            width: 100%;
+            /*padding: 18px 12px;*/
+            margin-block: 18px;
+        }
+
+        .navegacao ul .active,
+        .navegacao ul li.active a{
+            background-color: #fff;
+            border-radius: 12px 0 0 12px;
+            color: #000;
+            transition: all .6s ease-in-out;
+        }
+
+        .navegacao ul .lista a{
+            display: block;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .navegacao ul .lista a .icon{
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            margin-right: 12px;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
     <nav class="navegacao">
         <ul>
-            <li class="lista">
+            <li class="lista active">
                 <a href="#">
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                     <span class="text">Home</span>
@@ -52,7 +115,7 @@
 
             <li class="lista">
                 <a href="#">
-                    <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                    <span class="icon"><ion-icon name="log-in-outline"></ion-icon></span>
                     <span class="text">Sign out</span>
                 </a>
             </li>
@@ -61,5 +124,18 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        let lista = document.querySelectorAll('.lista');
+        for(let x = 0; x < lista.length; x++){
+            lista[x].onclick = function(){
+                let y = 0;
+                while(y < lista.length){
+                    lista[y++].className = 'lista';
+                }
+                lista[x].className = 'lista active';
+            }
+        }
+    </script>
 </body>
 </html>
