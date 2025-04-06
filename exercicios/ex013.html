@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Corner Hover Effects | CSS & Javascript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #161616;
+        }
+
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card{
+            position: relative;
+            width: 300px;
+            height: 400px;
+            border-radius: 18px;
+            background-color: #313131;
+            overflow: hidden;
+        }
+
+        .card::before{
+            position: absolute;
+            top: var(--y);
+            left: var(--x);
+            transform: translate(-50%,-50%);
+            content: "";
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(var(--cor), transparent, transparent);
+            opacity: 0;
+            transition: .5s, top 0s, left 0s;
+        }
+
+        .card:hover::before{
+            opacity: 1;
+        }
+
+        .card::after{
+            position: absolute;
+            content: "";
+            inset: 2px;
+            background-color: rgba(49, 49, 49, 0.9);
+            border-radius: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" style="--cor:#00f;"></div>
+    </div>
+
+    <script>
+        let cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.onmousemove = function(a){
+                let x = a.pageX - card.offsetLeft;
+                let y = a.pageY - card.offsetTop;
+
+                card.style.setProperty('--x', x + 'px');
+                card.style.setProperty('--y', y + 'px');
+            }
+        })
+    </script>
+</body>
+</html>
