@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas border</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            /*
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            */
+            background-color: #c2c2c2;
+            
+        }
+
+        table{
+            margin: 1rem;
+            border-spacing: 30px;
+        }
+
+        table, th, td{
+            border: 2px solid white;
+            /*border-collapse: collapse;*/
+            border-radius: 8px;
+            padding: 1.2rem;
+            width: var(--size);
+            height: var(--size2);
+            background-color: var(--cor);
+        }
+
+        th{
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th style="--size: 350px; --cor: green;">table 1</th>
+            <th style="--size: 50%;">table 2</th>
+            <th>table 3</th>
+        </tr>
+
+        <tr>
+            <td style="--size2: 200px;">title table 1</td>
+            <td>title table 2</td>
+            <td>title table 3</td>
+        </tr>
+    </table>
+
+    <table style="--size: 500px;">
+        <tr>
+            <th>Cabeçalho 1</th>
+            <td>tabela 1</td>
+            <td>tabela 2</td>
+        </tr>
+        <tr>
+            <th>Cabeçalho 2</th>
+            <td>tabela 1</td>
+            <td>tabela 2</td>
+        </tr>
+        <tr>
+            <th>Cabeçalho 3</th>
+            <td>tabela 1</td>
+            <td>tabela 2</td>
+        </tr>
+    </table>
+</body>
+</html>
