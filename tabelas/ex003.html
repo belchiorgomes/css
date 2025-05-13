@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela basica em HTML</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 1.1rem;
+        }
+
+        table{
+            background-color: #e4e4e4;
+            width: 500px;
+        }
+
+        td{
+            text-align: center;
+        }
+
+        th{
+            background-color: green;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <table><!--Define uma Tabela-->
+        <caption>Exemplo de tabela</caption><!--Define uma legenta para tabela-->
+        <tr>
+            <th>titulo tabela 01</th><!--CÉLULAS DE CABEÇALLO-->
+            <th>titulo tabela 02</th>
+            <th>titulo tabela 03</th>
+        </tr>
+
+        <tr><!--Linha da tabela-->
+            <td>texto tabela 01</td><!--Conteudo de uma célula da tabela-->
+            <td colspan="2">texto tabela 02 e 03</td>
+            <!--colspan = faz abranger mais de uma linha ou uma coluna-->
+        </tr>
+
+        <tr>
+            <td>tabela 1</td>
+            <td>tabela 2</td>
+            <td>tabela 3</td>
+        </tr>
+    </table>
+</body>
+</html>
