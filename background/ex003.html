@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>backgroundRepeat</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: antiquewhite;
+            background-image: url("imagens/img01.jpg");
+            background-size: 200px;
+        }
+
+        .container_btn{
+            display: inline-block;
+            padding: 18px 22px;
+            border-radius: 12px;
+            background-color: antiquewhite;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, .6);
+            margin: 33px;
+        }
+
+        .container_btn button{
+            border: none;
+            border-radius: 12px;
+            outline: none;
+            background-color: #b6ac9e;
+            padding: 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container_btn">
+        <button type="button" onclick="noRepeat()">no-repeat</button>
+        <button type="button" onclick="repeatX()">repeat-x</button>
+        <button type="button" onclick="repeatY()">repeat-y</button>
+        <button type="button" onclick="repeat()">repeat</button>
+    </div>
+
+    <script>
+        function noRepeat(){
+            document.body.style.backgroundRepeat = "no-repeat";
+        }
+
+        function repeat(){
+            document.body.style.backgroundRepeat = "repeat";
+        }
+
+        function repeatX(){
+            document.body.style.backgroundRepeat = "repeat-x";
+        }
+
+        function repeatY(){
+            document.body.style.backgroundRepeat = "repeat-y";
+        }
+    </script>
+</body>
+</html>

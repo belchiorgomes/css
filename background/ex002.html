@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>backgroundPosition</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            flex-flow: column wrap;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container_img{
+            width: 500px;
+            aspect-ratio: 16 / 9;
+            border: 5px solid #000;
+            border-radius: 12px;
+            background-color: aliceblue;
+            background-repeat: no-repeat;
+            background-size: 300px;
+        }
+
+        button{
+            width: 200px;
+            padding: 12px 18px;
+            border: none;
+            outline: none;
+            border-radius: 12px;
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+    <div class="container_img"></div>
+    <button type="button" onclick="gerarImagem()">Gerar imagem</button>
+    <button type="button" onclick="posicaoImagem()">Mudar a posção imagem</button>
+
+    <script>
+        function gerarImagem(){
+            document.querySelector(".container_img").style.backgroundImage = "url('imagens/img01.jpg')";
+        }
+
+        function posicaoImagem(){
+            document.querySelector(".container_img").style.backgroundPosition = "top right";
+        }
+    </script>
+</body>
+</html>
