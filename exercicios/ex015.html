@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedade de text</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            font-family: monospace;
+            font-size: 16px;
+            background-color: #ffffff;
+        }
+
+        .container{
+            width: 100%;
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 12px;
+            border: 2px solid #a34100;
+        }
+
+        .container h1{
+            text-align: center;
+            padding-block: 1rem;
+            font-size: 2rem;
+        }
+
+        .container h1 > span{
+            text-transform: uppercase;
+        }
+
+        .container p{
+            transition: all .6s;
+        }
+
+        .container a{
+            text-decoration: none;
+            transition: all .6s ease-in-out;
+        }
+
+        .container a:hover{
+            /*
+            text-decoration-line: underline;
+            text-decoration-color: #a34100;
+            text-decoration-style: dotted;
+            text-decoration-thickness: 3px;
+            */
+
+            text-decoration: underline #000 solid 2px;
+        }
+
+        .container button{
+            display: block;
+            margin-block: 1rem;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            padding: 12px 18px;
+            text-align: center;
+            color: #fff;
+            background-color: #a34100;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: -1px;
+            transition: all .6s;
+        }
+
+        .container button:hover{
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Propriedade de texto em <span>html & css</span></h1>
+        <p style="--cor:#a34100;">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis at ab animi, praesentium minima quisquam consectetur, aperiam iure deserunt nisi ut, ipsa eaque accusamus dolorum possimus tempora blanditiis illum vero!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt deserunt animi provident veritatis recusandae autem quas nisi illo ea, ab, molestias voluptatem vel officiis assumenda rerum impedit dolor corporis. Ratione.
+            <a href="https://www.w3schools.com/css/css_text.asp" target="_blank">Ir para tutorial da w3schools</a>
+            <button type="button" onclick="styleParagrafo()">estilo do paragrafo</button>
+        </p>
+    </div>
+
+    <script>
+        function styleParagrafo(){
+            document.querySelector("p").style.color = "var(--cor)";
+            document.querySelector("p").style.textAlign = "justify"
+            document.querySelector("p").style.textIndent = "20px";
+            document.querySelector("p").style.lineHeight = "1.6";
+        }
+    </script>
+</body>
+</html>
