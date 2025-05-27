@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal em HTML CSS JS</title>
+    <style>
+        dialog::backdrop{
+            background-color: rgba(0, 0, 0, 0.219);
+            filter: blur(50px);
+        }
+
+        dialog{
+            border: none;
+            border-radius: .5rem;
+            box-shadow: 0 0 1em rgba(0 0 0 / .3);
+            width: 80%;
+            max-width: 300px;
+            transition: all .5s ease-in-out;
+        }
+
+        dialog h1{
+            font-size: 2em;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        dialog p{
+            text-align: justify;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <button>Abrir Modal</button>
+
+    <dialog>
+        <h1>title</h1>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam commodi aliquid, illum tempore itaque libero adipisci, quidem necessitatibus est eaque eum quaerat ipsam sunt animi ut, nihil reprehenderit blanditiis! Minima!
+        </p>
+        <button>Fechar Modal</button>
+    </dialog>
+
+    <script>
+        const button = document.querySelector("button");
+        const modal = document.querySelector("dialog");
+        const modalclose = document.querySelector("dialog button");
+
+        button.onclick = function(){
+            //modal.show();
+            modal.showModal();
+        }
+
+        modalclose.onclick = function(){
+            modal.close();
+        }
+    </script>
+</body>
+</html>
