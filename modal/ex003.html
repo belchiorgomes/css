@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Modal popup</title>
+    <style>
+        *:not(dialog){
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aqua;
+        }
+
+        .btn_subscribe{
+            border: none;
+            border-radius: 8px;
+            background-color: #fff;
+            color: #000;
+            cursor: pointer;
+            padding: 14px 18px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 2px 2px 8px #007e7e;
+            transition: all .6s;
+        }
+
+        .btn_subscribe:hover{
+            letter-spacing: 5px;
+        }
+
+        dialog{
+            width: 100%;
+            max-width: 350px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        dialog .container{
+            position: relative;
+            display: flex;
+            flex-flow: column wrap;
+            align-items: flex-end;
+            gap: 18px;
+        }
+
+        dialog .container .btn_close{
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background-color: #007e7e;
+            cursor: pointer;
+        }
+
+        dialog .container .btn_close i{
+            display: block;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn_subscribe">Subscribe us</button>
+
+    <dialog open>
+        <div class="container">
+            <div class="btn_close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div class="container_text">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                <h2>Join Our Newsletter</h2>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti quae dolores eos harum similique laudantium placeat molestiae optio rerum quam necessitatibus amet vero quasi, corrupti repellendus repellat assumenda ipsum! Adipisci?
+                </p>
+            </div>
+        </div>
+    </dialog>
+
+    <script>
+        const btnSub = document.querySelector("btn_subscribe");
+
+         
+    </script>
+</body>
+</html>
