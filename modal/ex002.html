@@ -36,6 +36,11 @@
             font-weight: bold;
             box-shadow: 0 0 8px #151231;
             transition: all .5s;
+            cursor: pointer;
+        }
+
+        .button-open:hover{
+            transform: translateY(-12px);
         }
 
         dialog{
@@ -49,13 +54,14 @@
         dialog .form-modal{
             display: flex;
             flex-flow: column wrap;
-            gap: 12px;
+            gap: 18px;
         }
 
         dialog .form-modal .modal-header{
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-block: 12px;
         }
 
         dialog .form-modal .modal-header h2{
@@ -65,12 +71,13 @@
         dialog .form-modal .modal-header .modal-header-btn{
             font-size: 18px;
             color: #8e85df;
+            cursor: pointer;
         }
 
         dialog .form-modal .modal-body{
             display: flex;
             flex-flow: column wrap;
-            gap: 12px;
+            gap: 18px;
         }
 
         dialog .form-modal .modal-body .input-dados{
@@ -85,6 +92,46 @@
             border-radius: 8px;
             border: 1px solid #c2c2c2;
             outline: none;
+            background-color: #e4e4e4;
+            text-shadow: 23px;
+        }
+
+        dialog .form-modal .modal-body .input-dados input:focus{
+            outline: 1px solid #625b99;
+        }
+
+        dialog .form-modal .modal-body .input-checkbox{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        dialog .form-modal .modal-body .input-checkbox a{
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        dialog .form-modal .modal-body .input-btn button{
+            width: 100%;
+            padding: 14px 18px;
+            border: none;
+            outline: none;
+            border-radius: 8px;
+            background-color: #5347be;
+            color: #fff;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        dialog .form-modal .modal-footer p{
+            color: #c2c2c2;
+        }
+
+        dialog .form-modal .modal-footer a{
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
