@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modal de aceitação de cookies</title>
+    <style>
+        *:not(dialog){
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2.3rem;
+            font-family: sans-serif;
+        }
+
+        dialog{
+            width: 100%;
+            max-width: 300px;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            padding: 28px 18px;
+            box-shadow: 0 0 8px rgba(0, 0, 255, 0.5),
+                        0 0 8px rgba(0, 0, 255, 0.8);
+        }
+
+        dialog::backdrop{
+            background-color: rgba(0, 0, 255, 0.795);
+        }
+
+        dialog .container{
+            display: flex;
+            flex-flow: column wrap;
+            gap: 1.4rem;
+        }
+
+        dialog .container h2{
+            text-align: center;
+            color: rgba(0, 0, 255, 0.795);
+        }
+
+        dialog .container p{
+            text-align: center;
+            line-height: 22px;
+            color: rgba(0, 0, 255, 0.562);
+        }
+
+        dialog .container .container_btn{
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        dialog .container .container_btn button{
+            flex: 0 0 50%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-weight: bolder;
+        } 
+
+        dialog .container .container_btn .btn_accept{
+            border: 2px solid rgba(0, 0, 255, 0.562);
+            color: rgba(0, 0, 255, 0.562);
+        }
+
+        dialog .container .container_btn .btn_decline{
+            background-color: rgba(0, 0, 255, 0.562);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>modal de aceitação de cookies</h1>
+    <p>
+        Esta pagina, e uma pagina de teste para um modal de aceitação de cookies
+    </p>
+
+    <dialog>
+        <div class="container">
+            <h2>Cookie Consent</h2>
+            <p>
+                The websiees cookies to slith enhance to enhance user experience and timise and track website usage.
+            </p>
+
+            <div class="container_btn">
+                <button type="button" class="btn_accept">Accept</button>
+
+                <button type="button" class="btn_decline">Decline</button>
+            </div>
+        </div>
+    </dialog>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const minhaModal = document.querySelector("dialog");
+            const fecharModal = document.querySelector(".btn_decline");
+
+            minhaModal.showModal();
+
+            fecharModal.addEventListener('click', () => {
+                minhaModal.close();
+            });
+        });
+    </script>
+</body>
+</html>
