@@ -39,11 +39,16 @@
         }
 
         dialog{
+            /*
+            position: absolute;
+            top: -490px;
+            */
             width: 100%;
             max-width: 350px;
             padding: 12px;
             border: none;
             border-radius: 8px;
+            transition: all .6s;
         }
 
         dialog .container{
@@ -60,6 +65,12 @@
             border-radius: 8px;
             background-color: #007e7e;
             cursor: pointer;
+            margin-block-end: 20px;
+            transition: all .6s;
+        }
+
+        dialog .container .btn_close i:hover{
+            font-size: 26px;
         }
 
         dialog .container .btn_close i{
@@ -70,31 +81,122 @@
             font-size: 24px;
             font-weight: bold;
         }
+
+        dialog .container .container_text{
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            gap: 18px;
+        }
+
+        dialog .container .container_text .icon i{
+            font-size: 3.3rem;
+            color: #007e7e;
+        }
+
+        dialog .container .container_text h2{
+            margin-block: 8px;
+            color: #005858;
+        }
+
+        dialog .container .container_text p{
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 18px;
+            color: #005858;
+        }
+
+        dialog .container form{
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            width: 100%;
+        }
+
+        dialog .container form input{
+            width: 80%;
+            padding: 12px 18px;
+            border: 1px solid #007e7e;
+            border-radius: 8px;
+            outline: none;
+            color: #007e7e;
+            font-weight: bold;
+            transition: all .6s;
+        }
+
+        dialog .container form input:hover,
+        dialog .container form input:focus{
+            background-color: #007e7e;
+            color: #fff;
+        }
+
+        dialog .container form input::placeholder{
+            color: #007e7e;
+            font-weight: inherit;
+        }
+
+        dialog .container form input:hover::placeholder{
+            color: #fff;
+        }
+
+        dialog .container form button{
+            padding: 18px 22px;
+            margin: 0 auto;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            background-color: #005858;
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all .6s;
+        }
+
+        dialog .container form button:hover,
+        dialog .container form button:focus{
+            letter-spacing: 8px;
+            color: #007e7e;
+        }
     </style>
 </head>
 <body>
     <button class="btn_subscribe">Subscribe us</button>
 
-    <dialog open>
+    <dialog>
         <div class="container">
             <div class="btn_close">
                 <i class="fa-solid fa-xmark"></i>
             </div>
 
             <div class="container_text">
-                <i class="fa-solid fa-envelope-open-text"></i>
+                <div class="icon">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
                 <h2>Join Our Newsletter</h2>
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti quae dolores eos harum similique laudantium placeat molestiae optio rerum quam necessitatibus amet vero quasi, corrupti repellendus repellat assumenda ipsum! Adipisci?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, voluptas! Atque ipsa pariatur assumenda, debitis non perspiciatis ea nam architecto! Dignissimos, laborum error.
                 </p>
             </div>
+
+            <form action="arquivo.php" method="post">
+                <input type="email" name="email" id="email" placeholder="Enter Email">
+
+                <button type="button">Sign up</button>
+            </form>
         </div>
     </dialog>
 
     <script>
         const btnSub = document.querySelector("btn_subscribe");
+        const modal = document.querySelector("dialog");
 
-         
+        btnSub.onclick() = function(){
+            modal.showModal();
+        }
     </script>
 </body>
 </html>
