@@ -48,7 +48,6 @@
             padding: 12px;
             border: none;
             border-radius: 8px;
-            transition: all .6s;
         }
 
         dialog .container{
@@ -156,8 +155,7 @@
             transition: all .6s;
         }
 
-        dialog .container form button:hover,
-        dialog .container form button:focus{
+        dialog .container form button:hover{
             letter-spacing: 8px;
             color: #007e7e;
         }
@@ -185,17 +183,22 @@
             <form action="arquivo.php" method="post">
                 <input type="email" name="email" id="email" placeholder="Enter Email">
 
-                <button type="button">Sign up</button>
+                <button class="btn_close" type="button">Sign up</button>
             </form>
         </div>
     </dialog>
 
     <script>
-        const btnSub = document.querySelector("btn_subscribe");
+        const btnOpen = document.querySelector(".btn_subscribe");
         const modal = document.querySelector("dialog");
+        const btnClose = document.querySelector(".btn_close")
 
-        btnSub.onclick() = function(){
+        btnOpen.onclick = function(){
             modal.showModal();
+        }
+
+        btnClose.onclick = function(){
+            modal.close();
         }
     </script>
 </body>
