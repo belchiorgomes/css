@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Open Modal</title>
+    <style>
+        *:not(dialog){
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #cc289b;
+        }
+
+        #open_modal{
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            padding: 12px 18px;
+            background-color: #fff;
+            color: #cc289b;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" id="open_modal">Open Modal</button>
+
+    <dialog open>
+        <div class="container_btn_close">
+            <h2>Share Modal</h2>
+            <i class="fa-solid fa-circle-xmark"></i>
+        </div>
+
+        <h3>Share this link via</h3>
+
+        <div class="container_redes_icon">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-square-x-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+
+        <h3>Or copy link</h3>
+
+        <div class="container_link_enviar">
+            <input type="text" placeholder="">
+            <input type="button" value="Copy">
+        </div>
+    </dialog>
+</body>
+</html>
