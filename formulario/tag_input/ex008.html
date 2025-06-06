@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Input password animation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(350deg, #3f0037, #4f0052);
+        }
+
+        .container{
+            flex: 0 0 400px;
+            background-color: #fff;
+            border-radius: 1rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 1.3rem;
+        }
+
+        .container input{
+            border: none;
+            outline: none;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="password" name="senha">
+        <i class="fa-solid fa-eye"></i>
+    </div>
+
+    <script>
+        const eyeIcon = document.querySelector('i');
+        const inputPassword = document.querySelector('input');
+
+        eyeIcon.onclock = function(){
+            if(inputPassword.type == "password"){
+                inputPassword.type = "text";
+            }else{
+                inputPassword.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>
