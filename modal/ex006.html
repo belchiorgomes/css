@@ -17,7 +17,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #cc289b;
+            background-color: #bd005e;
+            font-family: sans-serif;
         }
 
         #open_modal{
@@ -26,7 +27,99 @@
             outline: none;
             padding: 12px 18px;
             background-color: #fff;
-            color: #cc289b;
+            color: #bd005e;
+        }
+
+        dialog{
+            width: 100%;
+            max-width: 300px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, .6);
+        }
+
+        dialog .container_btn_close{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-block: 8px;
+        }
+
+        dialog .container_btn_close .fa-circle-xmark{
+            color: #bd005e;
+            font-size: 1.6rem;
+            cursor: pointer;
+            transition: all .6s;
+        }
+
+        dialog .container_btn_close .fa-circle-xmark:hover{
+            transform: scale(1.2);
+        }
+
+        dialog p{
+            padding-block: 8px;
+            margin-block: 8px;
+        }
+
+        dialog ul{
+            list-style-type: none;
+            display: flex;
+            gap: 1.3rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        dialog ul li{
+            flex: 0 0 40px;
+            height: 40px;
+            background-color: #bd005e;
+            border-radius: 50%;
+            background-color: transparent;
+            overflow: hidden;
+            transition: all .6s;
+        }
+
+        dialog ul li a{
+            display: block;
+            text-align: center;
+            line-height: 40px;
+            font-size: 1.2rem;
+            color: var(--cor_icon);
+            transition: all .6s;
+        }
+
+        dialog ul li:hover a{
+            background-color: var(--cor_icon);
+            color: #fff;
+            transform: scale(2px);
+        }
+
+        dialog .container_link_copy{
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid #4b4b4b;
+            border-radius: 8px;
+            padding-left: 8px;
+            overflow: hidden;
+        }
+
+        dialog .container_link_copy input,
+        dialog .container_link_copy button{
+            border: none;
+            outline: none;
+            flex: 1;
+        }
+
+        dialog .container_link_copy .fa-link{
+            flex: 0 0 10%;
+        }
+
+        dialog .container_link_copy button{
+            background-color: #bd005e;
+            height: 40px;
         }
     </style>
 </head>
@@ -39,21 +132,47 @@
             <i class="fa-solid fa-circle-xmark"></i>
         </div>
 
-        <h3>Share this link via</h3>
+        <p>Share this link via</p>
 
-        <div class="container_redes_icon">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-square-x-twitter"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-whatsapp"></i>
-        </div>
+        <ul>
+            <li style="--cor_icon: #4267B2;">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </li>
 
-        <h3>Or copy link</h3>
+            <li style="--cor_icon: #14171A;">
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </li>
 
-        <div class="container_link_enviar">
-            <input type="text" placeholder="">
-            <input type="button" value="Copy">
+            <li style="--cor_icon: #d62976;">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+
+            <li style="--cor_icon: #25D366;">
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            </li>
+        </ul>
+
+        <p>Or copy link</p>
+
+        <div class="container_link_copy">
+            <i class="fa-solid fa-link"></i>
+            <input type="text" value="exemplo.com">
+            <button type="button">Copy</button>
         </div>
     </dialog>
+
+    <script>
+        const modal = document.querySelector('dialog');
+        const btnClose = document.querySelector('.fa-circle-xmark');
+        const btnOpen = document.querySelector('#open_modal');
+
+        btnClose.onclick = function(){
+            modal.close();
+        }
+
+        btnOpen.onclick = function(){
+            modal.showModal();
+        }
+    </script>
 </body>
 </html>
