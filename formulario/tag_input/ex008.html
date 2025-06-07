@@ -41,21 +41,25 @@
 </head>
 <body>
     <div class="container">
-        <input type="password" name="senha">
-        <i class="fa-solid fa-eye"></i>
+        <input type="password" name="senha" id="inputPassword">
+        <i class="fa-solid fa-eye-slash"></i>
     </div>
 
     <script>
         const eyeIcon = document.querySelector('i');
-        const inputPassword = document.querySelector('input');
+        const inputPassword = document.querySelector('#inputPassword');
 
-        eyeIcon.onclock = function(){
-            if(inputPassword.type == "password"){
-                inputPassword.type = "text";
+        eyeIcon.addEventListener('click', function(){
+            if(inputPassword.type === 'password'){
+                inputPassword.type = 'text';
+                eyeIcon.querySelector('i').classList.remove('fa-eye');
+                eyeIcon.querySelector('i').classList.add('fa-eye-slash');
             }else{
-                inputPassword.type = "password";
+                inputPassword.type = 'password';
+                eyeIcon.querySelector('i').classList.remove('fa-eye-slash');
+                eyeIcon.querySelector('i').classList.add('fa-eye');
             }
-        }
+        })
     </script>
 </body>
 </html>
