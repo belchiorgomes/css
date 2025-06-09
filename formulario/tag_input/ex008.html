@@ -42,22 +42,22 @@
 <body>
     <div class="container">
         <input type="password" name="senha" id="inputPassword">
-        <i class="fa-solid fa-eye-slash"></i>
+        <i class="fa-solid fa-eye-slash" id="input_icon"></i>
     </div>
 
     <script>
-        const eyeIcon = document.querySelector('i');
+        const eyeIcon = document.querySelector('#input_icon');
         const inputPassword = document.querySelector('#inputPassword');
 
         eyeIcon.addEventListener('click', function(){
             if(inputPassword.type === 'password'){
                 inputPassword.type = 'text';
-                eyeIcon.querySelector('i').classList.remove('fa-eye');
-                eyeIcon.querySelector('i').classList.add('fa-eye-slash');
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
             }else{
                 inputPassword.type = 'password';
-                eyeIcon.querySelector('i').classList.remove('fa-eye-slash');
-                eyeIcon.querySelector('i').classList.add('fa-eye');
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
             }
         })
     </script>
