@@ -20,7 +20,7 @@
             background-color: #00093b;
         }
 
-        ::placeholder, #input_icon, p{
+        ::placeholder, #input_icon, .container p{
             color: #fff;
         }
 
@@ -53,6 +53,21 @@
             left: 0;
             top: 50px;
             display: none;
+            padding: 0 12px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .weak {
+            color: red;
+        }
+
+        .medium {
+            color: orange;
+        }
+
+        .strong {
+            color: green;
         }
     </style>
 </head>
@@ -66,8 +81,8 @@
     <script>
         const inputPassword = document.querySelector('#input');
         const inputIcon = document.querySelector('#input_icon');
-        const msg = document.querySelector('#mesagem');
-        const msdAdd = document.querySelector('#mesagem_adicional');
+        const mensagemParagrafo = document.querySelector('#mesagem');
+        const mensagemAdicionalSpan = document.querySelector('#mesagem_adicional');
 
         inputIcon.addEventListener('click', function(){
             if(inputPassword.type === 'password'){
@@ -80,6 +95,14 @@
                 inputIcon.classList.add('fa-eye-slash');
             }
         });
+
+       inputPassword.addEventListener('input', function() {
+            if(inputPassword.value.length > 0){
+                mensagemParagrafo.style.display = 'block';
+            }else{
+                mensagemParagrafo.style.display = 'none';
+            }
+       });
     </script>
 </body>
 </html>
