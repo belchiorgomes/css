@@ -28,45 +28,43 @@
             display: flex;
             flex-flow: column wrap;
             gap: 12px;
-            background-color: #fff;
             border-radius: 12px;
-            overflow: hidden;
-            
         }
 
         .container .containerInput{
+            width: 100%;
+            border: 2px solid #c2c2c2;
+            background-color: transparent;
+            border-radius: 12px;
+            overflow: hidden;
             display: flex;
             align-items: center;
-            gap: 8px;
-            transition: all .6s;
         }
 
         .container .containerInput #inputPassword{
-            flex: 0 0 80%;
             padding: 12px 18px;
             border: none;
             outline: none;
+            background-color: transparent;
+            flex: 0 0 80%;
         }
 
-        .container .containerInput #input_icon{
-            cursor: pointer;
+        input, ::placeholder, #input_icon{
+            color: #fff;
         }
 
         .container #mensagem{
+            font-size: 18px;
             padding-left: 18px;
-            padding-bottom: 8px;
             display: none;
-        }
-
-        .weak{
-            border: 2px solid green ;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="containerInput">
-            <input type="password" name="senha" id="inputPassword">
+            <input type="password" name="senha" id="inputPassword" placeholder="Digite sua senha">
             <i class="fa-solid fa-eye-slash" id="input_icon"></i>
         </div>
         <p id="mensagem">Sua senha é <span id="mensagemAdicional"></span></p>
@@ -77,7 +75,7 @@
         const inputIcon = document.querySelector('#input_icon');
         const mensagem = document.querySelector('#mensagem');
         const mensagemAdicional = document.querySelector('#mensagemAdicional');
-        const container =document.querySelector('.container');
+        const containerInput = document.querySelector('.containerInput');
 
         inputIcon.addEventListener('click', function() {
             if(inputPassword.type === 'password'){
@@ -91,38 +89,26 @@
             }
         });
 
-        inputPassword.addEventListener('input', function() {
-            const senha = inputPassword.value;
-            let forca = '';
-            let classeForca = '';
-
-            // Se o input estiver vazio, esconde a mensagem
-            if (senha.length === 0) {
+        inputPassword.addEventListener('input', function(){
+            if(inputPassword.value.length > 0){
+                mensagem.style.display = 'block';
+            }else{
                 mensagem.style.display = 'none';
-                return; // Sai da função
             }
-
-            // Lógica simples para determinar a força da senha
-            if (senha.length < 6) {
-                forca = 'fraca';
-                classeForca = 'weak';
-            } else if (senha.length >= 6 && senha.length < 10) {
-                forca = 'média';
-                classeForca = 'medium';
-            } else {
-                forca = 'forte';
-                classeForca = 'strong';
+            if(inputPassword.value.length <4){
+                mensagemAdicional.innerHTML = 'fraca';
+                mensagem.style.color = 'red';
+                containerInput.style.borderColor = 'red';
+            }else if(inputPassword.value.length >= 4 && inputPassword.value.length < 8){
+                mensagemAdicional.innerHTML = 'boa';
+                mensagem.style.color = 'yellow';
+                containerInput.style.borderColor = 'yellow';
+            }else if(inputPassword.value.length >= 8){
+                mensagemAdicional.innerHTML = 'forte';
+                mensagem.style.color = 'green';
+                containerInput.style.borderColor = 'green';
             }
-
-            // Atualiza o texto e a classe do span
-            mensagemAdicional.textContent = forca;
-            mensagemAdicional.className = classeForca; // Remove classes anteriores e adiciona a nova
-
-            // Mostra o parágrafo da mensagem
-            mensagem.style.display = 'block';
         })
-
-        container.className = classeForca;
     </script>
 </body>
 </html>
