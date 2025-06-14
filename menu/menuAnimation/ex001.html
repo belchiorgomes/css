@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>social midia icons css hover</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul{
+            list-style-type: none;
+            width: 80%;
+            max-width: 600px;
+            display: flex;
+            justify-content: space-around;
+            gap: 1.3rem;
+        }
+
+        ul li{
+            position: relative;
+            flex-basis: 4.5rem;
+        }
+
+        ul li::after{
+            position: absolute;
+            content: attr(data-icon);
+            inset: 50px auto auto 50%;
+            z-index: -1;
+            translate: -50%;
+            padding: 0.25rem 0.75rem;
+            color: #fff;
+            background-color: #000;
+            opacity: 0;
+            visibility: hidden;
+            border-radius: .35rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all .6s ease-in-out;
+        }
+
+        ul li:hover::after{
+            inset: -45% auto auto 50%;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        ul li a{
+            position: relative;
+            display: block;
+            aspect-ratio: 1;
+            border: 1px solid #000;
+            border-radius: 100%;
+            text-decoration: none;
+            font-size: 1.8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000;
+            overflow: hidden;
+            outline: none;
+            transition: all .6s ease-in-out;
+        }
+
+        ul li a > i{
+            position: relative;
+            z-index: 1;
+        }
+
+        ul li a::after{
+            position: absolute;
+            content: "";
+            inset: 100% 0 0;
+            background-color: #000;
+            pointer-events: none;
+            transition: all .6s ease-in-out;
+        }
+
+        ul li a:hover{
+            color: #fff;
+            border: none;
+        }
+
+        ul li a:hover::after{
+            inset-block-start: 0;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li data-icon="instagram"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        <li data-icon="whatsapp"><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+        <li data-icon="linkedin"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+        <li data-icon="twitter"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+        <li data-icon="github"><a href="#"><i class="fa-brands fa-github"></i></a></li>
+    </ul>
+</body>
+</html>
