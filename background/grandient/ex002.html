@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>CSS Grandient</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root{
+            --gradient: linear-gradient(
+                to right,
+                rgb(149 114 252),
+                rgb(67 231 173),
+                rgb(226 212 92)
+            );
+        }
+
+        body{
+            width: 100%;
+            min-height: 100vh;
+            background-image: linear-gradient(
+                45deg, #000, #17003b
+            );
+
+            display: grid;
+            place-content: center;
+            color: #fff;
+            font-size: 2.4rem;
+            font-family: "Bebas Neue", sans-serif;
+        }
+
+        h1{
+            display: block;
+            background-image: var(--gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        section::after{
+            display: block;
+            content: "";
+            width: 100%;
+            height: 4px;
+            border-radius: 4rem;
+            background-image: var(--gradient);
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>CSS Gradient</h1>
+    </section>
+</body>
+</html>
