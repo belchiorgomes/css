@@ -26,7 +26,15 @@ input[type="radio"]{
     display: none;
 }
 
-.carrosel-container{
+.container-carrosel{
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1.2rem;
+    padding-inline: 1.4rem;
+}
+
+.container-carrosel .carrosel-container{
     position: relative;
     width: 100%;
     max-width: 600px;
@@ -35,20 +43,32 @@ input[type="radio"]{
     border-radius: 1.2rem;
 }
 
-.carrosel-container .slides{
+.container-carrosel .carrosel-container .slides{
     display: flex;
     transition: all .6s ease-in-out;
     
 }
 
-.carrosel-container .slides .slide-item{
+.container-carrosel .carrosel-container .slides .slide-item{
     flex:  0 0 100%;
 }
 
-.carrosel-container .slides .slide-item img{
+.container-carrosel .carrosel-container .slides .slide-item img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.container-carrosel .slides-text{
+    position: relative;
+    padding: 1.2rem;
+    margin-inline: auto;
+}
+
+.container-carrosel .slides-text label{
+    display: block;
+    width: 400px;
+    visibility: hidden;
 }
 
 .carrosel-controles{
@@ -77,18 +97,42 @@ input[type="radio"]{
     object-fit: cover;
 }
 
-#radio1:checked ~ .carrosel-container .slides{
+#radio1:checked ~ .container-carrosel .carrosel-container .slides{
     transform: translateX(0);
 }
 
-#radio2:checked ~ .carrosel-container .slides{
+#radio2:checked ~ .container-carrosel .carrosel-container .slides{
     transform: translateX(-100%);
 }
 
-#radio3:checked ~ .carrosel-container .slides{
+#radio3:checked ~ .container-carrosel .carrosel-container .slides{
     transform: translateX(-200%);
 }
 
-#radio4:checked ~ .carrosel-container .slides{
+#radio4:checked ~ .container-carrosel .carrosel-container .slides{
     transform: translateX(-300%);
+}
+
+#radio1:checked ~ .container-carrosel .slides-text #text01{
+    visibility: visible;
+    position: absolute;
+    top: 0;
+}
+
+#radio2:checked ~ .container-carrosel .slides-text #text02{
+    visibility: visible;
+    position: absolute;
+    top: 0;
+}
+
+#radio3:checked ~ .container-carrosel .slides-text #text03{
+    visibility: visible;
+    position: absolute;
+    top: 0;
+}
+
+#radio4:checked ~ .container-carrosel .slides-text #text04{
+    visibility: visible;
+    position: absolute;
+    top: 0;
 }
