@@ -115,14 +115,10 @@ input[type="radio"]{
 
 #radio1:checked ~ .container-carrosel .slides-text #text01{
     visibility: visible;
-    position: absolute;
-    top: 0;
 }
 
 #radio2:checked ~ .container-carrosel .slides-text #text02{
     visibility: visible;
-    position: absolute;
-    top: 0;
 }
 
 #radio3:checked ~ .container-carrosel .slides-text #text03{
