@@ -25,7 +25,7 @@ input[type="radio"]{
 }
 
 .container-carrosel{
-   /* position: relative;*/
+   position: relative;
    display: flex;
    flex-flow: row wrap;
    justify-content: flex-end;
@@ -35,11 +35,8 @@ input[type="radio"]{
 }
 
 .container-carrosel .carrosel-container{
-    /*
-    position: absolute;
-    top: 50%;
-    left: 70%;
-    transform: translate(-50%,-50%);*/
+    
+    position: relative;
     width: 600px;
     aspect-ratio: 16 / 9;
     z-index: 999;
@@ -59,7 +56,7 @@ input[type="radio"]{
     height: 100%;
     object-fit: cover;
 }
-
+/*
 .container-carrosel .slides-text{
     position: absolute;
     top: 50%;
@@ -79,6 +76,7 @@ input[type="radio"]{
 .container-carrosel .slides-text label h2{
     font-size: 2.3rem;
 }
+*/
 
 .carrosel-controles{
     position: relative;
@@ -115,6 +113,14 @@ input[type="radio"]{
 
 #radio2:checked ~ .container-carrosel .carrosel-container .slides{
     transform: translateX(-100%);
+}
+
+#radio3:checked ~ .container-carrosel .carrosel-container .slides{
+    transform: translateX(-200%);
+}
+
+#radio4:checked ~ .container-carrosel .carrosel-container .slides{
+    transform: translateX(-300%);
 }
 
 
