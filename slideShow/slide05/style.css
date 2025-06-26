@@ -11,7 +11,6 @@
 body{
     min-height: 100vh;
     width: 100%;
-    padding: 1.2rem;
 }
 
 h1{
@@ -25,80 +24,61 @@ input[type="radio"]{
 }
 
 .container-carrosel{
-   position: relative;
-   display: flex;
-   flex-flow: row wrap;
-   justify-content: flex-end;
+    position: relative;
     width: 100%;
     height: 60vh;
     /*background-color: aqua;*/
 }
 
 .container-carrosel .carrosel-container{
-    
-    position: relative;
-    width: 600px;
-    aspect-ratio: 16 / 9;
-    z-index: 999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .container-carrosel .carrosel-container .slides{
-    width: 100%;
-    height: 100%;
+    width: 500px;
+    aspect-ratio: 16 / 9;
     display: flex;
-    flex-flow: row wrap;
-    border-radius: 1.4rem;
+    flex-flow: column wrap;
+    border-radius: 1.2rem;
     overflow: hidden;
 }
 
-.container-carrosel .carrosel-container .slides img{
+.container-carrosel .carrosel-container .slides .slide-item img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
-/*
+
 .container-carrosel .slides-text{
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    width: 400px;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .container-carrosel .slides-text label{
     display: none;
+    position: absolute;
+    width: 300px;
 }
 
 .container-carrosel .slides-text label:nth-child(1){
     display: block;
 }
 
-.container-carrosel .slides-text label h2{
-    font-size: 2.3rem;
-}
-*/
-
 .carrosel-controles{
     position: relative;
-    right: 100px;
     width: 100%;
     height: auto;
-    margin-top: 12px;
-    display: flex;
-    justify-content: flex-end;
-    gap: 1.2rem;
 }
 
 .carrosel-controles label{
     width: 120px;
     aspect-ratio: 16 / 9;
-    border-radius: 1.2rem;
-    overflow: hidden;
-    transition: all .6s;
-}
-
-.carrosel-controles label:hover{
-    transform: scale(1.2);
+    display: flex;
+    flex-flow: column wrap;
 }
 
 .carrosel-controles label img{
@@ -106,23 +86,6 @@ input[type="radio"]{
     height: 100%;
     object-fit: cover;
 }
-
-#radio1:checked ~ .container-carrosel .carrosel-container .slides{
-    transform: translateX(0);
-}
-
-#radio2:checked ~ .container-carrosel .carrosel-container .slides{
-    transform: translateX(-100%);
-}
-
-#radio3:checked ~ .container-carrosel .carrosel-container .slides{
-    transform: translateX(-200%);
-}
-
-#radio4:checked ~ .container-carrosel .carrosel-container .slides{
-    transform: translateX(-300%);
-}
-
 
 /*codigo antico
 .container-carrosel{
