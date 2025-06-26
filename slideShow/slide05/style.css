@@ -35,6 +35,7 @@ input[type="radio"]{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    transition: all .6s ease-in-out;
 }
 
 .container-carrosel .carrosel-container .slides{
@@ -44,6 +45,7 @@ input[type="radio"]{
     flex-flow: column wrap;
     border-radius: 1.2rem;
     overflow: hidden;
+    transition: all .6s ease-in-out;
 }
 
 .container-carrosel .carrosel-container .slides .slide-item img{
@@ -59,32 +61,91 @@ input[type="radio"]{
 }
 
 .container-carrosel .slides-text label{
-    display: none;
+    display: block;
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     width: 300px;
+    z-index: -1;
+    transition: all .6s;
 }
 
+/*
 .container-carrosel .slides-text label:nth-child(1){
     display: block;
+}*/
+
+.container-carrosel .slides-text label h2{
+    font-size: 2.3rem;
+}
+
+.container-carrosel .slides-text label p{
+    font-size: 1rem;
 }
 
 .carrosel-controles{
-    position: relative;
+    left: 140px;
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
     width: 100%;
     height: auto;
 }
 
 .carrosel-controles label{
-    width: 120px;
+    width: 160px;
     aspect-ratio: 16 / 9;
-    display: flex;
-    flex-flow: column wrap;
+    border-radius: 1.3rem;
+    overflow: hidden;
+    transform: scale(.8);
+    transition: all .6s;
+}
+
+.carrosel-controles label:hover{
+    transform: scale(1);
 }
 
 .carrosel-controles label img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+#radio1:checked ~ .container-carrosel .carrosel-container .slides .slide-item{
+    transform: translateX(0);
+}
+
+#radio2:checked ~ .container-carrosel .carrosel-container .slides .slide-item{
+    transform: translateX(-100%);
+}
+
+#radio3:checked ~ .container-carrosel .carrosel-container .slides .slide-item{
+    transform: translateX(-200%);
+}
+
+#radio4:checked ~ .container-carrosel .carrosel-container .slides .slide-item{
+    transform: translateX(-300%);
+}
+
+#radio1:checked ~ .container-carrosel .slides-text #text01{
+    left: 18%;
+    transition-delay: .3s;
+}
+
+#radio2:checked ~ .container-carrosel .slides-text #text02{
+    left: 18%;
+    transition-delay: .6s;
+}
+
+#radio3:checked ~ .container-carrosel .slides-text #text03{
+    left: 18%;
+    transition-delay: .9s;
+}
+
+#radio4:checked ~ .container-carrosel .slides-text #text04{
+    left: 18%;
+    transition-delay: .12s;
 }
 
 /*codigo antico
