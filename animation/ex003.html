@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Text Animation in CSS</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2.4rem;
+            background-image: linear-gradient(45deg, #0d0057, #080036);
+        }
+
+        .textContainer{
+            display: flex;
+            gap: 1.2rem;
+            color: #424242;
+        }
+
+        .palavrasContainer{
+            position: relative;
+            height: 50px;
+            overflow: hidden;
+        }
+
+        .palavra{
+            color: var(--cor);
+            animation: animationText 4s infinite;
+        }
+
+        @keyframes animationText{
+            10%{
+                transform: translateY(-102%);
+            }
+            25%{
+                transform: translateY(-100%);
+            }
+            35%{
+                transform: translateY(-202%);
+            }
+            50%{
+                transform: translateY(-200%);
+            }
+            65%{
+                transform: translateY(-302%);
+            }
+            75%{
+                transform: translateY(-300%);
+            }
+            85%{
+                transform: translateY(-402%);
+            }
+            100%{
+                transform: translateY(-400%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="textContainer">
+        <p class="textPrincipal">I am a</p>
+        <div class="palavrasContainer">
+            <div class="palavra" style="--cor:#800000;">Developer</div>
+            <div class="palavra" style="--cor:#25007a;">Photographer</div>
+            <div class="palavra" style="--cor:#6d0077;">Freelancer</div>
+            <div class="palavra" style="--cor:#6d6e00;">Youtuber</div>
+            <div class="palavra" style="--cor:#800000;">Developer</div>
+        </div>
+    </div>
+</body>
+</html>
