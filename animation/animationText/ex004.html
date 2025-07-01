@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Text Animation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: #10002e;
+        }
+
+        h2{
+            position: relative;
+            font-size: 10vw;
+            font-family: "Bebas Neue", sans-serif;
+            letter-spacing: 1.2rem;
+            color: #10002e;
+            filter: drop-shadow(0 0 0 #fff);
+        }
+
+        h2::before{
+            position: absolute;
+            content: attr(data-text);
+            width: 0;
+            height: 100%;
+            color: #019e9e;
+            border-right: 3px solid #019e9e;
+            overflow: hidden;
+            animation: animationText 6s linear infinite alternate;
+        }
+
+        @keyframes animationText{
+            0%,100%{
+                width: 0;
+            }
+            100%{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2 data-text="Animation...">Animation...</h2>
+</body>
+</html>
