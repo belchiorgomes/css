@@ -26,13 +26,42 @@
         }
 
         .textoPrincipal{
-            margin-right: 12px;
             white-space: nowrap;
         }
 
         .containerPalavras{
+            position: relative;
             display: flex;
-            gap: ;
+            gap: 12px;
+        }
+
+        .palavra{
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: animatioPalavra 6s infinite;
+            animation-delay: var(--animationDelay);
+        }
+
+        @keyframes animatioPalavra {
+            0% {
+        transform: translateX(50%);
+        opacity: 0;
+      }
+      10% {
+        transform: translateX(0%);
+        opacity: 1;
+      }
+      25% {
+        opacity: 1;
+      }
+      35% {
+        transform: translateX(-50%);
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
         }
     </style>
 </head>
@@ -40,8 +69,11 @@
     <div class="container">
         <p class="textoPrincipal">I am a</p>
         <div class="containerPalavras">
-            <p class="palavra">Develope</p>
-            <p class="palavra">Photographer</p>
+            <p class="palavra" style="--animationDelay: 0s;">Develope</p>
+            <p class="palavra" style="--animationDelay: 2.5s;">Photographer</p>
+            <p class="palavra" style="--animationDelay: 5s;">Freelancer</p>
+            <p class="palavra" style="--animationDelay: 7.5s;">Youtuber</p>
+            <p class="palavra" style="--animationDelay: 8.5s;">Develope</p>
         </div>
     </div>
 </body>
