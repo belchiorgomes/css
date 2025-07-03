@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Animação de texto neon</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: #001d24;
+        }
+
+        h1{
+            font-size: 4.2rem;
+            font-family: sans-serif;
+            letter-spacing: 1.1rem;
+            text-transform: uppercase;
+            color: #003441;
+            -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.4));
+            outline: none;
+            animation: animationTextNeon 5s linear infinite;
+        }
+
+        @keyframes animationTextNeon{
+            0%, 11%, 22%, 35%, 43.2%, 68%, 73.1%, 89%, 95.3%{
+                color: #003441;
+                text-shadow: none;
+            }
+            10.3%, 20%, 34.5%, 55%, 78.5%, 88%, 98.1%, 100%{
+                color: #fff;
+                text-shadow: 0 0 5px #00718d,
+                             0 0 10px #00718d;
+            }
+        }
+
+        /*
+        h1:hover{
+            color: #00718d;
+            text-shadow: 0 0 5px #00718d,
+                         0 0 10px #00718d;
+        }
+                         */
+    </style>
+</head>
+<body>
+    <h1 contenteditable="true">Animation</h1>
+</body>
+</html>
