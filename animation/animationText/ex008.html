@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaçao de texto pulando</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: #5a0053;
+        }
+
+        h1{
+            color: transparent;
+            font-size: 2.3rem;
+            text-transform: uppercase;
+            letter-spacing: .8rem;
+        }
+
+        h1 span{
+            display: inline-block;
+            text-shadow: 0 0 5px #f0f,
+                         0 0 10px #f0f,
+                         0 0 20px #f0f;
+            animation: animationPulo .6s ease-in-out infinite;
+            animation-delay: var(--delay);
+        }
+
+        @keyframes animationPulo{
+            0%, 100%{
+                transform: translateX(0);
+            }
+            50%{
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <span style="--delay: 0s;">a</span>
+        <span style="--delay: .1s;">n</span>
+        <span style="--delay: .2s;">i</span>
+        <span style="--delay: .3s;">m</span>
+        <span style="--delay: .4s;">a</span>
+        <span style="--delay: .5s;">t</span>
+        <span style="--delay: .6s;">i</span>
+        <span style="--delay: .7s;">o</span>
+        <span style="--delay: .8s;">n</span>
+    </h1>
+</body>
+</html>
