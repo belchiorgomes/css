@@ -1,93 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Menu com Indicador</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Menu indicador</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    nav {
-      position: relative;
-      background: #222;
-      padding: 10px 0;
-    }
+        body{
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background-image: linear-gradient(180deg, #020086, #01003b);
+        }
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      position: relative;
-    }
+        input[type="radio"]{
+            display: none;
+        }
 
-    nav ul li {
-      margin: 0 20px;
-    }
+        nav ul{
+            position: relative;
+            display: flex;
+            gap: 1.2rem;
+            list-style-type: none;
+            width: auto;
+            padding: 1.2rem;
+            border-radius: 1.2rem;
+            box-shadow: 0 0 8px #00001d;
+        }
 
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 0;
-      position: relative;
-    }
+        nav ul label{
+            position: relative;
+            display: block;
+            width: 50px;
+            height: 30px;
+        }
 
-    /* Indicador deslizante */
-    .indicador {
-      position: absolute;
-      height: 4px;
-      background: #00ffcc;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      transition: all 0.3s ease;
-    }
-  </style>
+        nav ul label li{
+            position: relative;
+        }
+
+        nav ul label li a{
+            position: relative;
+            display: block;
+            text-align: center;
+            line-height: 30px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        nav ul .indicador{
+            position: absolute;
+            display: block;
+            top: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #fff;
+            border-radius: 5px;
+            z-index: 999;
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <input type="radio" name="indicador" id="indicador01" checked>
+        <input type="radio" name="indicador" id="indicador02">
+        <input type="radio" name="indicador" id="indicador03">
+        <input type="radio" name="indicador" id="indicador04">
+        <input type="radio" name="indicador" id="indicador05">
 
-<nav>
-  <ul id="menu">
-    <li><a href="#" class="ativo">Início</a></li>
-    <li><a href="#">Sobre</a></li>
-    <li><a href="#">Serviços</a></li>
-    <li><a href="#">Contato</a></li>
-    <div class="indicador" id="indicador"></div>
-  </ul>
-</nav>
+        <ul>
+            <label for="indicador01">
+                <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+            </label>
 
-<script>
-  const menu = document.getElementById('menu');
-  const links = menu.querySelectorAll('a');
-  const indicador = document.getElementById('indicador');
+            <label for="indicador02">
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            </label>
 
-  function moverIndicador(el) {
-    const offsetLeft = el.offsetLeft;
-    const width = el.offsetWidth;
-    indicador.style.left = offsetLeft + 'px';
-    indicador.style.width = width + 'px';
-  }
+            <label for="indicador03">
+                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+            </label>
 
-  // Mover indicador inicialmente para o link com classe 'ativo'
-  const ativo = menu.querySelector('a.ativo');
-  if (ativo) moverIndicador(ativo);
+            <label for="indicador04">
+                <li><a href="#"><i class="fa-brands fa-github-alt"></i></a></li>
+            </label>
 
-  // Evento de clique nos links
-  links.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
+            <label for="indicador05">
+                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+            </label>
 
-      // Remover classe 'ativo' de todos e adicionar no clicado
-      links.forEach(l => l.classList.remove('ativo'));
-      link.classList.add('ativo');
-
-      moverIndicador(link);
-    });
-  });
-</script>
-
+            <div class="indicador"></div>
+        </ul>
+    </nav>
 </body>
 </html>
