@@ -12,93 +12,106 @@
             box-sizing: border-box;
         }
 
-        body{
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            background-image: linear-gradient(180deg, #020086, #01003b);
-        }
+        body {
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
 
-        input[type="radio"]{
-            display: none;
-        }
+.menu-container {
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-        nav ul{
-            position: relative;
-            display: flex;
-            gap: 1.2rem;
-            list-style-type: none;
-            width: auto;
-            padding: 1.2rem;
-            border-radius: 1.2rem;
-            box-shadow: 0 0 8px #00001d;
-        }
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para alinhar os itens horizontalmente */
+    gap: 20px; /* Espaço entre os itens do menu */
+}
 
-        nav ul label{
-            position: relative;
-            display: block;
-            width: 50px;
-            height: 30px;
-        }
+.menu-item {
+    position: relative; /* Necessário para posicionar o indicador */
+}
 
-        nav ul label li{
-            position: relative;
-        }
+.menu-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    display: block;
+    transition: color 0.3s ease; /* Transição suave para a cor do texto */
+}
 
-        nav ul label li a{
-            position: relative;
-            display: block;
-            text-align: center;
-            line-height: 30px;
-            text-decoration: none;
-            color: #fff;
-            font-size: 1.5rem;
-        }
+.menu-link:hover {
+    color: #ffd700; /* Cor ao passar o mouse */
+}
 
-        nav ul .indicador{
-            position: absolute;
-            display: block;
-            top: -2px;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background-color: #fff;
-            border-radius: 5px;
-            z-index: 999;
-        }
+/* Estilo para o item ativo */
+.menu-link.active {
+    color: #ffd700; /* Cor do texto do item ativo */
+    font-weight: bold;
+}
+
+/* Criando o indicador abaixo do item ativo */
+.menu-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Posição abaixo do texto */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0; /* Largura inicial zero para animação */
+    height: 3px;
+    background-color: #ffd700;
+    border-radius: 2px;
+    animation: expandIndicator 0.3s forwards; /* Animação ao ativar */
+}
+
+@keyframes expandIndicator {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%; /* Expande para a largura total do item */
+    }
+}
     </style>
 </head>
 <body>
-    <nav>
-        <input type="radio" name="indicador" id="indicador01" checked>
-        <input type="radio" name="indicador" id="indicador02">
-        <input type="radio" name="indicador" id="indicador03">
-        <input type="radio" name="indicador" id="indicador04">
-        <input type="radio" name="indicador" id="indicador05">
+    <nav class="menu-container">
+    <ul class="menu">
+        <li class="menu-item"><a href="#home" class="menu-link active">Home</a></li>
+        <li class="menu-item"><a href="#sobre" class="menu-link">Sobre</a></li>
+        <li class="menu-item"><a href="#servicos" class="menu-link">Serviços</a></li>
+        <li class="menu-item"><a href="#contato" class="menu-link">Contato</a></li>
+    </ul>
+</nav>
 
-        <ul>
-            <label for="indicador01">
-                <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-            </label>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const menuLinks = document.querySelectorAll('.menu-link');
 
-            <label for="indicador02">
-                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-            </label>
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            // Remove a classe 'active' de todos os links
+            menuLinks.forEach(l => l.classList.remove('active'));
 
-            <label for="indicador03">
-                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-            </label>
+            // Adiciona a classe 'active' ao link clicado
+            this.classList.add('active');
 
-            <label for="indicador04">
-                <li><a href="#"><i class="fa-brands fa-github-alt"></i></a></li>
-            </label>
-
-            <label for="indicador05">
-                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-            </label>
-
-            <div class="indicador"></div>
-        </ul>
-    </nav>
+            // Opcional: Impedir o comportamento padrão do link para navegação interna
+            // Se você está usando links para seções na mesma página (ex: #home),
+            // você pode querer manter o comportamento padrão.
+            // event.preventDefault();
+        });
+    });
+});
+</script>
 </body>
 </html>
