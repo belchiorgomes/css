@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu indicador</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: #dddddd;
+        }
+
+        .containerMenu{
+            background-color: #464646;
+            border-radius: 8px;
+        }
+
+        .containerMenu .menu{
+            list-style-type: none;
+            display: flex;
+            gap: 1.2rem;
+            padding: 8px;
+        }
+
+        .containerMenu .menu li{
+            position: relative;
+        }
+
+        .containerMenu .menu li .menuLink{
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            color: #fff;
+            padding: 8px 18px;
+            font-size: 18px;
+            transition: color .6s ease-in-out;
+        }
+
+        .containerMenu .menu li .menuLink:hover{
+            color: #ffff00;
+        }
+
+        .containerMenu .menu li .active{
+            color: #ffff00;
+            font-weight: bolder;
+            transition: all .6s ease-in-out;
+        }
+
+        .containerMenu .menu li .active::after{
+            position: absolute;
+            top: -11px;
+            left: 50%;
+            transform: translateX(-50%);
+            content: "";
+            width: 0;
+            height: 5px;
+            border-radius: 8px;
+            background-color: #ffff00;
+            transition: all .6s ease-in-out;
+            animation: indicador .5s ease-in-out forwards;
+        }
+
+        @keyframes indicador{
+            0%{
+                width: 0%;
+            }
+            50%{
+                width: 25%;
+            }
+            100%{
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="containerMenu">
+        <ul class="menu">
+            <li><a href="#" class="menuLink active">Home</a></li>
+            <li><a href="#" class="menuLink">Sobre</a></li>
+            <li><a href="#" class="menuLink">Serviços</a></li>
+            <li><a href="#" class="menuLink">Contato</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuLink = document.querySelectorAll('.menuLink');
+            menuLink.forEach(link => {
+                link.addEventListener('click', function(event){
+                    menuLink.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        })
+    </script>
+</body>
+</html>
