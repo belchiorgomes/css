@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu indicador</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: black;
+        }
+
+        nav{
+            background-color: #1d1d1d;
+            border-radius: 10px;
+            padding: 8px;
+        }
+
+        nav ul{
+            position: relative;
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        nav ul li{
+            position: relative;
+            flex: 0 0 70px;
+        }
+
+        nav ul li a{
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bolder;
+            text-transform: uppercase;
+            transition: color .5s ease-in-out;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active{
+            color: yellow;
+        }
+
+        nav ul .indicador{
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 0px;
+            height: 3px;
+            background-color: yellow;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Contato</a></li>
+            <div class="indicador"></div>
+        </ul>
+    </nav>
+
+    <script>
+        const links = document.querySelectorAll('a');
+
+        function atualizarIndicador(el){
+            links.forEach(item => item.classList.remove('.active'));
+
+            el.classList.add('active');
+        }
+    </script>
+</body>
+</html>

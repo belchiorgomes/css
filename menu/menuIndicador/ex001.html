@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu com Indicador</title>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  background: #111;
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  background: #222;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.menu .item {
+  padding: 15px 25px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.menu .item:hover,
+.menu .item.ativo {
+  color: #00ffe1;
+}
+
+.indicador {
+  position: absolute;
+  height: 4px;
+  background: #00ffe1;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  transition: 0.3s;
+  border-radius: 4px 4px 0 0;
+}
+
+  </style>
+</head>
+<body>
+
+  <nav class="menu">
+    <ul>
+      <li class="item ativo">Início</li>
+      <li class="item">Sobre</li>
+      <li class="item">Serviços</li>
+      <li class="item">Contato</li>
+      <div class="indicador"></div>
+    </ul>
+  </nav>
+
+  <script>
+    const items = document.querySelectorAll('.item');
+    const indicador = document.querySelector('.indicador');
+
+    function atualizaIndicador(el) {
+    // Remove classe ativa de todos
+    items.forEach(item => item.classList.remove('ativo'));
+    
+    // Adiciona ao clicado
+    el.classList.add('ativo');
+    
+    // Posição e largura
+    indicador.style.left = el.offsetLeft + 'px';
+    indicador.style.width = el.offsetWidth + 'px';
+    }
+
+    // Inicia com o primeiro item
+    window.addEventListener('DOMContentLoaded', () => {
+    const ativo = document.querySelector('.item.ativo');
+    if (ativo) atualizaIndicador(ativo);
+    });
+
+    // Clique nos itens
+    items.forEach(item => {
+    item.addEventListener('click', () => {
+        atualizaIndicador(item);
+    });
+    });
+
+  </script>
+</body>
+</html>
