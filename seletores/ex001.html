@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletores Compostos</title>
+    <style>
+        article{
+            outline: 4px solid green;
+            padding: 12px;
+        }
+
+        article a{
+            color: red;
+        }
+
+        article a > b{
+            text-transform: uppercase;
+            color: green;
+        }
+
+        h3 + p{
+            background-color: #c2c2c2;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <p>Paragrafo <a href="#">Link falso em <b>Negrito</b></a></p>
+
+    <article>
+        <p>Paragrafo antes do titulo com <b>Negrito</b></p>
+
+        <h3>titulo</h3>
+
+        <p>Paragrafo <a href="#">Link falso em <b>Negrito</b></a></p>
+
+        <p>Paragrafo <a href="#">Link falso em <b>Negrito</b></a></p>
+
+        <p>Paragrafo <a href="#">Link falso em <b>Negrito</b></a></p>
+    </article>
+
+    <p>Paragrafo <a href="#">Link falso em <b>Negrito</b></a>
+</body>
+</html>
