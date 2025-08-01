@@ -18,49 +18,22 @@
             /* background-color: #00072c; */
         }
 
-        input{
-            display: none;
-        }
-
         .accordeon{
             width: 100%;
             max-width: 600px;
             overflow: hidden;
         }
-
-        .accordeon label{
-            padding: 12px;
-            display: block;
-        }
-
-        .accordeon .container{
-            width: 100%;
-            max-height: 0;
-            transition: all .4s ease;
-        }
-
-        .accordeon input:checked ~ .container{
-            max-height: 100px;
-        }
     </style>
 </head>
 <body>
     <div class="accordeon">
-        <input type="checkbox" id="secao01">
-        <label for="secao01">Titulo 01</label>
-        <div class="container">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, explicabo, quo ex nostrum qui laudantium officiis ad velit error autem non ipsam provident necessitatibus cum nobis dignissimos illo? Adipisci, numquam.
-            </p>
-        </div>
+        <input type="radio" id="accordeon01">
+        <input type="radio" id="accordeon02">
+        <input type="radio" id="accordeon03">
 
-        <input type="checkbox" id="secao02">
-        <label for="secao02">Titulo 02</label>
-        <div class="container">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, explicabo, quo ex nostrum qui laudantium officiis ad velit error autem non ipsam provident necessitatibus cum nobis dignissimos illo? Adipisci, numquam.
-            </p>
-        </div>
+        <label for="accordeon01">Accordeon</label>
+        <label for="accordeon02">Accordeon</label>
+        <label for="accordeon03">Accordeon</label>
     </div>
 </body>
 </html>
