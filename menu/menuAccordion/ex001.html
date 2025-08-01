@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Accordion em HTML e CSS</title>
+    <title>Menu Accordeon</title>
     <style>
         *{
             margin: 0;
@@ -12,28 +12,93 @@
         }
 
         body{
+            background-color: #003f3f;
             min-height: 100vh;
             display: grid;
             place-items: center;
-            /* background-color: #00072c; */
         }
 
-        .accordeon{
+        input{
+            display: none;
+        }
+
+        .container{
+            /* position: relative; */
             width: 100%;
             max-width: 600px;
             overflow: hidden;
         }
+
+        .container .accordeon{
+            /* position: relative; */
+            margin-bottom: 12px;
+        }
+
+        .container .accordeon .accordeonContainer{
+            /* position: absolute;
+            top: 0; */
+            width: 100%;
+            display: block;
+            padding: 12px 18px;
+            background-color: #002c2c;
+            border-radius: 1.2rem;
+            color: white;
+            font-weight: bolder;
+            text-transform: uppercase;
+        }
+
+        .container .accordeon .conteudo{
+            width: 100%;
+            padding: 12px 18px;
+            background-color: white;
+            border-radius: .8rem;
+            color: #001a1a;
+            margin-block-start: 12px;
+            max-height: 0;
+            overflow: hidden;
+            display: none;
+            opacity: 0;
+            transition: all .6s ease;
+        }
+
+        .container .accordeon input:checked ~ .conteudo{
+            max-height: 150px;
+            display: block;
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
-    <div class="accordeon">
-        <input type="radio" id="accordeon01">
-        <input type="radio" id="accordeon02">
-        <input type="radio" id="accordeon03">
+    <div class="container">
+        <div class="accordeon">
+            <input type="checkbox" id="accordeon01">
+            <label for="accordeon01" class="accordeonContainer">Accordeon 01</label>
+            <div class="conteudo">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias, velit consequuntur possimus quod tempora facilis eos sunt, saepe atque nemo dolores veniam fugit cum obcaecati rerum natus officiis magnam!
+                </p>
+            </div>
+        </div>
 
-        <label for="accordeon01">Accordeon</label>
-        <label for="accordeon02">Accordeon</label>
-        <label for="accordeon03">Accordeon</label>
+        <div class="accordeon">
+            <input type="checkbox" id="accordeon02">
+            <label for="accordeon02" class="accordeonContainer">Accordeon 02</label>
+            <div class="conteudo">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias, velit consequuntur possimus quod tempora facilis eos sunt, saepe atque nemo dolores veniam fugit cum obcaecati rerum natus officiis magnam!
+                </p>
+            </div>
+        </div>
+
+        <div class="accordeon">
+            <input type="checkbox" id="accordeon03">
+            <label for="accordeon03" class="accordeonContainer">Accordeon 03</label>
+            <div class="conteudo">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias, velit consequuntur possimus quod tempora facilis eos sunt, saepe atque nemo dolores veniam fugit cum obcaecati rerum natus officiis magnam!
+                </p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
