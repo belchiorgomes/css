@@ -20,16 +20,23 @@
             background-color: #a3a3a3;
         }
 
+        input{
+            display: none;
+        }
+
         .container{
             width: 90%;
             max-width: 600px;
         }
 
         .container .container_accordeon{
+            position: relative;
             width: 100%;
             height: auto;
-            padding: 1.3rem;
-            background-color: #ff4800;
+            padding: 1rem;
+            /* background-color: #ff4800; */
+            border-radius: .4rem;
+            transition: all .6s ease-in-out;
         }
 
         .container .container_accordeon .accordeon_label{
@@ -41,7 +48,7 @@
             align-items: center;
             gap: 1.3rem;
             background-color: #fff;
-            border-radius: .8rem;
+            border-radius: .4rem;
         }
 
         .container .container_accordeon .accordeon_label::after,
@@ -84,16 +91,36 @@
 
         .container .container_accordeon .container_text{
             width: 100%;
-            height: auto;
-            padding: 12px;
-            background-color: #fff;
+            /* height: auto; */
+            /* background-color: transparent; */
+            background-color: #ff4800;
+            color: #fff;
+            height: 150px;
+            max-height: 0;
+            overflow: hidden;
+            /* margin-block-start: 1rem; */
+            /* max-height: 0; */
+            /* overflow: hidden;
+            display: none;
+            opacity: 0; */
+            transition: all .6s ease-in-out;
+        }
+
+        .container input:checked ~ .container_accordeon{
+            background-color: #ff4800;
+        }
+
+        .container input:checked + .container_accordeon .container_text{
+            padding-top: 12px;
+            max-height: 300px;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <input type="checkbox" id="accordeon01">
         <div class="container_accordeon">
-            <input type="checkbox" id="accordeon01">
+            <!-- <input type="checkbox" id="accordeon01"> -->
             <label for="accordeon01" class="accordeon_label">
                 <a href="#"><i class="fa-brands fa-html5"></i></a>
                 <h3>HTML</h3>
