@@ -12,6 +12,7 @@
         }
 
         .container_tab{
+            position: relative;
             width: 100%;
             max-width: 80%;
             height: 400px;
@@ -43,15 +44,21 @@
 
         .container_tab .container_conteudo_tab{
             height: 100%;
-            width: 0;
+            width: 100%;
+            max-width: 0;
+            opacity: 0;
             border-radius: 0 .8rem .8rem 0;
             background-color: #ffa1ee;
-            padding: 1.3rem;
             overflow: hidden;
+            transition: all .9s ease;
         }
 
-        #tab01:checked ~ #conteudo_tab01{
-            width: 80%;
+        #tab01:checked ~ #conteudo_tab01,
+        #tab02:checked ~ #conteudo_tab02,
+        #tab03:checked ~ #conteudo_tab03{
+            max-width: 80%;
+            padding: 1.3rem;
+            opacity: 1;
         }
     </style>
 </head>
@@ -76,7 +83,7 @@
         </div>
 
         <div class="container_conteudo_tab" id="conteudo_tab02">
-            <h1>Aba 03</h1>
+            <h1>Aba 02</h1>
             <h2>Conteudo da segunda aba</h2>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa placeat sit quae eveniet molestiae delectus. Soluta maxime molestias dignissimos vel officiis, aut aspernatur, exercitationem at nihil odio, quo quasi dolorem?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis nostrum odit magnam dolor harum? Ea autem natus voluptatum at! Nemo ipsum deserunt voluptates, voluptatem commodi ad magnam saepe ullam quam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum aspernatur eaque possimus repellat voluptatum, ipsum vel. Odio possimus impedit, labore facilis doloremque maiores, assumenda alias distinctio, officiis quidem quae exercitationem.
