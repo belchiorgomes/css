@@ -33,25 +33,49 @@
         }
 
         .container .container_label{
-            flex: 0 0 120px;
+            flex: 0 0 20%;
             height: 100%;
             background-color: #000c2c;
             z-index: 1;
         }
 
         .container .container_label label{
+            position: relative;
             color: white;
             font-size: 18px;
             display: flex;
             font-weight: bolder;
             padding: 1.2rem;
+            margin-top: 12px;
+        }
+
+        .container .container_label label::after{
+            position: absolute;
+            right: 0;
+            content: "";
+            width: 4px;
+            height: 20px;
+            background-color: #00a300;
         }
 
         .container .conteudo_tabs{
-            width: 100%;
+            position: absolute;
+            max-width: 0;
+            /* flex: 0 0 80%; */
             height: 100%;
+            padding: 2.3rem 1.2rem;
             margin-left: -700px;
             opacity: 0;
+            transition: all .6s ease;
+            transition-delay: .2s;
+        }
+
+        .container #menuTab01:checked ~ #conteudo_tab01,
+        .container #menuTab02:checked ~ #conteudo_tab02,
+        .container #menuTab03:checked ~ #conteudo_tab03{
+            max-width: 100%;
+            margin-left: 150px;
+            opacity: 1;
         }
     </style>
 </head>
