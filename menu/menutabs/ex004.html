@@ -121,7 +121,7 @@
             top: 75%;
         }
 
-        .container .tabs .conteudo{
+        .container .tabs .box{
             position: absolute;
             top: 0;
             left: 80px;
@@ -130,11 +130,32 @@
             background-color: var(--cor_fundo);
             padding: 2em;
             border-radius: 20px;
-            opacity: 0;
-            visibility: hidden;
         }
 
-        .container .tabs #home:checked .conteudo:nth-child(1){
+        .container .tabs .box .conteudo{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            visibility: hidden;
+            opacity: 0;
+            transition: all .6s ease;
+        }
+
+        .container .tabs .box .conteudo h2{
+            font-size: 2em;
+            padding-block: 2rem;
+            text-transform: uppercase;
+        }
+
+        .container .tabs .box .conteudo p{
+            width: 400px;
+            text-align: justify;
+        }
+
+        .container .tabs #home:checked ~ .box .conteudo:nth-child(1),
+        .container .tabs #about:checked ~ .box .conteudo:nth-child(2),
+        .container .tabs #settings:checked ~ .box .conteudo:nth-child(3),
+        .container .tabs #security:checked ~ .box .conteudo:nth-child(4){
             visibility: visible;
             opacity: 1;
         }
@@ -156,36 +177,35 @@
                 <div class="indicador"></div>
             </div>
 
-            <div class="conteudo" for="home">
-                <h2>Home</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, amet minus? Ea earum laboriosam autem recusandae delectus expedita voluptate, ut maxime nesciunt id aut. Deserunt eaque quam fugiat odit dicta?
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam impedit illum, et blanditiis corrupti molestiae similique maxime at alias adipisci est minima hic consequatur vel consequuntur sunt! Iure, nam numquam.
-                </p>
-            </div>
-
-            <div class="conteudo" for="about">
-                <h2>about</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, amet minus? Ea earum laboriosam autem recusandae delectus expedita voluptate, ut maxime nesciunt id aut. Deserunt eaque quam fugiat odit dicta?
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam impedit illum, et blanditiis corrupti molestiae similique maxime at alias adipisci est minima hic consequatur vel consequuntur sunt! Iure, nam numquam.
-                </p>
-            </div>
-
-            <div class="conteudo" for="settings">
-                <h2>settings</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, amet minus? Ea earum laboriosam autem recusandae delectus expedita voluptate, ut maxime nesciunt id aut. Deserunt eaque quam fugiat odit dicta?
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam impedit illum, et blanditiis corrupti molestiae similique maxime at alias adipisci est minima hic consequatur vel consequuntur sunt! Iure, nam numquam.
-                </p>
-            </div>
-
-            <div class="conteudo" for="security">
-                <h2>security</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, amet minus? Ea earum laboriosam autem recusandae delectus expedita voluptate, ut maxime nesciunt id aut. Deserunt eaque quam fugiat odit dicta?
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam impedit illum, et blanditiis corrupti molestiae similique maxime at alias adipisci est minima hic consequatur vel consequuntur sunt! Iure, nam numquam.
-                </p>
+            <div class="box">
+                <div class="conteudo" for="home">
+                    <h2>Home</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, amet minus? Ea earum laboriosam autem recusandae delectus expedita voluptate, ut maxime nesciunt id aut. Deserunt eaque quam fugiat odit dicta?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam impedit illum, et blanditiis corrupti molestiae similique maxime at alias adipisci est minima hic consequatur vel consequuntur sunt! Iure, nam numquam.
+                    </p>
+                </div>
+                <div class="conteudo" for="about">
+                    <h2>about</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, amet minus? Ea earum laboriosam autem recusandae delectus expedita voluptate, ut maxime nesciunt id aut. Deserunt eaque quam fugiat odit dicta?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam impedit illum, et blanditiis corrupti molestiae similique maxime at alias adipisci est minima hic consequatur vel consequuntur sunt! Iure, nam numquam.
+                    </p>
+                </div>
+                <div class="conteudo" for="settings">
+                    <h2>settings</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, amet minus? Ea earum laboriosam autem recusandae delectus expedita voluptate, ut maxime nesciunt id aut. Deserunt eaque quam fugiat odit dicta?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam impedit illum, et blanditiis corrupti molestiae similique maxime at alias adipisci est minima hic consequatur vel consequuntur sunt! Iure, nam numquam.
+                    </p>
+                </div>
+                <div class="conteudo" for="security">
+                    <h2>security</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, amet minus? Ea earum laboriosam autem recusandae delectus expedita voluptate, ut maxime nesciunt id aut. Deserunt eaque quam fugiat odit dicta?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam impedit illum, et blanditiis corrupti molestiae similique maxime at alias adipisci est minima hic consequatur vel consequuntur sunt! Iure, nam numquam.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
