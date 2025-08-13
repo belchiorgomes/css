@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Menu indicador</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root{
+            --cor_fundo: #b61759;
+        }
+
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #222;
+        }
+
+        .container{
+            width: 600px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            /* background-color: #b61759; */
+        }
+
+        .container .tabs{
+            position: relative;
+            width: 80px;
+            padding: 40px 0;
+        }
+
+        .container .tabs input[type="radio"]{
+            appearance: none;
+            display: none;
+        }
+
+        .container .tabs .icon{
+            position: relative;
+            display: flex;
+            flex-flow: column wrap;
+            /* background-color: #b61759; */
+        }
+
+        .container .tabs .icon label{
+            position: relative;
+            width: 100%;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+            font-size: 2em;
+            opacity: .4;
+            cursor: pointer;
+            transition: all .6s ease;
+        }
+
+        .container .tabs #home:checked ~ .icon label:nth-child(1),
+        .container .tabs #about:checked ~ .icon label:nth-child(2),
+        .container .tabs #settings:checked ~ .icon label:nth-child(3),
+        .container .tabs #security:checked ~ .icon label:nth-child(4){
+            opacity: 1;
+            color: #fff;
+        }
+
+        .container .tabs .indicador{
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: var(--cor_fundo);
+            border-radius: 30px 0 0 30px;
+            z-index: -1;
+            transition: all .6s ease;
+        }
+
+        .container .tabs .indicador::before{
+            position: absolute;
+            top: -20px;
+            right: 0;
+            border-bottom-right-radius: 20px;
+            content: "";
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            box-shadow: 8px 8px 0 8px var(--cor_fundo);
+        }
+
+        .container .tabs .indicador::after{
+            position: absolute;
+            bottom: -20px;
+            right: 0;
+            border-top-right-radius: 20px;
+            content: "";
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            box-shadow: 8px -8px 0 8px var(--cor_fundo);
+        }
+
+        .container .tabs #home:checked ~ .icon .indicador{
+            top: 0;
+        }
+
+        .container .tabs #about:checked ~ .icon .indicador{
+            top: 25%;
+        }
+
+        .container .tabs #settings:checked ~ .icon .indicador{
+            top: 50%;
+        }
+
+        .container .tabs #security:checked ~ .icon .indicador{
+            top: 75%;
+        }
+
+        .container .tabs .conteudo{
+            position: absolute;
+            top: 0;
+            left: 80px;
+            width: 500px;
+            height: 400px;
+            background-color: var(--cor_fundo);
+            padding: 2em;
+            border-radius: 20px;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .container .tabs #home:checked .conteudo:nth-child(1){
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <input type="radio" name="group" id="home" checked>
+            <input type="radio" name="group" id="about">
+            <input type="radio" name="group" id="settings">
+            <input type="radio" name="group" id="security">
+
+            <div class="icon">
+                <label for="home"><i class="fa-regular fa-house"></i></label>
+                <label for="about"><i class="fa-regular fa-user"></i></label>
+                <label for="settings"><i class="fa-solid fa-gear"></i></label>
+                <label for="security"><i class="fa-solid fa-lock"></i></label>
+                <div class="indicador"></div>
+            </div>
+
+            <div class="conteudo" for="home">
+                <h2>Home</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, amet minus? Ea earum laboriosam autem recusandae delectus expedita voluptate, ut maxime nesciunt id aut. Deserunt eaque quam fugiat odit dicta?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam impedit illum, et blanditiis corrupti molestiae similique maxime at alias adipisci est minima hic consequatur vel consequuntur sunt! Iure, nam numquam.
+                </p>
+            </div>
+
+            <div class="conteudo" for="about">
+                <h2>about</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, amet minus? Ea earum laboriosam autem recusandae delectus expedita voluptate, ut maxime nesciunt id aut. Deserunt eaque quam fugiat odit dicta?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam impedit illum, et blanditiis corrupti molestiae similique maxime at alias adipisci est minima hic consequatur vel consequuntur sunt! Iure, nam numquam.
+                </p>
+            </div>
+
+            <div class="conteudo" for="settings">
+                <h2>settings</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, amet minus? Ea earum laboriosam autem recusandae delectus expedita voluptate, ut maxime nesciunt id aut. Deserunt eaque quam fugiat odit dicta?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam impedit illum, et blanditiis corrupti molestiae similique maxime at alias adipisci est minima hic consequatur vel consequuntur sunt! Iure, nam numquam.
+                </p>
+            </div>
+
+            <div class="conteudo" for="security">
+                <h2>security</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, amet minus? Ea earum laboriosam autem recusandae delectus expedita voluptate, ut maxime nesciunt id aut. Deserunt eaque quam fugiat odit dicta?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam impedit illum, et blanditiis corrupti molestiae similique maxime at alias adipisci est minima hic consequatur vel consequuntur sunt! Iure, nam numquam.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
