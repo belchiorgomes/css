@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Menu indicador usando CSS</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: #002929;
+        }
+
+        .container input[type='radio']{
+            display: none;
+        }
+
+        .container{
+            padding: 0 18px;
+            background-color: #fff;
+            border-radius: .9rem;
+        }
+
+        .container .menu_indicador{
+            display: flex;
+            gap: .9rem;
+        }
+
+        .container .menu_indicador label{
+            position: relative;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container .menu_indicador label .icon{
+            position: absolute;
+            display: block;
+            line-height: 70px;
+            text-align: center;
+            transition: all .6s ease;
+        }
+
+        .container input:nth-child(1):checked ~ .menu_indicador label:nth-child(1) .icon{
+            top: -35px;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 6px solid #002929;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="radio" name="menuIndicador" id="menu01" checked>
+        <input type="radio" name="menuIndicador" id="menu02">
+        <input type="radio" name="menuIndicador" id="menu03">
+        <input type="radio" name="menuIndicador" id="menu04">
+        <input type="radio" name="menuIndicador" id="menu05">
+
+        <div class="menu_indicador">
+            <label for="menu01">
+                <span class="icon"><i class="fa-solid fa-house"></i></span>
+                <span class="text">Home</span>
+            </label>
+
+            <label for="menu02">
+                <span class="icon"><i class="fa-solid fa-user"></i></span>
+                <span class="text">Usuario</span>
+            </label>
+
+            <label for="menu03">
+                <span class="icon"><i class="fa-solid fa-message"></i></span>
+                <span class="text">Mensagem</span>
+            </label>
+
+            <label for="menu04">
+                <span class="icon"><i class="fa-solid fa-camera"></i></span>
+                <span class="text">Fotos</span>
+            </label>
+
+            <label for="menu05">
+                <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                <span class="text">Configurações</span>
+            </label>
+            <div class="indicador"></div>
+        </div>
+    </div>
+</body>
+</html>
