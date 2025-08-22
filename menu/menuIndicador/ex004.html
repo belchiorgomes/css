@@ -23,72 +23,102 @@
             display: none;
         }
 
-        .container{
-            position: relative;
-            padding: 0 22px;
-            background-color: #fff;
-            border-radius: .9rem;
-        }
-
         .container .menu_indicador{
+            position: relative;
+            width: 500px;
+            /* height: 70px; */
+            padding: 0 1.5rem;
+            background-color: #fff;
+            border-radius: .8rem;
             display: flex;
-            gap: .9rem;
+            justify-content: space-around;
+            gap: .8rem;
         }
 
         .container .menu_indicador label{
             position: relative;
-            width: 70px;
+            width: 20%;
             height: 70px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        }
+
+        .container .menu_indicador label span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
         }
 
         .container .menu_indicador label .icon{
-            position: absolute;
-            display: block;
-            line-height: 70px;
-            text-align: center;
-            font-size: 1.1em;
-            color: transparent;
+            font-size: 1.3rem;
+            color: #fff;
             -webkit-text-stroke: 2px #002929;
             transition: all .6s ease;
-            z-index: 1;
+            z-index: 999;
         }
 
-        /* .container input:nth-child(1):checked ~ .menu_indicador label:nth-child(1) .icon,
-        .container input:nth-child(2):checked ~ .menu_indicador label:nth-child(2) .icon,
-        .container input:nth-child(3):checked ~ .menu_indicador label:nth-child(3) .icon,
-        .container input:nth-child(4):checked ~ .menu_indicador label:nth-child(4) .icon,
-        .container input:nth-child(5):checked ~ .menu_indicador label:nth-child(5) .icon{
-            transform: translateY(-35px);
-        } */
+        .container #menu01:checked ~ .menu_indicador label:nth-child(1) .icon,
+        .container #menu02:checked ~ .menu_indicador label:nth-child(2) .icon,
+        .container #menu03:checked ~ .menu_indicador label:nth-child(3) .icon,
+        .container #menu04:checked ~ .menu_indicador label:nth-child(4) .icon,
+        .container #menu05:checked ~ .menu_indicador label:nth-child(5) .icon{
+            top: 0;
+            color: #002929;
+        }
 
         .container .menu_indicador label .text{
-            position: absolute;
-            font-size: 0.75em;
+            top: 80%;
+            font-size: .75em;
+            color: #fff;
+            font-weight: bold;
+            border-radius: .4rem;
+            background-color: #002929;
+            padding: 4px 6px;
+            text-transform: uppercase;
+            visibility: hidden;
             opacity: 0;
+            transition: all .6s ease;
+        }
+
+        .container #menu01:checked ~ .menu_indicador label:nth-child(1) .text,
+        .container #menu02:checked ~ .menu_indicador label:nth-child(2) .text,
+        .container #menu03:checked ~ .menu_indicador label:nth-child(3) .text,
+        .container #menu04:checked ~ .menu_indicador label:nth-child(4) .text,
+        .container #menu05:checked ~ .menu_indicador label:nth-child(5) .text{
+            visibility: visible;
+            opacity: 1;
+            top: 80%;
         }
 
         .container .menu_indicador .indicador{
             position: absolute;
-            /* transform: translateY(-35px); */
-            top: -35px;
-            left: 20%;
+            top: -50%;
+            left: 6%;
             width: 70px;
             height: 70px;
             border-radius: 50%;
             background-color: #fff;
-            border: 5px solid #002929;
+            border: 3px solid #002929;
+            transition: all .6s ease;
         }
 
-        .container input:nth-child(1):checked ~ .menu_indicador .indicador{
-            left: 20%;
+        .container #menu01:checked ~ .menu_indicador .indicador{
+            left: 6%;
         }
 
-        .container input:nth-child(2):checked ~ .menu_indicador .indicador{
-            left: 40%;
+        .container #menu02:checked ~ .menu_indicador .indicador{
+            left: 25.2%;
+        }
+
+        .container #menu03:checked ~ .menu_indicador .indicador{
+            left: 43%;
+        }
+
+        .container #menu04:checked ~ .menu_indicador .indicador{
+            left: 61%;
+        }
+
+        .container #menu05:checked ~ .menu_indicador .indicador{
+            left: 80%;
         }
     </style>
 </head>
