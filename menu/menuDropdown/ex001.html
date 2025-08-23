@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Dropdown com css</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            /* min-height: 100vh; */
+            display: flex;
+            justify-content: center;
+            padding-block-start: 2rem;
+            background-color: #002b2b;
+        }
+
+        .menu_dropdown{
+            background-color: #fff;
+            border-radius: .8rem;
+            padding: .8rem;
+            display: flex;
+            gap: .8rem;
+        }
+
+        .menu_dropdown .links_dropdown{
+            position: relative;
+            width: 100px;
+            list-style-type: none;
+        }
+
+        .menu_dropdown .links_dropdown a, span{
+            display: block;
+            text-align: center;
+            color: #002b2b;
+            text-decoration: none;
+            transition: all .6s ease;
+        }
+
+        .menu_dropdown .links_dropdown a:hover, span:hover{
+            text-decoration: underline;
+        }
+
+        .menu_dropdown .links_dropdown .subMenu_dropdown{
+            position: absolute;
+            top: calc(100% + 30px);
+            left: 50%;
+            transform: translateX(-50%) rotateY(90deg);
+            transform-origin: top center;
+            background-color: #fff;
+            border-radius: .8rem;
+            padding: .8rem;
+            transition: all .6s ease;
+        }
+
+        .menu_dropdown .links_dropdown:hover .subMenu_dropdown{
+            transform: rotateY(0deg);
+        }
+
+        .menu_dropdown .links_dropdown .subMenu_dropdown .links_dropdown{
+            margin-block: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu_dropdown">
+        <li class="links_dropdown">
+            <a href="#">Home</a>
+        </li>
+
+        <li class="links_dropdown">
+            <span>Animes</span>
+            <ul class="subMenu_dropdown">
+                <li class="links_dropdown">
+                    <a href="#">sakamoto days</a>
+                </li>
+
+                <li class="links_dropdown">
+                    <a href="#">solo leveling</a>
+                </li>
+
+                <li class="links_dropdown">
+                    <a href="#">jujutsu kaisen</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="links_dropdown">
+            <a href="#">Sobre nos</a>
+        </li>
+    </ul>
+</body>
+</html>
