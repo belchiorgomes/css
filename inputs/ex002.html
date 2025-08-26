@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Switch</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 900px;
+            margin: 0 auto;
+            padding-top: 30px;
+        }
+
+        .container .switch{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container .switch .switch-text{
+            font-weight: bolder;
+            font-size: 1.5rem;
+        }
+
+        .container .switch-grupo input{
+            visibility: hidden;
+        }
+
+        .container .switch-grupo{
+            position: relative;
+            width: 70px;
+            height: 40px;
+            background-color: #c4c4c4;
+            margin-left: 8px;
+            border-radius: 1.3rem;
+            padding: 1rem;
+        }
+
+        .container .switch-grupo .switch-button{
+            position: absolute;
+            inset: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #fff;
+            margin: 2px;
+            transition: all .6s ease-in-out;
+        }
+
+        .container .switch .switch-grupo input:checked ~ .switch-button{
+            transform: translateX(30px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="switch" class="switch">
+            <span class="switch-text">Assitir todos os videos</span>
+            <div class="switch-grupo">
+                <input type="checkbox" id="switch">
+                <span class="switch-button"></span>
+            </div>
+        </label>
+    </div>
+</body>
+</html>

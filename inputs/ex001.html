@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input Animado com css</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            background-color: #003131;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container input{
+            visibility: hidden;
+        }
+
+        .container label{
+            position: relative;
+            font-size: 1.8em;
+            color: #fff;
+            font-weight: bolder;
+        }
+
+        .container label::before{
+            position: absolute;
+            left: -40px;
+            content: "";
+            width: 30px;
+            height: 30px;
+            border: 2px solid #fff;
+            border-radius: .3rem;
+            transition: all .6s ease;
+        }
+
+        .container input:checked ~ label::before{
+            transform: rotate(45deg);
+            border-left-color: transparent;
+            border-top-color: transparent;
+            width: 10px;
+            height: 20px;
+            border-radius: none;
+            left: -30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="checkbox" name="menuCheckbox" id="menuCheckbox">
+
+        <label for="menuCheckbox">Tarefa feita</label>
+    </div>
+</body>
+</html>
