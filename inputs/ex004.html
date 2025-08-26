@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #003030;
+            font-family: sans-serif;
+        }
+
+        input{
+            visibility: hidden;
+        }
+
+        .container{
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container .switch-container{
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+        }
+
+        .container .switch-container .slider{
+            position: relative;
+            width: 160px;
+            height: 70px;
+            border-radius: 60px;
+            background-color: #fff;
+            transition: all .4s ease;
+        }
+
+        .container .switch-container .slider::after{
+            position: absolute;
+            top: 50%;
+            left: 90px;
+            transform: translateY(-50%);
+            content: 'OFF';
+            font-weight: bolder;
+            font-size: 1.4rem;
+            color: #003030;
+            transition: all.4s ease;
+        }
+
+        .container .switch-container input:checked ~ .slider::after{
+            content: 'ON';
+            color: #fff;
+            left: 30px;
+        }
+
+        .container .switch-container input:checked ~ .slider{
+            background-color: #006161;
+        }
+
+        .container .switch-container .slider .button{
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: 58px;
+            height: 58px;
+            background-color: #003030;
+            border-radius: 50%;
+            transition: all .4s ease-in-out;
+        }
+
+        .container .switch-container input:checked ~ .slider .button{
+            left: 96px;
+            background-color: #fff;
+        }
+
+        .container .switch-container .descricao{
+            line-height: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="switch-container">
+            <label>
+                <input type="checkbox">
+                <div class="slider">
+                    <div class="button"></div>
+                </div>
+            </label>
+            <div class="descricao">
+                <h2>Notificações</h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

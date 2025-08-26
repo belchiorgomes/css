@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        input{
+            visibility: hidden;
+        }
+
+        .container{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container label .switch-container{
+            position: relative;
+            width: 120px;
+            height: 60px;
+            border: 2px solid #c2c2c2;
+            border-radius: 60px;
+            transition: all .6s ease;
+        }
+
+        .container label .switch-container::before{
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            content: "";
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #000;
+            transition: all .6s ease;
+        }
+
+        .container label input:checked + .switch-container::before{
+            left: 63px;
+        }
+
+        .container label input:checked + .switch-container{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label>
+            <input type="checkbox">
+            <div class="switch-container"></div>
+        </label>
+    </div>
+</body>
+</html>
