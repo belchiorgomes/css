@@ -11,74 +11,141 @@
             box-sizing: border-box;
         }
 
+        input{
+            display: none;
+        }
+
         nav{
             width: 100%;
-            display: flex;
-            flex-direction: column;
+            background-color: #003838;
+            transition: all .4s ease-in-out;
+            /* display: flex; */
         }
 
         nav .logo{
-            padding: 1rem;
+            padding: 1.2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
-        nav .logo input{
-            display: none;
+        nav .logo a{
+            color: #fff;
+            font-size: 1.3rem;
+            text-decoration: none;
         }
 
         nav .logo label{
             position: relative;
             display: block;
-            width: 35px;
-            height: 35px;
-            background-color: #000;
-            border-radius: .4rem;
+            width: 30px;
+            height: 30px;
+            background-color: #000f0f;
+            border-radius: .3rem;
         }
 
         nav .logo label span{
             position: absolute;
+            width: 20px;
+            height: 3px;
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
-            display: block;
-            width: 80%;
-            height: 3px;
-            background-color: orange;
+            background-color: #fff;
         }
 
-        nav .logo input:checked label ~ ul{
+        nav .logo label span:nth-child(1){
+            top: 30%;
+        }
+
+        nav .logo label span:nth-child(2){
+            top: 50%;
+        }
+
+        nav .logo label span:nth-child(3){
+            top: 70%;
+        }
+
+        nav ul{
+            list-style-type: none;
+            /* margin-top: 1.2rem; */
+            padding: 1.2rem;
+            background-color: #000f0f;
+            transition: all .6s ease-in-out;
+        }
+
+        nav ul li{
+            padding: 1.2rem 0;
+        }
+
+        nav ul li a{
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        nav input:checked ~ ul{
             display: none;
+        }
+
+        main{
+            width: 100%;
+            padding: 2rem;
+        }
+
+        @media screen and (min-width: 768px){
+            nav{
+                display: flex;
+            }
+
+            nav input:checked ~ ul{
+                display: block;
+            }
+
+            nav .logo label{
+                /* display: none; */
+                visibility: hidden;
+            }
+
+            nav ul{
+                display: flex;
+                gap: 1rem;
+                background-color: #003838;
+            }
+
+            main{
+                max-width: 700px;
+                margin: 2rem auto;
+            }
         }
     </style>
 </head>
 <body>
     <nav>
+        <input type="checkbox" name="Menu" id="menu" checked>
+
         <div class="logo">
-            <a href="#">MyLogo</a>
-
-            <input type="checkbox" name="menuHumbuguer" id="menuHumbuguer" checked>
-            <label for="menuHumbuguer">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
+            <a href="#">Logo</a>
+            <label for="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
         </div>
-
+        
         <ul>
-            <li>
-                <a href="#">Serviços</a>
-            </li>
-
-            <li>
-                <a href="#">Contados</a>
-            </li>
-
-            <li>
-                <a href="#">Midias</a>
-            </li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
         </ul>
     </nav>
+
+    <main>
+        <h1>Menu responsivo</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quaerat quia, nulla error sed itaque, incidunt illo tempora iusto blanditiis maiores delectus ullam reprehenderit soluta esse est perspiciatis quo! Totam?
+        </p>
+    </main>
 </body>
 </html>
