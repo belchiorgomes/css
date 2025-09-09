@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Menu animado</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            min-height: 100vh;
+        }
+
+        input[type="radio"]{
+            display: none;
+        }
+
+        .container{
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #00002b;
+            overflow: hidden;
+        }
+
+        .container .menu{
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+            width: 500px;
+            padding: 1rem;
+            border-radius: 4rem;
+            border: 1px solid #3f3fa7;
+            background-color: rgba(255, 255, 255, .1);
+            backdrop-filter: blur(20px);
+        }
+
+
+        .container .menu label{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        .container .menu label a{
+            display: block;
+            text-align: center;
+            line-height: 60px;
+            font-size: 1.3rem;
+            -webkit-text-stroke: 1px #3f3fa7;
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <input type="radio" name="menu" id="menu01">
+            <input type="radio" name="menu" id="menu02">
+            <input type="radio" name="menu" id="menu03">
+            <input type="radio" name="menu" id="menu04">
+            <input type="radio" name="menu" id="menu05">
+
+            <label for="menu01">
+                <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+            </label>
+
+            <label for="menu02">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </label>
+
+            <label for="menu03">
+                <a href="#"><i class="fa-solid fa-house"></i></a>
+            </label>
+
+            <label for="menu04">
+                <a href="#"><i class="fa-solid fa-folder"></i></a>
+            </label>
+
+            <label for="menu05">
+                <a href="#"><i class="fa-solid fa-gear"></i></a>
+            </label>
+        </div>
+    </div>
+</body>
+</html>
