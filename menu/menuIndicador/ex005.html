@@ -30,7 +30,7 @@
             position: relative;
             /* width: 500px; */
             border-radius: 3rem;
-            border: 2px solid white;
+            border: 2px solid #01018f;
         }
 
         .container .menu-indicador{
@@ -47,14 +47,26 @@
             position: relative;
             width: 70px;
             padding: 1rem;
-
+            cursor: pointer;
         }
 
         .container .menu-indicador label span{
             position: relative;
             display: block;
             text-align: center;
+            -webkit-text-stroke: 1px #01018f;
+            color: transparent;
             z-index: 999;
+            transition: all .6s ease-in-out;
+        }
+
+        .container #menu01:checked ~ .menu-indicador label:nth-child(1) span,
+        .container #menu02:checked ~ .menu-indicador label:nth-child(2) span,
+        .container #menu03:checked ~ .menu-indicador label:nth-child(3) span,
+        .container #menu04:checked ~ .menu-indicador label:nth-child(4) span,
+        .container #menu05:checked ~ .menu-indicador label:nth-child(5) span{
+            color: #fff;
+            -webkit-text-stroke: 0 transparent;
         }
 
         .container .menu-indicador .indicador{
@@ -62,8 +74,12 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background-color: aliceblue;
+            background-image: linear-gradient(45deg, #01018f, #02023a);
             transition: all .6s ease-in-out;
+        }
+
+        .container .menu-indicador .indicador:hover{
+            background-color: aliceblue;
         }
 
         .container #menu01:checked ~ .menu-indicador .indicador{
@@ -75,7 +91,15 @@
         }
 
         .container #menu03:checked ~ .menu-indicador .indicador{
-            left: 45%;
+            left: 44%;
+        }
+
+        .container #menu04:checked ~ .menu-indicador .indicador{
+            left: 62%;
+        }
+
+        .container #menu05:checked ~ .menu-indicador .indicador{
+            left: 80%;
         }
     </style>
 </head>
