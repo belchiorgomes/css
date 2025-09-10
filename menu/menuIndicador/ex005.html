@@ -42,7 +42,7 @@
             padding: 1rem;
             border-radius: 4rem;
             border: 1px solid #3f3fa7;
-            background-color: rgba(255, 255, 255, .1);
+            background-color: rgba(208, 208, 224, 0.1);
             backdrop-filter: blur(20px);
         }
 
@@ -51,6 +51,7 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
+            z-index: 999;
         }
 
         .container .menu label a{
@@ -61,12 +62,30 @@
             -webkit-text-stroke: 1px #3f3fa7;
             color: transparent;
         }
+
+        .container .menu .menu-indicador{
+            position: absolute;
+            top: 1rem;
+            left: 1.2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            background-color: #3f3fa7;
+        }
+
+        .container .menu input:nth-child(1):checked + .menu-indicador{
+            left: 1.2rem;
+        }
+
+        .container .menu input:nth-child(2):checked + .menu-indicador{
+            left: 20%;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="menu">
-            <input type="radio" name="menu" id="menu01">
+            <input type="radio" name="menu" id="menu01" checked>
             <input type="radio" name="menu" id="menu02">
             <input type="radio" name="menu" id="menu03">
             <input type="radio" name="menu" id="menu04">
@@ -91,6 +110,8 @@
             <label for="menu05">
                 <a href="#"><i class="fa-solid fa-gear"></i></a>
             </label>
+
+            <div class="menu-indicador"></div>
         </div>
     </div>
 </body>
