@@ -25,9 +25,91 @@
         input[type="radio"]{
             display: none;
         }
+
+        .container{
+            position: relative;
+            /* width: 500px; */
+            border-radius: 3rem;
+            border: 2px solid white;
+        }
+
+        .container .menu-indicador{
+            position: relative;
+            padding: 1rem;
+            /* width: 100%; */
+            display: flex;
+            /* justify-content: space-around; */
+            /* gap: 1rem; */
+            
+        }
+
+        .container .menu-indicador label{
+            position: relative;
+            width: 70px;
+            padding: 1rem;
+
+        }
+
+        .container .menu-indicador label span{
+            position: relative;
+            display: block;
+            text-align: center;
+            z-index: 999;
+        }
+
+        .container .menu-indicador .indicador{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: aliceblue;
+            transition: all .6s ease-in-out;
+        }
+
+        .container #menu01:checked ~ .menu-indicador .indicador{
+            left: 7%;
+        }
+
+        .container #menu02:checked ~ .menu-indicador .indicador{
+            left: 25%;
+        }
+
+        .container #menu03:checked ~ .menu-indicador .indicador{
+            left: 45%;
+        }
     </style>
 </head>
 <body>
-    
+    <div class="container">
+        <input type="radio" name="menu" id="menu01" checked>
+        <input type="radio" name="menu" id="menu02">
+        <input type="radio" name="menu" id="menu03">
+        <input type="radio" name="menu" id="menu04">
+        <input type="radio" name="menu" id="menu05">
+
+        <div class="menu-indicador">
+            <label for="menu01">
+                <span><i class="fa-solid fa-bag-shopping"></i></span>
+            </label>
+
+            <label for="menu02">
+                <span><i class="fa-solid fa-cart-shopping"></i></span>
+            </label>
+
+            <label for="menu03">
+                <span><i class="fa-solid fa-house"></i></span>
+            </label>
+
+            <label for="menu04">
+                <span><i class="fa-solid fa-envelope"></i></span>
+            </label>
+
+            <label for="menu05">
+                <span><i class="fa-solid fa-gear"></i></span>
+            </label>
+
+            <div class="indicador"></div>
+        </div>
+    </div>
 </body>
 </html>
