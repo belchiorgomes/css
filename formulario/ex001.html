@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Formulario de Login</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(-180deg, #003738, #007f81);
+        }
+
+        .container{
+            width: 600px;
+            max-width: 300px;
+            border-radius: 3rem;
+            border: 2px solid #007f81;
+            padding: 1rem;
+        }
+
+        .container .imagem_top{
+            width: 100%;
+            margin: 1rem auto;
+            display: flex;
+            justify-content: center;
+            border: 2px solid #00d6da;
+            box-shadow: 0 0 8px #00d6da;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-block-end: 2rem;
+        }
+
+        .container .imagem_top i{
+            display: block;
+            font-size: 3rem;
+            line-height: 100px;
+            -webkit-text-stroke: 2px #00d6da;
+            filter: drop-shadow(0 0 8px #00d6da);
+            color: transparent;
+        }
+
+        .container .input_login .input{
+            width: 100%;
+            background-color: #003738;
+            margin-block: 1rem;
+            border-radius: .2rem;
+            padding: .8rem;
+        }
+
+        .container .input_login .input i{
+            color: #fff;
+            margin-right: 15px;
+        }
+
+        .container .input_login .input input{
+            background-color: transparent;
+            border: none;
+            outline: none;
+            overflow: hidden;
+            transition: all .6s ease;
+        }
+
+        .container .input_login .input input::placeholder{
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="post" class="container">
+        <div class="imagem_top">
+            <i class="fa-solid fa-camera"></i>
+        </div>
+
+        <div class="input_login">
+            <div class="input">
+                <i class="fa-solid fa-user"></i>
+
+                <input type="text" name="nome_usuario" id="nome_usuario" placeholder="Username">
+            </div>
+
+            <div class="input">
+                <i class="fa-solid fa-lock"></i>
+
+                <input type="password" name="senha_usuario" id="senha_usuario" placeholder="YourPassord">
+            </div>
+        </div>
+
+        <div class="input_cheked">
+            <div class="checked">
+                <input type="checkbox" name="true" id="checkbox" checked>
+                <label for="checkbox">Remember me</label>
+            </div>
+
+            <a href="#">Forgot password?</a>
+        </div>
+
+        <div class="btn">
+            <button type="button">Login</button>
+        </div>
+    </form>
+</body>
+</html>
