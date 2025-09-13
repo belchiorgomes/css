@@ -21,10 +21,10 @@
         }
 
         .container{
-            width: 600px;
-            max-width: 300px;
+            width: 800px;
+            max-width: 350px;
             border-radius: 3rem;
-            border: 2px solid #007f81;
+            box-shadow: 0 0 4px #003738;
             padding: 1rem;
         }
 
@@ -33,8 +33,8 @@
             margin: 1rem auto;
             display: flex;
             justify-content: center;
-            border: 2px solid #00d6da;
-            box-shadow: 0 0 8px #00d6da;
+            border: 2px solid #003738;
+            box-shadow: 0 0 8px #003738;
             border-radius: 50%;
             width: 100px;
             height: 100px;
@@ -45,8 +45,8 @@
             display: block;
             font-size: 3rem;
             line-height: 100px;
-            -webkit-text-stroke: 2px #00d6da;
-            filter: drop-shadow(0 0 8px #00d6da);
+            -webkit-text-stroke: 2px #003738;
+            filter: drop-shadow(0 0 8px #003738);
             color: transparent;
         }
 
@@ -73,6 +73,46 @@
 
         .container .input_login .input input::placeholder{
             color: #fff;
+        }
+
+        .container .input_cheked{
+            display: flex;
+            justify-content: space-between;
+            color: #003738;
+            margin-bottom: 18px;
+        }
+
+        .container .input_cheked label{
+            margin-left: 12px;
+        }
+
+        .container .input_cheked a{
+            color: #003738;
+            text-decoration: none;
+        }
+
+        .container .input_cheked a:hover{
+            text-decoration: underline;
+        }
+
+        .container button{
+            display: block;
+            width: 100%;
+            padding: .8rem 1rem;
+            margin: 2rem auto;
+            border: none;
+            border-radius: .2rem;
+            outline: none;
+            background-color: #003738;
+            color: #fff;
+            text-transform: uppercase;
+            transition: all .6s ease-in-out;
+        }
+
+        .container button:hover{
+            background-color: #00d6da;
+            box-shadow: 0 0 8px #00d6da;
+            color: #003738;
         }
     </style>
 </head>
@@ -105,9 +145,7 @@
             <a href="#">Forgot password?</a>
         </div>
 
-        <div class="btn">
-            <button type="button">Login</button>
-        </div>
+        <button type="button">Login</button>
     </form>
 </body>
 </html>
