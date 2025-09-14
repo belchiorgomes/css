@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Efeito de digitação CSS</title>
+<style>
+  :root{
+    --chars: 36;      /* número de caracteres do texto */
+    --speed: 4s;      /* duração total da "digitação" */
+    --cursor-w: .12em;
+  }
+
+  body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+    margin:0;
+    background:#111;
+    color:#fff;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .type-wrap{
+    font-size:1.25rem;
+    /* largura final em "ch" (aproxima um caractere) */
+    width: calc(var(--chars) * 1ch);
+  }
+
+  .typing{
+    display:inline-block;         /* necessário para animar width */
+    white-space:nowrap;           /* evita quebra de linha */
+    overflow:hidden;              /* esconde o texto ainda não "digitado" */
+    box-sizing:content-box;
+    border-right: var(--cursor-w) solid rgba(255,255,255,0.9); /* cursor */
+    padding-right: .25rem;        /* espaço entre texto e cursor */
+    /* animação: typing revela o texto; blink faz o cursor piscar */
+    animation:
+      typing var(--speed) steps(var(--chars), end) forwards,
+      blink 700ms steps(2, start) infinite;
+    /* começar com largura zero */
+    width: 0;
+  }
+
+  /* animação que revela o texto aumentando width de 0 até width final */
+  @keyframes typing{
+    from { width: 0; }
+    to   { width: calc(var(--chars) * 1ch); }
+  }
+
+  /* cursor piscando */
+  @keyframes blink{
+    50% { border-color: transparent; }
+  }
+
+  /* pequena responsividade: se a tela for pequena, permitir wrap após terminar */
+  @media (max-width: 480px){
+    .type-wrap{ width: 100%; }
+    .typing{ white-space: normal; /* permite quebra depois da digitação */ }
+  }
+</style>
+</head>
+<body>
+
+<div class="type-wrap">
+  <span class="typing">Olá! Este é um efeito de texto digitando feito só com HTML e CSS.</span>
+</div>
+
+</body>
+</html>
