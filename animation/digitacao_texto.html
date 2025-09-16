@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efeito de digitaçao de texto</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            background-color: #005a5a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container .write{
+            font-size: 1.6rem;
+            white-space: nowrap;
+            font-weight: bold;
+            border-right: 10px solid #002727;
+            width: 0ch;
+            overflow: hidden;
+            animation: mark .6s step-end infinite, write 5s steps(45, end) infinite;
+        }
+
+        @keyframes mark{
+            50%{border-right-color: transparent;}
+        }
+
+        @keyframes write{
+            0%{width: 0ch;}
+            75%{width: 60ch;}
+            80%{width: 45ch;}
+            100%{width: 0ch;}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="write">
+            Olá! Este é um efeito de texto digitando feito só com HTML e CSS.
+        </div>
+    </div>
+</body>
+</html>
