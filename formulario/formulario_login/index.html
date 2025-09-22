@@ -25,7 +25,7 @@
 
         form{
             flex: 0 0 400px;
-            /* position: relative; */
+            position: relative;
             height: 400px;
             padding: 2rem;
             border-radius: .8rem;
@@ -33,7 +33,7 @@
         }
 
         form .imagem{
-            /* position: absolute; */
+            position: absolute;
             top: -20%;
             left: 50%;
             transform: translateX(-50%);
@@ -48,6 +48,40 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        form .title{
+            margin-block-start: 5rem;
+            margin-block-end: 2rem;
+            text-align: center;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        form .inputs input{
+            width: 100%;
+            display: block;
+            background-color: #fff;
+            margin: 12px 0;
+            padding: 12px;
+            border-radius: .8rem;
+            border: none;
+            outline: none;
+        }
+
+        form input[type='button']{
+            display: block;
+            width: 150px;
+            padding: 1rem;
+            border-radius: .8rem;
+            border: none;
+            outline: none;
+            margin: 1rem auto;
+            background-color: #000;
+            color: #fff;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            cursor: pointer;
         }
     </style>
 </head>
