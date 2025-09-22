@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de pesquisa</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1a1a1a;
+        }
+
+        .container{
+            position: relative;
+            width: 300px;
+        }
+
+        .container label{
+            position: absolute;
+            top: -80px;
+            display: block;
+            width: 100%;
+            padding: 1.3rem;
+            border-radius: .5rem;
+            background-color: #292929;
+            transition: all .6s ease-in-out;
+        }
+
+        .container label:hover{
+            box-shadow: 0 0 8px #797979;
+        }
+
+        .container input:checked ~ label{
+            box-shadow: 0 0 8px #797979;
+        }
+
+        .container label .selected{
+            color: #fff;
+        }
+
+        input{
+            display: none;
+        }
+
+        .container .menu{
+            position: absolute;
+            display: none;
+            width: 100%;
+            padding: 1.3rem;
+            border-radius: .5rem;
+            background-color: #292929;
+            margin-block: .8rem;
+            transition: all .6s ease-in-out;
+        }
+
+        .container .menu li{
+            list-style-type: none;
+            padding: 1rem 0;
+            margin-block: .6rem;
+            color: #fff;
+            transition: all .6s ease;
+        }
+
+        .container .menu li:hover{
+            width: 100%;
+            padding: 1rem;
+            border-radius: inherit;
+            background-color: #1a1a1a;
+        }
+
+        .container input:checked ~  .menu{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="checkbox" id="select">
+        <label for="select">
+            <span class="selected">Opção 01</span>
+        </label>
+        
+
+        <ul class="menu">
+            <li>Opção 01</li>
+            <li class="active">Opção 02</li>
+            <li>Opção 03</li>
+            <li>Opção 04</li>
+        </ul>
+    </div>
+
+    <script>
+        // // 1. Encontre os elementos do HTML
+        // const selectInput = document.getElementById('select');
+        // const selectedSpan = document.querySelector('.selected');
+        // const menuItems = document.querySelectorAll('.menu li');
+
+        // // 2. Adicione um "ouvinte de clique" a cada item da lista
+        // menuItems.forEach(item => {
+        //     item.addEventListener('click', () => {
+        //         // 3. Pegue o texto do item clicado
+        //         const itemText = item.textContent;
+
+        //         // 4. Mude o texto do elemento 'span' em cima
+        //         selectedSpan.textContent = itemText;
+
+        //         // 5. Opcional: Desmarca o checkbox para fechar o menu
+        //         selectInput.checked = false;
+        //     });
+        // });
+
+        const selecionaLabel = document.querySelector('.select');
+        const selecionaText = document.querySelector('.selected')
+        const menu = document.querySelectorAll('.menu li')
+
+        menu.forEach(item => {
+            item.addEventListener('click', () => {
+                const itemTexto = item.textContent;
+
+                selecionaText.textContent = itemTexto;
+
+                selecionaLabel.checked = false;
+            })
+        })
+    </script>
+</body>
+</html>
