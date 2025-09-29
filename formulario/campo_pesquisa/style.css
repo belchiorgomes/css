@@ -13,7 +13,7 @@ body{
     overflow: hidden;
 }
 
-input{
+input[type="checkbox"]{
     display: none;
 }
 
@@ -98,8 +98,17 @@ input{
     margin: 12px auto;
     border-radius: .3rem;
     width: 98%;
+    cursor: pointer;
 }
 
 .container .box .options li:hover{
     box-shadow: 0 0 3px #000;
+}
+
+
+.container .box .options li .highlight {
+    font-weight: bold;
+    color: #003f47; /* Cor escura para o texto correspondente */
+    padding: 0 2px;
+    border-radius: 2px;
 }
