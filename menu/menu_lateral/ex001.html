@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu lateral</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        input{
+            display: none;
+        }
+
+        body{
+            display: flex;
+            gap: 1.3rem;
+        }
+
+        .container_menu{
+            min-height: 100dvh;
+            display: flex;
+        }
+
+        .container_menu .menu{
+            position: relative;
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            flex: 0 0 100px;
+            /* padding: 1.3rem; */
+            background-color: transparent;
+            transition: all .6s ease-in-out;
+        }
+
+        .container_menu .menu .menu_hamburger{
+            position: absolute;
+            right: 5px;
+            margin-block: 1.3rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #1572af;
+        }
+
+        .container_menu .menu ul{
+            position: absolute;
+            top: 70px;
+            list-style-type: none;
+            display: none;
+            transition: all .6s ease-in-out;
+        }
+
+        .container_menu .menu ul li{
+            width: 100%;
+        }
+
+        .container_menu .menu ul li a{
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            text-align: center;
+            text-decoration: none;
+            margin: 1.2rem 0;
+        }
+
+        .container_menu .menu ul li a:hover{
+            background-color: #000;
+        }
+
+        .container_menu input:checked ~ .menu{
+            background-color: rgba(0,0,0, .5);
+            flex: 0 0 300px;
+        }
+
+        .container_menu input:checked ~ .menu ul{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container_menu">
+        <input type="checkbox" id="menu_hamburger">
+
+        <nav class="menu">
+            <label for="menu_hamburger" class="menu_hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul>
+                <li><a href="#">Menu 01</a></li>
+                <li><a href="#">Menu 02</a></li>
+                <li><a href="#">Menu 03</a></li>
+                <li><a href="#">Menu 04</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <header>
+            <h2>Menu responsivo lateral</h2>
+        </header>
+
+        <section>
+            <h2>Menu Lateral</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam dignissimos beatae asperiores ea cum itaque reprehenderit velit. Id consequuntur eum tempore eligendi. Fugiat eligendi error harum, odit nihil inventore eos? - Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, id? Voluptate cumque sed impedit! Recusandae, ratione fuga. Libero quod, illum cumque accusamus voluptas beatae vero at harum aliquam autem recusandae.
+            </p>
+        </section>
+    </main>
+</body>
+</html>
