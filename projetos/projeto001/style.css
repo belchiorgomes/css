@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --cor-rimaria: #fff2f2;
+}
+
+.container{
+    padding: 1rem;
+}
+
+nav{
+    background-color: var(--cor-rimaria);
+    max-width: 425px;
+}
+
+nav .container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+nav .container .menu_hambuguer{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+}
+
+nav .container .menu_hambuguer .btn_hambuguer{
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    border-radius: 3px;
+}
+
+nav input:checked ~ .menu_nav{
+    display: none;
+}
