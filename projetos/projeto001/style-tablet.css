@@ -1,7 +1,7 @@
 @media (min-width: 768px){
     nav .container{
         display: flex;
-        justify-content: space-between;
+        /* gap: 3rem; */
     }
 
     nav .container .logo{
@@ -18,12 +18,26 @@
     }
 
     nav .container .container_menu .menu_nav{
+        flex: 1 0 auto;
         display: flex;
         flex-flow: row wrap;
+        justify-content: space-between;
     }
 
-    nav .container .container_menu .menu_nav li{
-        /* width: 150px; */
+    nav .container .container_menu .menu_nav div{
+        display: flex;
+        gap: 1rem;
+        margin-inline-start: 3rem;
+    }
+
+    nav .container .container_menu .menu_nav div li{
+        flex: 0 1 auto;
+        padding: 12px 18px;
+        transition: all .6s ease-in-out;
+    }
+
+    nav .container .container_menu .menu_nav div li:hover{
+        border-bottom: 1px solid #000;
     }
 
     nav .container .container_menu .menu_nav a .btn_princial{

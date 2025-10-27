@@ -30,6 +30,7 @@ nav{
 nav .container{
     display: flex;
     align-items: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     gap: 1rem;
 }
@@ -99,6 +100,7 @@ nav .container .container_menu .menu_nav li{
 
 nav .container .container_menu .menu_nav li a{
     display: block;
+    text-align: center;
     text-decoration: none;
     color: var(--cor-texto-segundaria);
     text-transform: capitalize;
