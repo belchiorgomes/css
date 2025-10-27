@@ -1,0 +1,32 @@
+@media (min-width: 768px){
+    nav .container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav .container .logo{
+        flex: 0 0 auto;
+        gap: 1.3rem;
+    }
+
+    nav .container .menu_hambuguer{
+        display: none;
+    }
+
+    nav .container .container_menu{
+        display: flex;
+    }
+
+    nav .container .container_menu .menu_nav{
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    nav .container .container_menu .menu_nav li{
+        /* width: 150px; */
+    }
+
+    nav .container .container_menu .menu_nav a .btn_princial{
+        margin-right: 3rem;
+    }
+}

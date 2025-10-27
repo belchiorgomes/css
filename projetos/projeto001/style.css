@@ -59,6 +59,19 @@ nav .container .menu_hambuguer .btn_hambuguer{
     height: 3px;
     background-color: black;
     border-radius: 3px;
+    transition: all .6s ease-in-out;
+}
+
+nav .container input:checked ~ .menu_hambuguer .btn01{
+    transform: rotate(45deg) translate(5px, 11px);
+}
+
+nav .container input:checked ~ .menu_hambuguer .btn02{
+    opacity: 0;
+}
+
+nav .container input:checked ~ .menu_hambuguer .btn03{
+    transform: rotate(-45deg) translate(5px, -11px);
 }
 
 nav .container .container_menu{
@@ -68,6 +81,7 @@ nav .container .container_menu{
 }
 
 nav .container input:checked ~ .container_menu{
+    transition: all .6s ease-in-out;
     display: block;
 }
 
