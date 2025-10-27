@@ -33,11 +33,6 @@
     nav .container .container_menu .menu_nav div li{
         flex: 0 1 auto;
         padding: 12px 18px;
-        transition: all .6s ease-in-out;
-    }
-
-    nav .container .container_menu .menu_nav div li:hover{
-        border-bottom: 1px solid #000;
     }
 
     nav .container .container_menu .menu_nav a .btn_princial{
