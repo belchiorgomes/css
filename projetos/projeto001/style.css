@@ -18,6 +18,14 @@ body{
     background-color: var(--cor-fundo);
 }
 
+img{
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
 .btn_princial{
     background-color: var(--cor-primaria);
     display: block;
@@ -33,6 +41,12 @@ body{
 .text_destaque{
     color: var(--cor-primaria);
     text-transform: uppercase;
+}
+
+.contados{
+    padding: 12px 18px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.26);
 }
 
 input{
@@ -141,6 +155,16 @@ header{
     margin: 0 auto;
 }
 
+header .container{
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+}
+
+header .container .header_container_text{
+    flex: 0 0 100%;
+}
+
 header .container .header_container_text h1{
     font-size: 3.7rem;
     text-align: center;
@@ -159,15 +183,36 @@ header .container .header_container_text .header_contado{
     padding-block: 1.3rem;
 }
 
-header .container .header_container_text .header_contado label.tel{
-    padding: 12px 18px;
-    border-radius: 8px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.26);
-}
-
 header .container .header_container_text .header_midiasSociais{
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin-block: 1.3rem;
+}
+
+header .container .header_container_text .header_midiasSociais a{
+    display: block;
+    color: #000;
+}
+
+header .header_container_imgPrato{
+    display: none;
+    flex: 0 0 40%;
+}
+
+section{
+    position: relative;
+    top: 5rem;
+}
+
+.container_pratos .container{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_pratos .container h3{
+    font-size: 2.3rem;
+    text-align: center;
 }

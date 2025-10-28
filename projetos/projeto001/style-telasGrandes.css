@@ -1,0 +1,19 @@
+@media (min-width: 1024px){
+    header{
+        top: 9rem;
+    }
+
+    header .container{
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+    }
+
+    header .container .header_container_text{
+        flex: 0 0 50%;
+    }
+
+    header .container .header_container_imgPrato{
+        border-radius: 90px;
+        overflow: hidden;
+    }
+}
