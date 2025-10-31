@@ -210,6 +210,7 @@ section{
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    margin-block: 2rem;
 }
 
 .container_pratos .container h3{
@@ -276,4 +277,28 @@ section{
     background-color: var(--cor-primaria);
     padding: 18px;
     border-radius: 12px;
+}
+
+.container_depoimento .container{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container_depoimento .container .container_imagem{
+    display: none;
+}
+
+.container_depoimento .container .container_depoimento_card{
+    flex-basis: 350px;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.container_depoimento .container .container_depoimento_card img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }
