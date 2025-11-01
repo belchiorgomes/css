@@ -293,8 +293,15 @@ section{
 
 .container_depoimento .container .container_depoimento_card{
     flex-basis: 350px;
+    flex-grow: 1;
     display: flex;
     flex-flow: column wrap;
+    align-items: center;
+    gap: 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 8px #c5bbbb;
+    border-radius: 1rem;
+    padding: 2rem;
 }
 
 .container_depoimento .container .container_depoimento_card img{
