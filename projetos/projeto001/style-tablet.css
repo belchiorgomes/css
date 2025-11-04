@@ -1,0 +1,21 @@
+@media (min-width: 768px){
+    nav .container{
+        display: flex;
+    }
+
+    nav .container input:checked ~ .menu-principal{
+        display: flex;
+    }
+
+    nav .container .menuburger{
+        display: none;
+    }
+
+    nav .container .menu-principal{
+        display: flex;
+        justify-content: flex-end;
+        gap: 3rem;
+        margin-left: 3rem;
+        margin-block: 0;
+    }
+}
