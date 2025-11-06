@@ -17,7 +17,7 @@ img{
 }
 
 .btn-princial{
-    padding: 12px 18px;
+    padding: 12px 14px;
     border-radius: 12px;
     background-color: var(--cor-principal);
     font-size: 1.2rem;
@@ -26,7 +26,23 @@ img{
     text-decoration: none;
 }
 
+.btn{
+    padding: 12px 14px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 0 8px #cfcfcf;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    color: #222222;
+    text-decoration: none;
+}
+
+.texto-destaque{
+    color: var(--cor-principal);
+}
+
 body{
+    position: relative;
     background-color: bisque;
     font-family: "Poppins", sans-serif;
 }
@@ -46,9 +62,6 @@ input{
 }
 
 nav{
-    /* position: fixed;
-    top: 0;
-    left: 0; */
     width: 100%;
     box-shadow: 0 3px 8px #e0c8ad;
 }
@@ -58,6 +71,12 @@ nav .container input:checked ~ .menu-principal{
 }
 
 nav .container{
+    z-index: 999;
+    width: 100%;
+    background-color: bisque;
+    box-shadow: 0 3px 8px #e0c8ad;
+
+    position: fixed;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 50px auto;
@@ -134,10 +153,45 @@ nav .container .menu-principal li a{
     font-size: 1.2rem;
 }
 
+header{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
 header .container{
+    position: absolute;
+    top: 80px;
+    width: 85%;
     display: grid;
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
+}
+
+header .container .header-text h1{
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+header .container .header-text p{
+    margin-block: 2rem;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+header .container .header-text .header-text-contados{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+header .container .header-text .header-text-btnSociais{
+    margin-block: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
 header .container .header-img{
