@@ -1,6 +1,8 @@
-@media (min-width: 768px){
+@media (min-width: 450px){
     nav .container{
-        display: flex;
+        /* display: flex; */
+        grid-template-columns: 1fr;
+        grid-template-areas: "logo menuPrincipal";
     }
 
     nav .container input:checked ~ .menu-principal{
@@ -17,5 +19,13 @@
         gap: 3rem;
         margin-left: 3rem;
         margin-block: 0;
+    }
+
+    header .container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header .container .header-img{
+        display: block;
     }
 }
