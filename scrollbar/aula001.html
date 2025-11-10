@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scrollbar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            grid-template-rows: 200px 1fr;
+            grid-template-areas: "header header"
+                                 "nav content";
+        }
+
+        .container header{
+            width: 100%;
+            grid-area: header;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container nav{
+            grid-area: nav;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-left: 50px;
+
+            scroll-target-group: auto;
+        }
+
+        .container nav a{
+            display: block;
+            text-decoration: none;
+            color: #000;
+            padding: 12px 18px;
+            border-radius: 18px;
+            transition: all .6s ease-in-out;
+        }
+
+        .container nav a:hover{
+            background-color: coral;
+            color: #832d0d;
+            cursor: pointer;
+        }
+
+        .container nav a:target-current{
+            background-color: coral;
+        }
+
+        .container .content{
+            grid-area: content;
+            padding: 2rem;
+        }
+
+        .container .content .section{
+            width: 70%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>scrollbar </h1>
+        </header>
+
+        <nav>
+            <a href="#secao01">Link seção 01</a>
+            <a href="#secao02">Link seção 02</a>
+            <a href="#secao03">Link seção 03</a>
+        </nav>
+
+        <div class="content">
+            <section class="section" id="secao01">
+                <h1>Seção 01</h1>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi recusandae ex ad tempora temporibus nihil iusto ullam voluptatibus tempore in, cupiditate ut adipisci eius distinctio dolor quibusdam. Eligendi, voluptates natus?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, temporibus. Consequatur placeat aperiam aut repudiandae quibusdam eligendi voluptas quos id odio quia dolore ea cumque, dicta ex mollitia asperiores recusandae.
+                </p>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam eum dolores, dolorem odit corrupti quam ea inventore? Odit, vero rem reiciendis quas quisquam, temporibus consectetur nesciunt nemo dicta vel dolorum?
+                </p>
+            </section>
+
+            <section class="section" id="secao02">
+                <h1>Seção 02</h1>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi recusandae ex ad tempora temporibus nihil iusto ullam voluptatibus tempore in, cupiditate ut adipisci eius distinctio dolor quibusdam. Eligendi, voluptates natus?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, temporibus. Consequatur placeat aperiam aut repudiandae quibusdam eligendi voluptas quos id odio quia dolore ea cumque, dicta ex mollitia asperiores recusandae.
+                </p>
+
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi recusandae ex ad tempora temporibus nihil iusto ullam voluptatibus tempore in, cupiditate ut adipisci eius distinctio dolor quibusdam. Eligendi, voluptates natus?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, temporibus. Consequatur placeat aperiam aut repudiandae quibusdam eligendi voluptas quos id odio quia dolore ea cumque, dicta ex mollitia asperiores recusandae.
+                </p>
+            </section>
+
+            <section class="section" id="secao03">
+                <h1>Seção 03</h1>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi recusandae ex ad tempora temporibus nihil iusto ullam voluptatibus tempore in, cupiditate ut adipisci eius distinctio dolor quibusdam. Eligendi, voluptates natus?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, temporibus. Consequatur placeat aperiam aut repudiandae quibusdam eligendi voluptas quos id odio quia dolore ea cumque, dicta ex mollitia asperiores recusandae.
+                </p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
