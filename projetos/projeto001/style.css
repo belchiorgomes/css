@@ -236,4 +236,76 @@ section .container .container-flex .section-cards .card{
     border-radius: 1rem;
     background-color: #fff;
     padding: 1.8rem;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+section .container .container-flex .section-cards .card h4{
+    /* text-align: center; */
+    font-size: 1.4rem;
+}
+
+section .container .container-flex .section-cards .card p{
+    text-align: center;
+    /* margin-block: 1rem; */
+    color: #555555;
+}
+
+section .container .container-flex .section-cards .card .avaliacao .fa-star{
+    color: var(--cor-principal);
+}
+
+section .container .container-flex .section-cards .card .preco{
+    /* margin-block: 1rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+section.depoimento .container .container-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+section.depoimento .container .container-grid .container-grid-depoimento-img{
+    display: none;
+}
+
+section.depoimento .container .container-grid .container-grid-depoimento-text{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+section.depoimento .container .container-grid .container-grid-depoimento-text h3{
+    font-size: 2.3rem;
+    text-align: center;
+}
+
+section.depoimento .container .container-grid .container-grid-depoimento-text .container-grid-depoimento-text-cards{
+    background-color: #fff;
+    box-shadow: 0 0 8px #cfcfcf;
+    border-radius: 12px;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+    padding: 1rem;
+    margin-block: 1rem;
+}
+
+section.depoimento .container .container-grid .container-grid-depoimento-text .container-grid-depoimento-text-cards .img img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 1rem auto;
+}
+
+section.depoimento .container .container-grid .container-grid-depoimento-text .container-grid-depoimento-text-cards .text p{
+    font-size: 1.4rem;
+    color: #555555;
 }

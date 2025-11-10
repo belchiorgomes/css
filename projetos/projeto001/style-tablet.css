@@ -44,6 +44,17 @@
         height: 100%;
         object-fit: cover;
     }
+
+    section .container .container-flex .section-cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    section.depoimento .container .container-grid .container-grid-depoimento-text .container-grid-depoimento-text-cards{
+        width: 500px;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media (min-width: 1024px){
@@ -55,5 +66,19 @@
 
     header .container .container-flex .header-img{
         flex-basis: 60%;
+    }
+
+    section .container .container-flex .section-cards{
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-columns: 1fr;
+        grid-auto-flow: column;
+    }
+
+    section.depoimento .container .container-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    section.depoimento .container .container-grid .container-grid-depoimento-img{
+        display: block;
     }
 }
