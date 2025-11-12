@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #00002c;
+            padding-inline: 1.4rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            anchor-name: --carrosel;
+        }
+
+        .container::-webkit-scrollbar{
+            display: none;
+        }
+
+        .container::scroll-button(right), .container::scroll-button(left){
+            position: fixed;
+            position-anchor: --carrosel;
+            position-area: right center;
+            translate: -80%;
+            content: '➡️';
+            border: none;
+            padding: 1.2rem;
+            margin: 0 1rem;
+            background-color: #fff;
+            border-radius: 50%;
+            border: .8rem solid #00002c;
+            cursor: pointer;
+        }
+
+        .container::scroll-button(left){
+            content: '⬅️';
+            position-area: left center;
+            translate: 80%;
+        }
+
+        .container .card{
+            aspect-ratio: 5 / 3;
+            flex: 0 0 100%;
+            border-radius: 18px;
+            overflow: hidden;
+
+            scroll-snap-align: start;
+        }
+
+        .container .card img:hover{
+            scale: 1.2;
+        }
+
+        .container .card img{
+            width: 100%;
+            height: 100%;
+            transition: all .6s ease-in-out;
+            object-fit: cover;
+        }
+
+        @media (min-width: 500px){
+            .container .card{
+                flex: 0 0 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card"><img src="img/img01.jpg"></div>
+        <div class="card"><img src="img/img02.jpg"></div>
+        <div class="card"><img src="img/img03.jpg"></div>
+        <div class="card"><img src="img/img04.jpg"></div>
+        <div class="card"><img src="img/img05.jpg"></div>
+        <div class="card"><img src="img/img06.jpg"></div>
+    </div>
+</body>
+</html>
