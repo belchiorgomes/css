@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>::scroll-button()</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #00001f;
+            min-height: 100vh;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carrosel{
+            position: relative;
+            /* width: 100%; */
+            margin: 6rem auto;
+            /* aspect-ratio: 9 / 3; */
+            width: 90%;
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            anchor-name: --carrosel;
+            scroll-snap-type: x mandatory;
+        }
+
+        .carrosel::-webkit-scrollbar{
+            display: none;
+        }
+
+        .carrosel::scroll-button(right), .carrosel::scroll-button(left){
+            position: fixed;
+            position-anchor: --carrosel;
+            position-area: right center;
+            translate: -50%;
+            content: '➡️';
+            border: none;
+            background-color: #fff;
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 18px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .carrosel::scroll-button(left){
+            content: '⬅️';
+            position-area: left center;
+            translate: 50%;
+        }
+
+        .carrosel::scroll-button(right):disabled, .carrosel::scroll-button(left):disabled{
+            opacity: .5;
+            cursor: auto;
+        }
+
+        .carrosel .card{
+            flex: 0 0 200px;
+            aspect-ratio: 5 / 3;
+            background-color: #000052;
+            color: #fff;
+            text-align: center;
+            line-height: 120px;
+            font-size: 1.3em;
+            border-radius: 18px;
+
+            scroll-snap-align: start;
+        }
+
+        @media (max-width: 500px){
+            .carrosel .card{
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="carrosel">
+        <div class="card">Card 01</div>
+        <div class="card">Card 02</div>
+        <div class="card">Card 03</div>
+        <div class="card">Card 04</div>
+        <div class="card">Card 05</div>
+        <div class="card">Card 06</div>
+        <div class="card">Card 07</div>
+        <div class="card">Card 08</div>
+        <div class="card">Card 09</div>
+        <div class="card">Card 10</div>
+        <div class="card">Card 11</div>
+        <div class="card">Card 12</div>
+    </div>
+</body>
+</html>
