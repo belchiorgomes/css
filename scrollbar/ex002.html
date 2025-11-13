@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrosel animado</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            width: 700px;
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+        }
+
+        .container::-webkit-scrollbar{
+            display: none;
+        }
+
+        .cards{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            animation: animaCards 6s infinite linear;
+        }
+
+        .card{
+            flex: 0 0 200px;
+            aspect-ratio: 5 / 3;
+            background-color: coral;
+            border-radius: .8rem;
+            text-align: center;
+        }
+
+        @keyframes animaCards{
+            from{translate: 0;}
+            to{translate: -100%;}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cards">
+            <div class="card">Card 01</div>
+            <div class="card">Card 02</div>
+            <div class="card">Card 03</div>
+            <div class="card">Card 04</div>
+            <div class="card">Card 05</div>
+        </div>
+
+        <div aria-hidden class="cards">
+            <div class="card">Card 01</div>
+            <div class="card">Card 02</div>
+            <div class="card">Card 03</div>
+            <div class="card">Card 04</div>
+            <div class="card">Card 05</div>
+        </div>
+    </div>
+</body>
+</html>
