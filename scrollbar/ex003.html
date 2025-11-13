@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll-behavior</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html{
+            scroll-behavior: smooth;
+
+        }
+
+        body{
+            position: relative;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            grid-template-areas: "nav container";
+            scroll-behavior: smooth;
+        }
+
+        nav{
+            grid-area: nav;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            scroll-target-group: auto;
+
+        }
+
+        nav a{
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            text-align: center;
+            font-weight: bolder;
+            color: #000;
+            padding: 12px 18px;
+            border-radius: .8rem;
+        }
+
+        nav a:target-current{
+            background-color: #000;
+            color: #fff;
+        }
+
+        .container{
+            grid-area: container;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .container .card{
+            width: 60%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .container .card h2{
+            font-size: 2.8rem;
+        }
+
+        .container .card p{
+            font-size: 1.2rem;
+            text-align: center;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#card01">Card 01</a>
+        <a href="#card02">Card 02</a>
+        <a href="#card03">Card 03</a>
+    </nav>
+
+    <div class="container">
+        <div class="card" id="card01">
+            <h2>Card 01</h2>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos possimus eligendi nulla reiciendis qui cupiditate deleniti reprehenderit quaerat velit totam non, eius, ea laborum perferendis accusamus numquam omnis praesentium soluta.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis aut exercitationem harum ducimus numquam amet corrupti quod enim. Sequi amet veritatis quibusdam eum aliquid mollitia sint sed illum quidem est.
+            </p>
+        </div>
+
+        <div class="card" id="card02">
+            <h2>Card 02</h2>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint totam omnis quam ipsam, at, ut veritatis fugit sunt quaerat quo modi officiis quae neque eveniet itaque reiciendis atque maxime esse!
+                Facilis adipisci non vitae eum atque voluptas provident ad, minima voluptatum odio totam maxime saepe assumenda quisquam tempora. Doloremque maiores dignissimos aut ratione perspiciatis culpa quam harum? Veniam, unde nobis?
+                Rem, iure mollitia, laboriosam cupiditate enim eligendi doloremque sequi, quibusdam aut quos consequuntur eum sit inventore? Fugiat eligendi laboriosam iusto illum id unde aliquid officiis esse non molestiae. Sed, fugiat!
+                Aliquam dignissimos hic aut sequi tempora itaque perspiciatis provident saepe qui officiis earum id repellendus voluptatem distinctio soluta ipsa dolorum eius, ut culpa. Totam necessitatibus qui quasi officia beatae. Sequi.
+            </p>
+        </div>
+
+        <div class="card" id="card03">
+            <h2>Card 03</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit nulla earum animi cumque quas totam cum, doloremque neque, inventore aut nam expedita dolorem ullam iure in minima rem veritatis laboriosam.
+                Sapiente nobis, error deserunt nisi earum perferendis odio, fuga sunt quibusdam ut molestias dolorem molestiae illum neque aspernatur beatae rerum perspiciatis mollitia, eveniet excepturi. Doloribus commodi beatae quam voluptates omnis.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
