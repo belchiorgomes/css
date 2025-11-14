@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: coral;
+        }
+
+        .container{
+            width: 100%;
+            padding-block: 12rem;
+        }
+
+        .container .card{
+            width: 400px;
+            height: auto;
+            padding: 1.3rem;
+            border-radius: .8rem;
+            box-shadow: 0 0 8px coral;
+
+            opacity: 0;
+            transform: translateX(-420px);
+
+            animation:  animacao linear forwards;
+            animation-timeline: view();
+            animation-range: entry 0% cover 50%;
+        }
+
+        @keyframes animacao{
+            from{
+                opacity: 0;
+                transform: translateX(-420px);
+            }
+
+            to{
+                opacity: 1;
+                transform: translateX(420px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Animation Scroll</h1>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Abimação de rolagem da pagina</h2>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, obcaecati delectus officia laboriosam dolor architecto, nobis veritatis dolores laudantium explicabo voluptate? Id nemo enim asperiores architecto, quos minima praesentium odio.
+                Consequatur quod voluptatibus non accusamus molestiae, ex velit eligendi? Quaerat quam praesentium id explicabo quo cupiditate obcaecati corporis hic sit quisquam autem, recusandae animi cumque aliquid minus, possimus commodi perspiciatis.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
