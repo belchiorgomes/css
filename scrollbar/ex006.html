@@ -20,27 +20,30 @@
             position: sticky;
             top: 0;
             left: 0;
-            display: flex;
+            /* display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: center; */
             height: 100vh;
             background-color: #ff50d3;
         }
 
         .card{
             position: absolute;
+            top: 50%;
+            left: 50%;
             width: 200px;
             height: 200px;
             border-radius: .8rem;
             background-color: var(--cor);
 
-            
+            transform: translate(-50%, -50%);
 
         }
 
         .card01{
             z-index: 999;
-            transform: translateY(0);
+            transform: translate(-10%) translateY(0);
+
 
             animation: animacaocard 1s linear forwards;
             animation-timeline: view();
