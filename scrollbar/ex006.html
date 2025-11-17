@@ -12,7 +12,7 @@
         }
 
         body{
-            min-height: 100vh;
+            min-height: 300vh;
             position: relative;
         }
 
@@ -23,12 +23,12 @@
             /* display: flex;
             justify-content: center;
             align-items: center; */
-            min-height: 200vh;
+            min-height: 100vh;
             background-color: #ff50d3;
         }
 
         .card{
-            position: sticky;
+            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
@@ -42,8 +42,10 @@
 
         }
 
-        /* .card01{
+        .card01{
             z-index: 1;
+
+            transform: translate(-50%,-50%) translateY(22.4%);
 
             animation: animacaoCard 2s linear forwards;
             animation-timeline: view();
@@ -57,7 +59,7 @@
             to{
                 transform: translate(-50%,-100vh);
             }
-        } */
+        }
     </style>
 </head>
 <body>
