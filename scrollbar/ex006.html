@@ -12,7 +12,7 @@
         }
 
         body{
-            min-height: 300vh;
+            min-height: 100vh;
             position: relative;
         }
 
@@ -23,50 +23,51 @@
             /* display: flex;
             justify-content: center;
             align-items: center; */
-            height: 100vh;
+            min-height: 200vh;
             background-color: #ff50d3;
         }
 
         .card{
-            position: absolute;
+            position: sticky;
             top: 50%;
             left: 50%;
+            transform: translate(-50%,-50%);
             width: 200px;
             height: 200px;
             border-radius: .8rem;
             background-color: var(--cor);
 
-            transform: translate(-50%, -50%);
+            /* animation: animacaoCard 2s linear forwards;
+            animation-timeline: view(); */
 
         }
 
-        .card01{
-            z-index: 999;
-            transform: translate(-10%) translateY(0);
+        /* .card01{
+            z-index: 1;
 
-
-            animation: animacaocard 1s linear forwards;
+            animation: animacaoCard 2s linear forwards;
             animation-timeline: view();
         }
 
-        @keyframes animacaocard{
+        @keyframes animacaoCard{
             from{
-                transform: translateY(0);
+                transform: translate(-50%,-50%) translateY(22.4%);
             }
 
             to{
-                transform: translateY(-600px);
+                transform: translate(-50%,-100vh);
             }
-        }
+        } */
     </style>
 </head>
 <body>
     <div class="container">
         <div class="card card01" style="--cor:coral;">01</div>
         <div class="card card02" style="--cor:blue;">02</div>
+        <div class="card card03" style="--cor:#09ff00;">03</div>
     </div>
 
-    <p>
+    <!-- <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam sapiente ratione voluptatibus accusamus maxime delectus distinctio natus! Sit expedita saepe, minus, adipisci fuga quo, aperiam officiis sequi praesentium sunt vitae?
         Optio, porro ducimus iusto eius, nisi voluptas adipisci natus illum consequatur eligendi, dignissimos officiis libero possimus nihil sint vitae maiores nam. Optio quas qui illum, reiciendis quia temporibus voluptatibus vero?
         Repellendus quibusdam, consequatur ad veniam architecto minus nobis sint officia, quae, aperiam hic quis reiciendis asperiores? Neque iure harum cupiditate facere commodi rerum dolorum similique, illo laboriosam repudiandae alias blanditiis?
@@ -87,6 +88,6 @@
         Inventore dolorem quasi hic saepe voluptatibus a dolore fugiat. Dolorem maxime laboriosam excepturi, esse rem deserunt quibusdam beatae animi porro! Et eius eum est quis corporis aut quisquam, ipsam nulla.
         Quaerat eum cum maiores ipsa ratione libero tempore officia dolorem facilis illo alias autem minus totam, animi repellendus illum natus quisquam eligendi aliquam iste quam aliquid possimus repudiandae. Sequi, maiores.
         Accusantium dicta porro beatae nobis, excepturi, eius suscipit fuga asperiores quaerat dolore pariatur inventore! Ab a similique doloremque inventore voluptate consequatur, esse dolores sapiente nulla mollitia laudantium quis quo illum.
-    </p>
+    </p> -->
 </body>
 </html>
