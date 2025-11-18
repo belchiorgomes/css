@@ -23,10 +23,14 @@
 
         body{
             overflow-y: hidden;
+            /* min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center; */
         }
 
         .container{
-            width: 100%;
+            width: 200%;
             height: 100vh;
             background-color: antiquewhite;
         }
@@ -50,7 +54,12 @@
         @keyframes rotate-appear{
             from{
                 rotate: 0deg;
-                left: 0;
+                top: 0;
+            }
+
+            to{
+                rotate: 720deg;
+                top: 100%;
             }
         }
     </style>
