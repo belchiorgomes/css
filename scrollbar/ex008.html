@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Definir uma linha do tempo de progresso de visualização nomeada</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-size: 22px;
+        }
+
+        .container{
+            width: 100%;
+            max-width: 75%;
+            margin: 1rem auto;
+        }
+
+        h1{
+            text-align: center;
+            font-size: 2.8rem;
+        }
+
+        p{
+            text-align: justify;
+            margin-block: 2rem;
+        }
+
+        .subject{
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: coral;
+            border-radius: .8rem;
+        }
+
+        /* 
+            O <div>elemento com a classe `viewProgressTimeline` subjecttambém recebe a classe `viewProgressTimeline` animation— é aqui que o elemento view-timeline-nameé definido para criar uma linha do tempo de progresso da visualização nomeada. Ele também recebe um animation-timelinenome com o mesmo valor para declarar que este será o elemento animado conforme a linha do tempo de progresso da visualização avança.
+
+            Por fim, especifica-se uma animação no elemento que anima sua opacidade e escala, fazendo com que ele apareça gradualmente e aumente de tamanho à medida que sobe na barra de rolagem.
+        */
+
+        .animation{
+            view-timeline-name: --subject-reveal;
+            animation-timeline: --subject-reveal;
+
+            animation-name: appear;
+            animation-fill-mode: both;
+            animation-duration: 1ms;
+        }
+
+        @keyframes appear{
+            from{
+                opacity: 0;
+                transform: scaleX(0);
+            }
+
+            to{
+                opacity: 1;
+                transform: scaleX(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        Uma linha do tempo de progresso da visualização, chamada `viewProgressTimeline` --subject-reveal, é definida usando a view-timeline-namepropriedade `viewProgressTimeline` em um elemento `subject` com um classvalor de `true` animation. Essa linha do tempo é então definida como a linha do tempo para o mesmo elemento usando `viewProgressTimeline` animation-timeline: --subject-reveal;. O resultado é que o elemento `subject` é animado à medida que se move para cima no documento conforme ele é rolado.
+    -->
+
+    <div class="container">
+        <h1>Titulo da pagina</h1>
+
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, molestias. Eius in omnis placeat optio non eos commodi ab at dolorum recusandae, accusamus distinctio consectetur impedit earum eaque, iure repudiandae.
+            Repellat nulla dicta impedit, aspernatur id atque autem quos ipsa. Aliquam, exercitationem tempora eum eveniet deserunt nobis. Ea, ab quia itaque similique aliquid doloremque magni rerum sed velit? Iusto, mollitia.
+            Nemo repellendus dolor eius dolorum quae, sunt vero explicabo reprehenderit, officiis porro soluta ullam delectus cum sit laborum rem quia id voluptate cupiditate sint quis itaque recusandae. Quod, aut. Rerum.
+            Odit qui, nulla adipisci eaque pariatur molestias et error quaerat rem nobis aliquid optio obcaecati earum. Aut nam nobis qui maiores quasi officiis temporibus, quibusdam iusto id autem, unde laborum.
+            Deleniti atque et voluptatum cupiditate! Rem provident ipsum reprehenderit corrupti corporis temporibus excepturi labore dignissimos! Cupiditate rem ex, voluptate esse eaque ullam enim impedit expedita, reprehenderit doloribus harum ut saepe.
+            Libero maxime saepe consequuntur cum voluptates perferendis, vitae assumenda animi. Reprehenderit, ratione nesciunt. Perferendis, quod cupiditate eveniet, pariatur quos, dignissimos ea nostrum deleniti quis expedita alias excepturi! Numquam, consequatur ut!
+            Sint error perspiciatis aliquam modi! Cupiditate iusto earum optio eligendi, assumenda accusantium fugit hic, sapiente atque suscipit quisquam labore dignissimos error pariatur? Recusandae voluptatibus explicabo necessitatibus voluptate in, labore accusamus!
+            Quae, vitae? Unde, laborum architecto perspiciatis et vitae odit totam explicabo inventore quas in facilis sed, molestias asperiores amet doloremque atque nisi quasi veniam tenetur eligendi reiciendis quam aut. Deserunt.
+            Quisquam voluptates suscipit eius aliquid ut quasi in unde laborum laudantium sint nulla eos, at a molestias! Quaerat laborum aliquid ut? Officiis obcaecati neque nobis iure perspiciatis asperiores, officia delectus.
+            Quis ex nesciunt excepturi aliquam eum facilis doloremque natus dolor deserunt illum libero tempore explicabo in aut sint, adipisci et corrupti? Magni, porro fugiat incidunt modi quis ea enim totam.
+            Optio temporibus error fugiat sunt adipisci laborum eligendi tempora a laudantium repellat? Nam minus explicabo architecto hic aut blanditiis esse, atque voluptate incidunt assumenda labore ipsam sed quibusdam at sint!
+            Atque quidem sed expedita repudiandae aliquam, non ab et necessitatibus quas vitae inventore totam corporis odio beatae excepturi magni. Suscipit ipsum aliquam quam provident molestiae voluptatibus quos repudiandae, quidem consequatur.
+            Dignissimos, voluptatem ab labore suscipit repudiandae culpa assumenda alias tempora veniam rem excepturi aut dolore est pariatur quibusdam odit nulla nam similique blanditiis, qui, cupiditate obcaecati reiciendis! Necessitatibus, excepturi cumque.
+        </p>
+
+        <div class="subject animation"></div>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti debitis magni non reprehenderit! In nulla architecto necessitatibus illo, excepturi placeat non fugiat quaerat ullam corporis sapiente. Impedit totam eaque assumenda.
+            Nihil quod provident iusto magni minima, velit illo laudantium obcaecati. Ullam atque in, eius delectus iure recusandae ipsum iusto debitis fugit. Optio tenetur delectus adipisci ad eius aut tempore sint!
+            Odit quos corrupti molestias cum assumenda harum velit necessitatibus, fugiat veniam dolor exercitationem esse laborum dolore. Neque inventore eveniet cupiditate alias a sit omnis ea amet, consectetur dolorem quis quas.
+            Quo, veniam voluptatem! Quis explicabo harum corrupti asperiores, voluptatibus consectetur ducimus aliquid eligendi pariatur! Qui molestiae quas blanditiis quam, fugiat deleniti vitae enim eius velit dolorem assumenda, voluptate quae saepe!
+            Vitae ut, aperiam nisi hic placeat pariatur neque et temporibus veniam, optio molestias dolorem iusto excepturi soluta expedita? Aliquam, vero obcaecati. Expedita molestias perferendis asperiores eius distinctio, voluptatem voluptatum placeat.
+            Provident nesciunt sapiente laborum illo aperiam aliquam, impedit excepturi accusamus ratione earum, autem fuga sed voluptatum, porro repellat reiciendis illum doloribus quia. Error veniam reprehenderit, obcaecati laudantium reiciendis id labore.
+            Iusto quia, distinctio saepe ut delectus officia tempora odit, veritatis laboriosam repellendus at incidunt mollitia dolor rerum ab perferendis beatae vero itaque provident. Atque necessitatibus voluptatem laboriosam nobis consequuntur sequi!
+        </p>
+    </div>
+</body>
+</html>

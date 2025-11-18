@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Definir uma linha do tempo de progresso de rolagem nomeada</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            height: 300px;
+            overflow-y: scroll;
+            scroll-timeline-name: --square-timeline;
+            position: relative;
+            background-color: antiquewhite;
+        }
+
+        .square{
+            background-color: coral;
+            width: 100px;
+            height: 100px;
+            margin-top: 100px;
+
+            animation-name: rotateAnimation;
+            animation-duration: 1ms;
+            animation-direction: alternate;
+            /* animation-timeline: --square-timeline; */
+
+            animation-timeline: scroll(block nearest);
+            /* Nota: block e nearestsão, na verdade, os valores padrão dos parâmetros, então poderíamos ter usado apenas scroll(). */
+
+            /* 
+                O CSS abaixo define um quadrado que gira em direções alternadas de acordo com a linha do tempo fornecida pela animation-timelinepropriedade. Nesse caso, a linha do tempo é fornecida por scroll(block nearest), o que significa que será selecionada a barra de rolagem na direção do bloco do elemento ancestral mais próximo que possua barras de rolagem; neste caso, a barra de rolagem vertical do elemento "container".
+            */
+
+            position: absolute;
+            bottom: 0;
+        }
+
+        @keyframes rotateAnimation{
+            from{
+                transform: rotate(0deg);
+            }
+
+            to{
+                transform: rotate(360deg);
+            }
+        }
+
+        .stretcher{
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="square"></div>
+        <div class="stretcher"></div>
+    </div>
+</body>
+</html>
