@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Progress indicator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: arial, sans-serif;
+        }
+
+        main{
+            padding-top: 50px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .long-content{
+            height: 200vh;
+            background-color: antiquewhite;
+            padding: 20px;
+            border-radius: 8px;
+            margin-block: 1rem;
+        }
+
+        .progress-bar{
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            width: 100%;
+            background-color: coral;
+            z-index: 1000;
+
+            animation: progress-animation linear;
+            animation-timeline: scroll(root y);
+            transform-origin: 0 50%;
+        }
+
+        @keyframes progress-animation{
+            from{
+                transform: scaleX(0);
+            }
+            to{
+                transform: scaleX(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+
+    <main>
+        <h1>Animação Scroll() em ação</h1>
+        <p>
+            Role a página para baixo para ver a barra de progresso no topo se expandir!
+        </p>
+
+        <div class="long-content">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi repellendus officia recusandae aut quis rerum, incidunt, sed accusantium iste quaerat, fugit quo commodi perferendis rem a consectetur inventore debitis temporibus.
+                Possimus minima molestiae culpa ex. Magnam cupiditate explicabo numquam itaque iste modi atque voluptas pariatur culpa, laborum deserunt iusto doloribus sed quas nemo debitis, sapiente officia, corrupti quibusdam. Doloremque, nisi?
+                Error ipsum veniam dolorem! Optio voluptates magnam rerum velit, facere neque ab molestiae quidem aliquam, dolor assumenda tempora, facilis pariatur omnis! Facere ex ipsam dolore quae. Excepturi doloribus nobis aliquid!
+                Minus inventore eius aut nobis? Pariatur, modi voluptatum! Exercitationem obcaecati magnam deserunt, enim fugit maxime cumque inventore sunt est culpa incidunt rerum molestias mollitia officia quasi repudiandae. Reprehenderit, excepturi iste.
+                Dolores sint quos ducimus unde odio sapiente, aliquam sit amet facere sed pariatur tempore accusamus, possimus repellat recusandae expedita ut praesentium obcaecati explicabo quibusdam. Animi nisi odio veritatis soluta totam.
+                Eaque quas enim dicta est totam repellendus deleniti, dolorem sapiente distinctio, placeat dignissimos voluptatibus rerum facere doloribus molestias cupiditate voluptatum fugiat officiis dolorum nostrum quisquam. Unde quae quod minima suscipit.
+                Qui nulla praesentium aliquam explicabo ea nam molestiae maiores dolorum laboriosam nostrum. Unde voluptate dicta, odio voluptas modi maxime reprehenderit necessitatibus autem animi assumenda ut soluta delectus repellat nulla quam!
+            </p>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi non magnam minima delectus, molestias quos expedita aperiam illum corporis quam facere tenetur officiis sunt vitae unde nisi, tempora, voluptatibus exercitationem.
+                Saepe temporibus esse rem ex architecto, ipsa animi reiciendis ipsum reprehenderit eos laborum molestiae? Odio repudiandae atque temporibus dolorem, delectus debitis, porro dolorum tenetur molestiae voluptate quibusdam laborum, enim ducimus.
+                Necessitatibus quas architecto, ullam illum perspiciatis suscipit, consequatur doloribus dolorum rem vel vero laboriosam facere nam ipsum natus? Earum dolore cum reprehenderit deleniti autem ea, qui odio quis et natus!
+                Inventore nam quas consequuntur harum. Expedita eligendi corporis debitis quo necessitatibus perferendis adipisci fugit magni natus itaque? Unde ipsa reprehenderit perferendis alias vel animi. Eaque aut tempora porro provident nesciunt!
+                Beatae quas, quod est officia saepe dicta, magni ad ex modi ipsa ab ipsum id. Esse maxime fuga facilis laborum, obcaecati eum magnam quas repellat delectus quos dignissimos reiciendis ratione.
+                Omnis sint illum porro nobis repellat? Necessitatibus numquam natus ut sit incidunt quos. Perspiciatis porro, omnis culpa magni eum quas. Ut necessitatibus laboriosam sit officiis temporibus sequi beatae ratione fuga?
+            </p>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, sit voluptate! Quia delectus omnis odit reprehenderit aliquam expedita quod similique quo labore tempore id sit distinctio voluptatem, accusantium obcaecati voluptas.
+                Dolores saepe harum deserunt adipisci nesciunt a amet esse ex recusandae consequatur eligendi natus nobis sapiente commodi, officiis corrupti? Iste quia error sint cum voluptates temporibus? Quaerat at provident odit?
+                Adipisci similique magni modi aliquam, tempora facere nulla vitae alias harum ipsam iusto delectus obcaecati sapiente ducimus quisquam pariatur, facilis itaque error id ab, cupiditate beatae iste! Suscipit, iste debitis.
+                Reprehenderit molestias harum, perspiciatis, accusamus quidem culpa alias aut ut aperiam excepturi consequuntur sequi odit recusandae voluptates molestiae! Assumenda sed libero quis praesentium inventore ipsa. Corporis recusandae inventore voluptatibus perspiciatis?
+            </p>
+        </div>
+    </main>
+</body>
+</html>
