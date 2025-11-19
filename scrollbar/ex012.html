@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de imagens rolaveis</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            width: 400px;
+            border-radius: .8rem;
+            background-color: antiquewhite;
+
+            display: flex;
+            gap: 1rem;
+
+            overflow-x: auto;
+        }
+
+        .box{
+            flex: 0 0 100px;
+            height: 100px;
+            background-color: coral;
+            border-radius: .8rem;
+
+            animation: box-animation .6s linear infinite;
+            /* animation-timeline: scroll(nearest x); */
+        }
+
+        @keyframes box-animation{
+            from{
+                transform: translate(0);
+            }
+            to{
+                transform: translate(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>
