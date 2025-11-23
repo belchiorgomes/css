@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overscroll-behavior</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: antiquewhite;
+            height: 200vh;
+            display: flex;
+        }
+
+        .container{
+            width: 200px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem;
+            border: 2px solid #000;
+            border-radius: .8rem;
+            padding: 1rem;
+            overflow-y: auto;
+
+        }
+
+        .container .box{
+            flex: 0 0 200px;
+            background-color: coral;
+            border-radius: inherit;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        .overscroll-behavior{
+            overscroll-behavior-y: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box">9</div>
+        <div class="box">10</div>
+    </div>
+
+    <div class="container overscroll-behavior">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box">9</div>
+        <div class="box">10</div>
+    </div>
+</body>
+</html>
