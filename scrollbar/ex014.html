@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        nav{
+            position: fixed;
+            top: .8rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            padding: 12px;
+            background-color: rgba(0, 0, 0, 0.466);
+            border-radius: .8rem;
+        }
+
+        nav ul{
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li a{
+            display: block;
+            color: #000;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bolder;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            /* overflow-y: scroll;
+            scroll-snap-type: y mandatory; */
+        }
+
+        .box{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 0 auto;
+            background-color: var(--cor);
+
+            /* scroll-snap-align: start;
+            scroll-margin: 4rem; */
+        }
+
+        .box p{
+            width: 700px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#page01">Page_01</a></li>
+            <li><a href="#page02">Page_02</a></li>
+            <li><a href="#page03">Page_03</a></li>
+            <li><a href="#page04">Page_04</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="box" id="page01" style="--cor:#ff7f50;">
+            <h1>Page 01</h1>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur neque facilis soluta aliquid molestiae minima, enim possimus. Tenetur, quibusdam natus beatae dolor sit vel autem, saepe cupiditate numquam ad error.
+                Unde doloribus libero est enim quis sequi optio at impedit, expedita quia error sunt distinctio cupiditate non corporis iste voluptatum illum architecto similique rem repudiandae id odio sapiente! Similique, praesentium!
+                Magnam dolorum aspernatur in aut repellendus voluptatibus quod omnis incidunt repellat quae hic, dolor nesciunt voluptas pariatur corrupti ipsum impedit eaque perferendis nulla officiis suscipit quos cumque quasi eum. Optio.
+                Expedita, quaerat. Minus nam, itaque tenetur, veniam reprehenderit aspernatur omnis soluta magni repellendus, facilis deserunt. Voluptate esse accusamus excepturi, reprehenderit asperiores assumenda nam explicabo necessitatibus at in maiores atque! Culpa.
+                Exercitationem eius porro, fugit nihil blanditiis nemo placeat unde maiores tempora reprehenderit recusandae ab corrupti eveniet provident obcaecati accusantium et, ad sed nobis qui. Dolores ab ad reiciendis dignissimos accusantium.
+            </p>
+        </section>
+        <section class="box" id="page02" style="--cor:#50fff6;">
+            <h1>Page 02</h1>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur neque facilis soluta aliquid molestiae minima, enim possimus. Tenetur, quibusdam natus beatae dolor sit vel autem, saepe cupiditate numquam ad error.
+                Unde doloribus libero est enim quis sequi optio at impedit, expedita quia error sunt distinctio cupiditate non corporis iste voluptatum illum architecto similique rem repudiandae id odio sapiente! Similique, praesentium!
+                Magnam dolorum aspernatur in aut repellendus voluptatibus quod omnis incidunt repellat quae hic, dolor nesciunt voluptas pariatur corrupti ipsum impedit eaque perferendis nulla officiis suscipit quos cumque quasi eum. Optio.
+                Expedita, quaerat. Minus nam, itaque tenetur, veniam reprehenderit aspernatur omnis soluta magni repellendus, facilis deserunt. Voluptate esse accusamus excepturi, reprehenderit asperiores assumenda nam explicabo necessitatibus at in maiores atque! Culpa.
+                Exercitationem eius porro, fugit nihil blanditiis nemo placeat unde maiores tempora reprehenderit recusandae ab corrupti eveniet provident obcaecati accusantium et, ad sed nobis qui. Dolores ab ad reiciendis dignissimos accusantium.
+            </p>
+        </section>
+        <section class="box" id="page03" style="--cor:#ff50e2;">
+            <h1>Page 03</h1>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur neque facilis soluta aliquid molestiae minima, enim possimus. Tenetur, quibusdam natus beatae dolor sit vel autem, saepe cupiditate numquam ad error.
+                Unde doloribus libero est enim quis sequi optio at impedit, expedita quia error sunt distinctio cupiditate non corporis iste voluptatum illum architecto similique rem repudiandae id odio sapiente! Similique, praesentium!
+                Magnam dolorum aspernatur in aut repellendus voluptatibus quod omnis incidunt repellat quae hic, dolor nesciunt voluptas pariatur corrupti ipsum impedit eaque perferendis nulla officiis suscipit quos cumque quasi eum. Optio.
+                Expedita, quaerat. Minus nam, itaque tenetur, veniam reprehenderit aspernatur omnis soluta magni repellendus, facilis deserunt. Voluptate esse accusamus excepturi, reprehenderit asperiores assumenda nam explicabo necessitatibus at in maiores atque! Culpa.
+                Exercitationem eius porro, fugit nihil blanditiis nemo placeat unde maiores tempora reprehenderit recusandae ab corrupti eveniet provident obcaecati accusantium et, ad sed nobis qui. Dolores ab ad reiciendis dignissimos accusantium.
+            </p>
+        </section>
+        <section class="box" id="page04" style="--cor:#5fff50;">
+            <h1>Page 04</h1>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur neque facilis soluta aliquid molestiae minima, enim possimus. Tenetur, quibusdam natus beatae dolor sit vel autem, saepe cupiditate numquam ad error.
+                Unde doloribus libero est enim quis sequi optio at impedit, expedita quia error sunt distinctio cupiditate non corporis iste voluptatum illum architecto similique rem repudiandae id odio sapiente! Similique, praesentium!
+                Magnam dolorum aspernatur in aut repellendus voluptatibus quod omnis incidunt repellat quae hic, dolor nesciunt voluptas pariatur corrupti ipsum impedit eaque perferendis nulla officiis suscipit quos cumque quasi eum. Optio.
+                Expedita, quaerat. Minus nam, itaque tenetur, veniam reprehenderit aspernatur omnis soluta magni repellendus, facilis deserunt. Voluptate esse accusamus excepturi, reprehenderit asperiores assumenda nam explicabo necessitatibus at in maiores atque! Culpa.
+                Exercitationem eius porro, fugit nihil blanditiis nemo placeat unde maiores tempora reprehenderit recusandae ab corrupti eveniet provident obcaecati accusantium et, ad sed nobis qui. Dolores ab ad reiciendis dignissimos accusantium.
+            </p>
+        </section>
+    </div>
+</body>
+</html>
