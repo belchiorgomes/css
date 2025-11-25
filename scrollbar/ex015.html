@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll-target-group</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        nav{
+            position: fixed;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            background-color: coral;
+            border-radius: .8rem;
+            box-shadow: 0 0 8px #c05e3b;
+        }
+
+        nav ul{
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem;
+        }
+        
+        nav ul li a{
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: bolder;
+        }
+
+        header{
+            background-color: aliceblue;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-size: 2.3rem;
+        }
+
+        section.box{
+            min-height: 100vh;
+        }
+
+        section.box .content{
+            width: 70%;
+            margin: 6rem auto;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#box01">Link 01</a></li>
+            <li><a href="#box02">Link 02</a></li>
+            <li><a href="#box03">Link 03</a></li>
+            <li><a href="#box04">Link 04</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Pagina principal</h1>
+    </header>
+
+    <section class="box" id="box01">
+        <div class="content">
+            <h2>Box 01</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quaerat odio, architecto assumenda neque fugiat blanditiis quidem inventore nemo molestiae quos, temporibus sit velit dolore unde, ex laudantium laboriosam error?
+                Esse inventore aliquid dolor corporis est debitis possimus, ratione minus laboriosam numquam ullam optio, perferendis officiis repellat alias hic, delectus fuga blanditiis. Temporibus, autem at deserunt in omnis repellat fugiat!
+                Soluta, facilis inventore. Dolorum ad, magnam culpa dolores enim totam! Impedit, eaque expedita? Nostrum reiciendis et sunt neque aspernatur cupiditate culpa fuga consequatur earum, non natus consectetur amet provident eos?
+                Libero accusantium nisi placeat blanditiis dicta odit tempore sed perspiciatis sequi suscipit? Placeat esse nobis, inventore eveniet eum saepe odit ea aut illo exercitationem iure at mollitia repellendus ducimus ratione.
+            </p>
+        </div>
+    </section>
+</body>
+</html>
