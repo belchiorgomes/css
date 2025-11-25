@@ -10,6 +10,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: sans-serif;
+            scroll-behavior: smooth;
         }
 
         nav{
@@ -28,6 +29,13 @@
             display: flex;
             justify-content: space-around;
             padding: 1rem;
+
+            scroll-target-group: auto;
+        }
+
+        :target-current{
+            background-color: #fff;
+            color: #000;
         }
         
         nav ul li a{
@@ -36,6 +44,8 @@
             color: #fff;
             font-size: 1.3rem;
             font-weight: bolder;
+            padding: 12px 18px;
+            border-radius: .8rem;
         }
 
         header{
@@ -48,11 +58,23 @@
 
         section.box{
             min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0997a;
         }
 
         section.box .content{
-            width: 70%;
-            margin: 6rem auto;
+            flex: 0 0 70%;
+        }
+
+        section.box .content h2{
+            font-size: 2.3rem;
+        }
+
+        section.box .content p{
+            margin-block: 2rem;
+            line-height: 1.8;
         }
     </style>
 </head>
@@ -73,6 +95,42 @@
     <section class="box" id="box01">
         <div class="content">
             <h2>Box 01</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quaerat odio, architecto assumenda neque fugiat blanditiis quidem inventore nemo molestiae quos, temporibus sit velit dolore unde, ex laudantium laboriosam error?
+                Esse inventore aliquid dolor corporis est debitis possimus, ratione minus laboriosam numquam ullam optio, perferendis officiis repellat alias hic, delectus fuga blanditiis. Temporibus, autem at deserunt in omnis repellat fugiat!
+                Soluta, facilis inventore. Dolorum ad, magnam culpa dolores enim totam! Impedit, eaque expedita? Nostrum reiciendis et sunt neque aspernatur cupiditate culpa fuga consequatur earum, non natus consectetur amet provident eos?
+                Libero accusantium nisi placeat blanditiis dicta odit tempore sed perspiciatis sequi suscipit? Placeat esse nobis, inventore eveniet eum saepe odit ea aut illo exercitationem iure at mollitia repellendus ducimus ratione.
+            </p>
+        </div>
+    </section>
+
+    <section class="box" id="box02">
+        <div class="content">
+            <h2>Box 02</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quaerat odio, architecto assumenda neque fugiat blanditiis quidem inventore nemo molestiae quos, temporibus sit velit dolore unde, ex laudantium laboriosam error?
+                Esse inventore aliquid dolor corporis est debitis possimus, ratione minus laboriosam numquam ullam optio, perferendis officiis repellat alias hic, delectus fuga blanditiis. Temporibus, autem at deserunt in omnis repellat fugiat!
+                Soluta, facilis inventore. Dolorum ad, magnam culpa dolores enim totam! Impedit, eaque expedita? Nostrum reiciendis et sunt neque aspernatur cupiditate culpa fuga consequatur earum, non natus consectetur amet provident eos?
+                Libero accusantium nisi placeat blanditiis dicta odit tempore sed perspiciatis sequi suscipit? Placeat esse nobis, inventore eveniet eum saepe odit ea aut illo exercitationem iure at mollitia repellendus ducimus ratione.
+            </p>
+        </div>
+    </section>
+
+    <section class="box" id="box03">
+        <div class="content">
+            <h2>Box 03</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quaerat odio, architecto assumenda neque fugiat blanditiis quidem inventore nemo molestiae quos, temporibus sit velit dolore unde, ex laudantium laboriosam error?
+                Esse inventore aliquid dolor corporis est debitis possimus, ratione minus laboriosam numquam ullam optio, perferendis officiis repellat alias hic, delectus fuga blanditiis. Temporibus, autem at deserunt in omnis repellat fugiat!
+                Soluta, facilis inventore. Dolorum ad, magnam culpa dolores enim totam! Impedit, eaque expedita? Nostrum reiciendis et sunt neque aspernatur cupiditate culpa fuga consequatur earum, non natus consectetur amet provident eos?
+                Libero accusantium nisi placeat blanditiis dicta odit tempore sed perspiciatis sequi suscipit? Placeat esse nobis, inventore eveniet eum saepe odit ea aut illo exercitationem iure at mollitia repellendus ducimus ratione.
+            </p>
+        </div>
+    </section>
+
+    <section class="box" id="box04">
+        <div class="content">
+            <h2>Box 04</h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quaerat odio, architecto assumenda neque fugiat blanditiis quidem inventore nemo molestiae quos, temporibus sit velit dolore unde, ex laudantium laboriosam error?
                 Esse inventore aliquid dolor corporis est debitis possimus, ratione minus laboriosam numquam ullam optio, perferendis officiis repellat alias hic, delectus fuga blanditiis. Temporibus, autem at deserunt in omnis repellat fugiat!
