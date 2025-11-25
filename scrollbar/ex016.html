@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll-timeline</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Configuração inicial para cobrir a tela */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* 1. O Contêiner de Rolagem: Cria o espaço para o efeito */
+.scroll-container {
+  /* Altura extra para permitir a rolagem */
+  height: 500vh; /* Ajuste este valor para controlar a "velocidade" e o comprimento do efeito */
+  background-color: #f0f0f0;
+}
+
+/* 2. O Wrapper Fixo: Mantém o card na tela */
+.sticky-wrapper {
+  position: sticky;
+  top: 0; /* Fixa o elemento no topo da viewport */
+  height: 100vh; /* Ocupa a altura da tela */
+  width: 100vw; /* Ocupa a largura da tela */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Garante que o conteúdo não vaze */
+}
+
+/* 3. O Card: Aplicação inicial e final do tamanho */
+.card {
+  /* Tamanho inicial: Ocupa a tela inteira */
+  width: 100vw;
+  height: 100vh;
+  background-color: #3498db;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease-out; /* Adiciona uma transição suave (opcional) */
+}
+
+/* 4. O Efeito de Escala: O truque principal */
+/* Este é o ponto onde o CSS puro é limitado. Você só pode definir um estado inicial (100vh/100vw) */
+/* e um estado final (o tamanho que você quer: 300px/200px) no CSS. */
+/* O CSS puro NÃO consegue ligar a rolagem diretamente ao valor de 'scale()' em tempo real. */
+
+/* === LIMITAÇÃO DO CSS PURO === */
+/* Para simular a diminuição em CSS, você precisaria de mais HTML e CSS (muito mais complexo) */
+/* ou, mais simplesmente, usar o novo recurso "scroll-driven-animations". */
+/* Se for para navegadores modernos, use o próximo passo: */
+
+    /* 1. Define a animação de diminuição/zoom-out */
+@keyframes zoomOut {
+  from {
+    /* Estado inicial: 100vw/100vh (Scale = 1) */
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    /* Estado final: Diminuir para simular a saída da tela */
+    /* Para ir de 100vh/100vw para 300px/200px, você calcularia o fator de escala */
+    /* Ex: Se a viewport for 1000px de largura, o fator é 200/1000 = 0.2 */
+    transform: scale(0.2);
+    /* Para atingir 300px de largura e 200px de altura, o cálculo exato seria: */
+    /* scaleX(300 / 100vw) e scaleY(200 / 100vh). Como é impossível no CSS, */
+    /* definimos um valor fixo de escala para simular a diminuição. */
+    opacity: 0.8; /* Diminui a opacidade um pouco ao diminuir */
+  }
+}
+
+/* 2. Aplica a linha do tempo de rolagem ao contêiner */
+.scroll-container {
+  height: 500vh; /* Altura de rolagem para o efeito */
+  view-timeline-axis: block; /* Acompanha a rolagem vertical */
+  view-timeline-name: --card-scroll; /* Define um nome para a linha do tempo */
+}
+
+/* 3. Aplica a animação ao card */
+.card {
+  /* ... (Estilos anteriores) ... */
+  animation: zoomOut linear;
+  animation-timeline: --card-scroll;
+  /* Define o intervalo de rolagem que aciona a animação */
+  animation-range: entry 0% cover 50%; /* A animação corre desde o início da rolagem (0%) até 50% do contêiner */
+}
+    </style>
+</head>
+<body>
+    <div class="scroll-container">
+        <div class="sticky-wrapper">
+            <div class="card">
+                <h1>Zoom Out ao Rolar</h1>
+                <p>Este card vai diminuir.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="filler-content">
+       <p>Conteúdo que aparece após o efeito de zoom.</p>
+    </div>
+</body>
+</html>
