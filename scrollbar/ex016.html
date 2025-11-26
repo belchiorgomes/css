@@ -22,7 +22,7 @@ body, html {
 /* 1. O Contêiner de Rolagem: Cria o espaço para o efeito */
 .scroll-container {
   /* Altura extra para permitir a rolagem */
-  height: 500vh; /* Ajuste este valor para controlar a "velocidade" e o comprimento do efeito */
+  height: 300vh; /* Ajuste este valor para controlar a "velocidade" e o comprimento do efeito */
   background-color: #f0f0f0;
 }
 
@@ -75,7 +75,7 @@ body, html {
     /* Estado final: Diminuir para simular a saída da tela */
     /* Para ir de 100vh/100vw para 300px/200px, você calcularia o fator de escala */
     /* Ex: Se a viewport for 1000px de largura, o fator é 200/1000 = 0.2 */
-    transform: scale(0.2);
+    transform: scale(.2);
     /* Para atingir 300px de largura e 200px de altura, o cálculo exato seria: */
     /* scaleX(300 / 100vw) e scaleY(200 / 100vh). Como é impossível no CSS, */
     /* definimos um valor fixo de escala para simular a diminuição. */
@@ -85,7 +85,7 @@ body, html {
 
 /* 2. Aplica a linha do tempo de rolagem ao contêiner */
 .scroll-container {
-  height: 500vh; /* Altura de rolagem para o efeito */
+  /* height: 100vh; */
   view-timeline-axis: block; /* Acompanha a rolagem vertical */
   view-timeline-name: --card-scroll; /* Define um nome para a linha do tempo */
 }
@@ -96,7 +96,7 @@ body, html {
   animation: zoomOut linear;
   animation-timeline: --card-scroll;
   /* Define o intervalo de rolagem que aciona a animação */
-  animation-range: entry 0% cover 50%; /* A animação corre desde o início da rolagem (0%) até 50% do contêiner */
+  animation-range: entry 100% cover 100%; /* A animação corre desde o início da rolagem (0%) até 50% do contêiner */
 }
     </style>
 </head>
@@ -110,8 +110,8 @@ body, html {
         </div>
     </div>
 
-    <div class="filler-content">
+    <!-- <div class="filler-content">
        <p>Conteúdo que aparece após o efeito de zoom.</p>
-    </div>
+    </div> -->
 </body>
 </html>
