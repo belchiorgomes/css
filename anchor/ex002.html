@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: grid;
+            place-content: center;
+        }
+
+        ul{
+            list-style-type: none;
+        }
+
+        ul li{
+            width: 150px;
+            padding: 12px 18px;
+            border-radius: .8rem;
+            background-color: coral;
+
+            position: absolute;
+            anchor-name: --btn;
+        }
+
+        ul li a{
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            color: #000;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        ul li > ul{
+            display: block;
+            position: absolute;
+            position-anchor: --btn;
+            width: anchor-size(width);
+            top: calc(anchor(top) + 78px);
+            left: anchor(center);
+            transform: translateX(-50%);
+        }
+
+        ul li:hover > ul{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="#">Home</a>
+
+            <ul>
+                <li><a href="#">Link01</a></li>
+                <li><a href="#">Link02</a></li>
+                <li><a href="#">Link03</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
