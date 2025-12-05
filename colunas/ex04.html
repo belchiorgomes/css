@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>column-count</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section{
+            width: 100%;
+            max-width: 750px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: antiquewhite;
+        }
+
+        section h1{
+            text-align: center;
+            margin-block-end: 1rem;
+        }
+
+        section{
+            column-count: 3;
+            column-fill: balance;
+            column-gap: 3rem;
+            column-rule-color: black;
+            column-rule-style: solid;
+            column-width: 300px;
+        }
+
+        h1{
+            column-span: all;
+        }
+
+        p{
+            margin-block: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Propriedades css column</h1>
+        <article>
+            <h3>01</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quasi enim velit porro quaerat iste blanditiis corporis laborum et minima alias similique, autem, repellat quam, vero consectetur illo sit minus.
+            </p>
+        </article>
+
+        <article>
+            <h3>02</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quasi enim velit porro quaerat iste blanditiis corporis laborum et minima alias similique, autem, repellat quam, vero consectetur illo sit minus.
+            </p>
+        </article>
+
+        <article>
+            <h3>03</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quasi enim velit porro quaerat iste blanditiis corporis laborum et minima alias similique, autem, repellat quam, vero consectetur illo sit minus.
+            </p>
+        </article>
+
+        <article>
+            <h3>04</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quasi enim velit porro quaerat iste blanditiis corporis laborum et minima alias similique, autem, repellat quam, vero consectetur illo sit minus.
+            </p>
+        </article>
+    </section>
+</body>
+</html>
