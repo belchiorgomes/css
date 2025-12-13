@@ -9,6 +9,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: sans-serif;
         }
 
         body{
@@ -18,59 +19,99 @@
             background-color: #000018;
         }
 
-        .card-container{
-            width: 300px;
-            height: 300px;
-            padding: 1.3rem;
-            color: #fff;
+        .card{
+            position: relative;
+            width: 350px;
+            height: 350px;
+            background-color: #000;
             border-radius: 50%;
-            background-color: #000018;
-            box-shadow: 0 0 12px #c50000,
-                        0 0 22px #c50000;
+            filter: drop-shadow(0 0 12px red) drop-shadow(0 0 18px red);
+            transition: all .6s ease-in;
+            transition-delay: 0.2s;
+
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            transition: all .6s ease-in-out;
         }
 
-        .card-container .card{
-            display: none;
-            transition-delay: 8s;
-            transition: all .6s ease-in-out;
-        }
-
-        .card-container:hover{
-            width: 500px;
+        .card:hover{
+            width: 550px;
             border-radius: .8rem;
-            background-color: #c50000;
+            background-color: red;
         }
 
-        .card-container .card-logo{
-            transform: scale(1);
-            transition: all .6s ease-in-out;
+        .card .logo{
+            transition: all .6s ease-in;
+            transition-delay: 0.2s;
         }
 
-        .card-container:hover .card-logo{
+        .card:hover .logo{
+            top: 50%;
+            left: 50%;
             transform: scale(0);
-            /* display: none; */
         }
 
-        .card-container:hover .card{
-            display: block;
-            transition-delay: 4s;
+        .card .imagem{
+            position: absolute;
+            top: -70px;
+            left: 60%;
+            transform: scale(0) rotate(70deg);
+            /* transition-delay: 0.75s; */
+            transition: all .6s ease-in;
+        }
+
+        .card:hover .imagem{
+            transform: scale(1) rotate(360deg);
+            transition-delay: 0.75s;
+        }
+
+        .card .imagem img{
+            width: 180px;
+        }
+
+        .card .content{
+            position: absolute;
+            left: 30px;
+            color: #fff;
+            width: 40%;
+            padding: .8rem;
+            visibility: hidden;
+            transition-delay: 0.8s;
+            transition: all .6s ease-in;
+        }
+
+        .card .content h1{
+            text-align: center;
+            font-weight: bolder;
+            font-size: 30px;
+        }
+
+        .card .content p{
+            text-align: center;
+            margin-block: 1rem;
+        }
+
+        .card:hover .content{
+            left: 30px;
+            visibility: visible;
+            transition-delay: 0.8s;
         }
     </style>
 </head>
 <body>
-    <div class="card-container">
-        <div class="card-logo">
-            <h1>Card logo</h1>
+    <div class="card">
+        <div class="logo">
+            <img src="imagem/cocacola_logo.png" alt="Logo da coca cola">
         </div>
-        <div class="card">
-            <h2>Card</h2>
+
+        <div class="imagem">
+            <img src="imagem/cocacola.png" alt="Garrafa de coca cola">
+        </div>
+
+        <div class="content">
+            <h1>Coca-Cola</h1>
             <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente ipsam, nemo eius neque nesciunt repudiandae vero placeat natus molestias eligendi commodi officia obcaecati, aut recusandae eaque! Molestiae doloremque sint quae.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aliquam ipsa aspernatur.
             </p>
         </div>
     </div>
