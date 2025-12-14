@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>corner-shape</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: grid;
+            place-content: center;
+        }
+
+        .box{
+            position: relative;
+            width: 550px;
+            aspect-ratio: 16 / 9;
+            background-color: aqua;
+            transition: all .6s ease-in-out;
+            box-shadow: 0 0 12px #00b3b3;
+
+            border-radius: .8rem;
+            /* border-top-right-radius: 3rem; */
+            /* corner-top-right-shape: scoop; */
+
+            anchor-name: --box;
+        }
+
+        .box:hover{
+            border-top-right-radius: 3rem;
+            corner-top-right-shape: scoop;
+        }
+
+        .box::before{
+            position: fixed;
+            content: '👍';
+            width: 80px;
+            height: 80px;
+            background-color: #5d0070;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 80px;
+            font-size: 2em;
+            transform: scale(0);
+            transition: all .6s ease-in-out;
+
+            position-anchor: --box;
+            top: calc(anchor(top) - 40px);
+            left: calc(anchor(right) - 40px);
+        }
+
+        .box:hover::before{
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
