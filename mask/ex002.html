@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mask</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img{
+            block-size: 100%;
+            inline-size: 100%;
+            object-fit: cover;
+        }
+
+        .hero{
+            display: grid;
+            grid-template-columns: 1fr;
+            outline: 1px dashed;
+            outline-offset: 0.5rem;
+            margin-block-start: 3rem;
+        }
+
+        .slide{
+            grid-area: 1 / 1;
+            block-size: 70vh;
+            inline-size: 80%;
+            margin-inline: auto;
+            border-radius: .5rem;
+            overflow: hidden;
+            font-size: 4rem;
+            text-align: center;
+            align-content: center;
+        }
+
+        .slide:nth-child(1){
+            background-color: cadetblue;
+        }
+
+        .slide:nth-child(2){
+            background-color: coral;
+        }
+
+        @property --position{
+            syntax: "<percentage>";
+            inherits: false;
+            initial-value: 0%;
+        }
+
+        .wipe-effect-1 .slide:nth-child(2){
+            --size: 0%;
+
+            /* mask-image: linear-gradient(
+                90deg, #000, #0000
+            );
+
+            mask-image: linear-gradient(
+                90deg, #000 40%, #0000 40%
+            ); */
+
+            /* mask-image: linear-gradient(
+                90deg,
+                #000 calc(var(--position) - var(--size)),
+                #0000 calc(var(--position))
+            ); */
+
+            mask-image: radial-gradient(
+                circle,
+                #000 calc(var(--position) - var(--size)),
+                #0000 calc(var(--position))
+            );
+
+            /* mask-image: conic-gradient(
+                #000 calc(var(--position) - var(--size)),
+                #0000 calc(var(--position))
+            ); */
+
+            transition: --position 0.5s ease-in-out;
+        }
+
+        .slide:nth-child(2):hover{
+            --position: calc(100% + var(--size));
+        }
+    </style>
+</head>
+<body>
+    <section class="hero wipe-effect-1">
+        <div class="slide">
+            <img src="imagem/img04.jpg" alt="">    
+        </div>
+        <div class="slide">
+            <img src="imagem/img05.jpg" alt="">      
+        </div>
+    </section>
+</body>
+</html>
