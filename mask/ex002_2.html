@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .box{
+            grid-area: 1 / 1;
+            inline-size: 600px;
+            aspect-ratio: 16 / 9;
+            margin: 6rem auto;
+            font-size: 8rem;
+            text-align: center;
+            align-content: center;
+            border-radius: .8rem;
+            transition: all .6s ease-in-out;
+        }
+
+        @property --position{
+            syntax: "<percentage>";
+            inherits: false;
+            initial-value: 0%;
+        }
+
+        .box:nth-child(2){
+            --size: 0%;
+            mask-image: linear-gradient(
+                90deg,
+                #000 calc(var(--position) + 20%),
+                #0000 calc(var(--position) + 40%),
+                #0000 calc(var(--position))
+            );
+
+            transition: --position .6s ease-in-out;
+        }
+
+        .box:nth-child(2):hover{
+            --position: calc(100% + var(--size));
+        }
+
+        .box:nth-child(1){
+            background-color: aqua;
+        }
+
+        .box:nth-child(2){
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+    </div>
+</body>
+</html>
