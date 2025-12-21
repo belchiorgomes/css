@@ -19,34 +19,37 @@
         }
 
         .container{
-            position: relative;
-            border-radius: .8rem;
-            background-color: aliceblue;
             display: grid;
             grid-template-columns: 1fr;
             overflow: hidden;
         }
 
         .box{
-            /* position: absolute; */
+            grid-area: 1 / 1;
             inline-size: 180px;
             block-size: 100px;
-            grid-area: 1 / 1;
+            overflow: hidden;
+            border-radius: .8rem;
+            transition: all .6s ease-in-out;
         }
 
-        .btn01{
+        .box01{
             background-color: coral;
         }
 
-        .btn02{
+        .box:hover{
+            transform: rotate(80deg) scaleX(2);
+        }
+
+        .box02{
             background-color: aqua;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="box btn01"></div>
-        <div class="box btn02">button</div>
+        <div class="box box01"></div>
+        <div class="box box02"></div>
     </div>
 </body>
 </html>
