@@ -19,37 +19,62 @@
         }
 
         .container{
-            display: grid;
-            grid-template-columns: 1fr;
-            overflow: hidden;
-        }
-
-        .box{
-            grid-area: 1 / 1;
-            inline-size: 180px;
-            block-size: 100px;
-            overflow: hidden;
+            position: relative;
+            inline-size: 300px;
+            block-size: 180px;
+            background-color: white;
+            padding: .8rem;
+            text-align: center;
             border-radius: .8rem;
-            transition: all .6s ease-in-out;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1.8rem;
         }
 
-        .box01{
-            background-color: coral;
+        @property --angle{
+            syntax: "<angle>";
+            inherits: false;
+            initial-value: 0deg;
         }
 
-        .box:hover{
-            transform: rotate(80deg) scaleX(2);
+        .container::after, .container::before{
+            position: absolute;
+            content: "";
+            inset: 0;
+            /* background-image: conic-gradient(from var(--angle), #ff7f50, #48a4fa, #57ff9d, #4c2dff); */
+            /* background-image: linear-gradient(var(--angle), coral, transparent, transparent, blue); */
+            background-image: conic-gradient(from var(--angle), transparent 90%, #ff2549);
+            /* background-image: linear-gradient(var(--angle), coral, transparent, transparent, aqua); */
+            z-index: -1;
+            transform: scale(1.04);
+            border-radius: .8rem;
+
+            animation: spin 3s linear infinite;
         }
 
-        .box02{
-            background-color: aqua;
+        .container::before{
+            filter: blur(10px);
+        }
+
+        @keyframes spin{
+            from{
+                --angle: 0deg;
+            }
+
+            to{
+                --angle: 360deg;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="box box01"></div>
-        <div class="box box02"></div>
+        <h1>Bordas animadas</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
     </div>
 </body>
 </html>
