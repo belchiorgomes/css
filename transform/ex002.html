@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transformações 3d</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: grid;
+            place-content: center;
+        }
+
+        .container{
+            position: relative;
+            inline-size: 200px;
+            block-size: 300px;
+            border-radius: .8rem;
+           transform-style: preserve-3d;
+        }
+
+        .box{
+            position: absolute;
+            inline-size: 100%;
+            block-size: 100%;
+            background-color: var(--cor);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all .6s ease-in-out;
+        }
+
+        .container:hover .box{
+            transform: rotateY(180deg);
+        }
+
+        .box:nth-child(2){
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" style="--cor: coral;">Box 01</div>
+        <div class="box" style="--cor: aqua;">Box 02</div>
+    </div>
+</body>
+</html>

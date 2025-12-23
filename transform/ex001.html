@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transformações 3d</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 50%;
+            border: 2px solid #000;
+            border-radius: .8rem;
+            margin: 4rem auto;
+            padding: 1rem;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            perspective: 500px;
+        }
+
+        .box{
+            flex: 0 0 200px;
+            aspect-ratio: 1;
+            border: inherit;
+            border-radius: inherit;
+            background-color: coral;
+            transition: all .6s ease-in-out;
+        }
+
+        .box01:hover{
+            transform: rotateY(45deg);
+        }
+
+        .box02:hover{
+            transform: perspective(300px) rotateX(45deg);
+        }
+
+        .box03:hover{
+            transform: rotateY(45deg);
+            perspective-origin: right bottom;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box01"></div>
+        <div class="box box02"></div>
+        <div class="box box03"></div>
+    </div>
+</body>
+</html>
