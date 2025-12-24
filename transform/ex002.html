@@ -17,38 +17,41 @@
             place-content: center;
         }
 
-        .container{
+        .card{
             position: relative;
-            inline-size: 200px;
-            block-size: 300px;
-            border-radius: .8rem;
-           transform-style: preserve-3d;
-        }
-
-        .box{
-            position: absolute;
-            inline-size: 100%;
-            block-size: 100%;
-            background-color: var(--cor);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: grid;
+            grid-template-columns: 1fr;
+            transform-style: preserve-3d;
             transition: all .6s ease-in-out;
         }
 
-        .container:hover .box{
+        .card-face{
+            grid-area: 1 / 1;
+            width: 200px;
+            height: 300px;
+            border: 2px solid #000;
+            border-radius: .8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.3rem;
+            backface-visibility: hidden;
+            background-color: var(--cor);
+        }
+
+        .card:hover{
             transform: rotateY(180deg);
         }
 
-        .box:nth-child(2){
-            visibility: hidden;
+        .card-back{
+            transform: rotateY(180deg);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="box" style="--cor: coral;">Box 01</div>
-        <div class="box" style="--cor: aqua;">Box 02</div>
+    <div class="card">
+        <div class="card-face card-front" style="--cor: coral;">Front</div>
+        <div class="card-face card-back" style="--cor: aqua;">Back</div>
     </div>
 </body>
 </html>
