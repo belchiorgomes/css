@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efeito de vidro no calendario</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e9e9e9;
+        }
+
+        .container{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container::after, .container::before{
+            position: absolute;
+            content: "";
+            top: -130px;
+            left: -40px;
+            width: 20px;
+            height: 60px;
+            border-radius: 2rem;
+            background-color: #fff;
+            box-shadow: 0 0 12px #d1d1d1;
+            z-index: 1;
+        }
+
+        .container::before{
+            left: 20px;
+        }
+
+        .box{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 2rem;
+            box-shadow: 0 0 12px #d1d1d1;
+        }
+
+        .box-fundo{
+            background-image: linear-gradient(45deg, orange, red);
+        }
+
+        .box-date{
+            top: -20px;
+            background-color: rgba(255, 255, 255, 0.185);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box-date span{
+            font-size: 1.8rem;
+            font-family: sans-serif;
+        }
+
+        .box-date span:nth-child(1){
+            color: #6e0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box-fundo"></div>
+        <div class="box box-date">
+            <span>Sun</span>
+            <span>28</span>
+        </div>
+    </div>
+</body>
+</html>
