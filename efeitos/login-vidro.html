@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Formulario de login com efeito de vidro</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body{
+            min-height: 100vh;
+            display: grid;
+            place-content: center;
+            background-image: url("img/img01.jpg");
+            background-size: contain;
+        }
+
+        form{
+            inline-size: 300px;
+            aspect-ratio: 16 / 9;
+            background-color: rgba(255, 255, 255, 0.096);
+            backdrop-filter: blur(3px);
+            border-radius: 1rem;
+            box-shadow: 0 0 6px #fff;
+            padding: 1.8rem;
+        }
+
+        form h1{
+            text-transform: uppercase;
+        }
+
+        form .container-input{
+            width: 100%;
+            margin-block: 1.4rem;
+            display: grid;
+            gap: 1rem;
+        }
+
+        form .container-input input{
+            display: block;
+            border: none;
+            outline: none;
+            border-radius: .6rem;
+            padding: 8px;
+            background-color: rgba(255, 255, 255, 0.096);
+            backdrop-filter: blur(3px);
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.226);
+        }
+
+        form .container-input input::placeholder{
+            color: rgba(255, 255, 255, 0.589);
+        }
+
+        form a{
+            display: block;
+            text-align: right;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.26);
+            font-size: .8rem;
+            transition: all .6s ease-in-out;
+        }
+
+        form p{
+            text-align: center;
+            color: rgba(255, 255, 255, 0.26);
+            margin-block: 1rem;
+        }
+
+        form .container-midias{
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        form .container-midias a{
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <h1>login</h1>
+
+        <div class="container-input">
+            <input type="email" name="email" placeholder="Email ou Username">
+            <input type="password" name="senha" placeholder="Password">
+        </div>
+
+        <a href="#">Forgot password?</a>
+
+        <p>or</p>
+
+        <div class="container-midias">
+            <a href=""><i class="fa-brands fa-google"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+    </form>
+</body>
+</html>
