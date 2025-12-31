@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag Select html</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: grid;
+            place-content: center;
+            background-color: #03001b;
+        }
+
+        select, ::picker(select){
+            appearance: base-select;
+            background-color: #0a0053;
+            border: none;
+            border-radius: .6rem;
+            outline: none;
+            margin-block: 30px;
+        }
+
+
+
+        select::picker-icon{
+            display: none;
+        }
+
+        form{
+            inline-size: 450px;
+            padding: 1.2rem 2rem;
+            border-radius: .6rem;
+            background-color: #04002c;
+            box-shadow: 0 0 12px #03001b;
+
+            label{
+                color: #fff;
+                font-family: sans-serif;
+                font-size: 1.3rem;
+                display: block;
+                margin-block-end: 2rem;
+            }
+
+            .selectedcontent{
+                width: 200px;
+                padding: .8rem;
+                border: none;
+                border-radius: .6rem;
+                outline: none;
+                background-color: #0a0053;
+                color: #fff;
+                font-size: 1.2rem;
+
+                option{
+                    padding: 12px;
+                    display: flex;
+                    gap: 12px;
+
+                    &::checkmark{
+                        display: none;
+                    }
+
+                    &:checked{
+                        background-color: #a86629;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <label for="selecao">Selecione um animal</label>
+        <select id="selecao" class="selectedcontent">
+            <button>
+                <selectedcontent></selectedcontent>
+            </button>
+
+            <option value="dog">
+                <span class="icon">🐶</span>
+                <span class="title">Dog</span>
+            </option>
+
+            <option value="cat">
+                <span class="icon">😺</span>
+                <span class="title">Cat</span>
+            </option>
+        </select>
+    </form>
+</body>
+</html>
