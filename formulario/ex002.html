@@ -15,85 +15,81 @@
             min-height: 100vh;
             display: grid;
             place-content: center;
-            background-color: #03001b;
+            background-color: #d67200;
         }
 
         select, ::picker(select){
             appearance: base-select;
-            background-color: #0a0053;
+        }
+
+        select{
+            background-color: #fff;
+            inline-size: 120px;
+            padding: 12px 18px;
             border: none;
-            border-radius: .6rem;
             outline: none;
-            margin-block: 30px;
-        }
+            transition: all .6s ease-in-out;
 
+            option{
+                width: 180px;
+                padding: 12px 18px;
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
 
-
-        select::picker-icon{
-            display: none;
-        }
-
-        form{
-            inline-size: 450px;
-            padding: 1.2rem 2rem;
-            border-radius: .6rem;
-            background-color: #04002c;
-            box-shadow: 0 0 12px #03001b;
-
-            label{
-                color: #fff;
-                font-family: sans-serif;
-                font-size: 1.3rem;
-                display: block;
-                margin-block-end: 2rem;
+                &::checkmark{
+                    content: "✅";
+                }
             }
 
-            .selectedcontent{
-                width: 200px;
-                padding: .8rem;
+            &::picker-icon{
+                color: #000;
+                transition: transform .6s ease-in-out;
+            }
+
+            &::picker(select){
+                background-color: #422300;
+                color: #fff;
                 border: none;
                 border-radius: .6rem;
                 outline: none;
-                background-color: #0a0053;
-                color: #fff;
-                font-size: 1.2rem;
-
-                option{
-                    padding: 12px;
-                    display: flex;
-                    gap: 12px;
-
-                    &::checkmark{
-                        display: none;
-                    }
-
-                    &:checked{
-                        background-color: #a86629;
-                        color: #fff;
-                    }
-                }
+                margin-top: 12px;
             }
+
+            &:open::picker-icon{
+                transform: rotate(180deg);
+            }
+
+            selectedcontent{
+                color: #000;
+                font-weight: bolder;
+            }
+        }
+
+        select:hover, select:open{
+            background-color: #422300;
         }
     </style>
 </head>
 <body>
-    <form action="#">
-        <label for="selecao">Selecione um animal</label>
-        <select id="selecao" class="selectedcontent">
-            <button>
-                <selectedcontent></selectedcontent>
-            </button>
+    <select>
+        <button>
+            <selectedcontent></selectedcontent>
+        </button>
+        <option value="dog">
+            <span class="icon">🐶</span>
+            <span class="text">Dog</span>
+        </option>
 
-            <option value="dog">
-                <span class="icon">🐶</span>
-                <span class="title">Dog</span>
-            </option>
+        <option value="cat">
+            <span class="icon">😺</span>
+            <span class="text">Cat</span>
+        </option>
 
-            <option value="cat">
-                <span class="icon">😺</span>
-                <span class="title">Cat</span>
-            </option>
-        </select>
-    </form>
+        <option value="bird">
+            <span class="icon">🐦</span>
+            <span class="text">Bird</span>
+        </option>
+    </select>
 </body>
 </html>
