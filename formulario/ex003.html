@@ -16,27 +16,90 @@
             min-height: 100vh;
             display: grid;
             place-content: center;
-            background-color: rgb(0, 163, 163);
+            background-color: #00a3a3;
         }
 
         select{
             appearance: base-select;
-            inline-size: 150px;
-            padding: 12px 18px;
-            background-color: #fff;
+            inline-size: 220px;
+            padding: 18px;
+            background-color: #003d3d;
             border: none;
             border-radius: .6rem;
             outline: none;
             cursor: pointer;
             transition: all .5s ease-in-out;
+            display: flex;
+            align-items: center;
+
+            selectedcontent{
+                color: #fff;
+                font-weight: bolder;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                .icon{
+                    width: 30px;
+                    height: 30px;
+                    background-color: #fff;
+                    color: #001f1f;
+                    border-radius: .6rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
 
             &::picker(select){
                 appearance: base-select;
+                margin-top: 20px;
+                border: none;
+                border-radius: .6rem;
+                outline: none;
+                color: #fff;
+                font-weight: bolder;
+            }
+
+            &::picker-icon{
+                color: #fff;
+                transition: transform .3s ease-in-out;
+            }
+
+            &:open::picker-icon{
+                transform: rotate(60deg);
             }
 
             option{
                 width: 100%;
                 height: 100%;
+                background-color: #003d3d; 
+                padding: 12px 18px;
+                transition: all .6s ease-in-out;
+                display: flex;
+                gap: 18px;
+
+                .icon{
+                    width: 30px;
+                    height: 30px;
+                    background-color: #fff;
+                    border-radius: .6rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    i{
+                        color: #001f1f;
+                    }
+                }
+
+                &:hover{
+                    background-color: #001f1f;
+                }
+
+                &::checkmark{
+                    display: none;
+                }
             }
         }
     </style>
@@ -51,7 +114,7 @@
             <span class="icon">
                  <span class="icon"><i class="fa-brands fa-html5"></i></span>
             </span>
-            <span class="text">tml</span>
+            <span class="text">HTML</span>
             <!-- <span class="text">HyperText Markup Language</span> -->
         </option>
 
@@ -59,7 +122,7 @@
             <span class="icon">
                  <span class="icon"><i class="fa-brands fa-css3-alt"></i></span>
             </span>
-            <span class="text">ss</span>
+            <span class="text">CSS</span>
             <!-- <span class="text">Cascading Style Sheets</span> -->
         </option>
 
@@ -67,7 +130,7 @@
             <span class="icon">
                  <span class="icon"><i class="fa-brands fa-square-js"></i></span>
             </span>
-            <span class="text">s</span>
+            <span class="text">JS</span>
             <!-- <span class="text">JavaScript is a programming language and core technology of the Web</span> -->
         </option>
     </select>
