@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root{
+            --cor-fundo: if(
+                media(width <= 450px): coral;
+                media(width <= 770px): tomato;
+                else: #c2c2c2;
+            );
+        }
+
+        section{
+            max-width: 800px;
+            padding: 1.4rem;
+            margin: 18px auto;
+            border-radius: 1rem;
+            background-color: var(--cor-fundo);
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>IF()</h1>
+        <p>
+            A função CSS permite que valores diferentes sejam definidos para uma propriedade dependendo do resultado de um teste condicional. O teste pode ser baseado em uma consulta de estilo , uma consulta de mídia ou uma consulta de recurso .if()
+        </p>
+    </section>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --theme: "darck";
+        }
+
+        body{
+            min-height: 100vh;
+            display: grid;
+            place-content: center;
+            font-family: sans-serif;
+            color: if(
+                style(--theme: "darck"): #fff;
+                style(--theme: "light"): #000;
+            );
+            background-color: if(
+                style(--theme: "darck"): #000;
+                style(--theme: "light"): #fff;
+            );
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Function if else in css</h1>
+</body>
+</html>

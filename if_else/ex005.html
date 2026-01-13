@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark-mode</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            min-height: 100vh;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            /* background-color: aqua; */
+            --cor-fundo: attr(data-color);
+            background-color: if(
+                style(--cor-fundo: "dark"): #000;
+                style(--cor-fundo: "light"): #fff;
+            );
+        }
+
+        input:checked ~ .btn-dark{
+            background-color: dark;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="dark-mode">
+
+    <div class="container" data-light="light">
+        <h1>Exemplo de <span>Dark-Mode</span></h1>
+        <p>
+            Este fundo muda de cor apenas com css!
+        </p>
+
+        <label for="dark-mode" class="btn btn-dark" data-color="dark">Dark</label>
+
+        <label for="dark-mode" class="btn" data-color="light">Light</label>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            --cor: attr(data-var);
+            inline-size: 300px;
+            block-size: 200px;
+            border-radius: .8rem;
+            background-color: if(
+                style(--cor: "darck"): #000;
+                style(--cor: "light"): #fff;
+            );
+
+            box-shadow: 0 0 12px #c1c1c1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" data-var="darck"></div>
+</body>
+</html>
