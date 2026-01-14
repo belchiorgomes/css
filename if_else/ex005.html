@@ -17,31 +17,79 @@
             position: fixed;
             top: 0;
             left: 0;
-            /* background-color: aqua; */
-            --cor-fundo: attr(data-color);
-            background-color: if(
-                style(--cor-fundo: "dark"): #000;
-                style(--cor-fundo: "light"): #fff;
-            );
+            display: grid;
+            place-content: center;
+            background-color: #e0e0e0;
+            transition: all .6s ease-in-out;
+            
+            .box{
+                padding: 1rem;
+                border-radius: .8rem;
+                box-shadow: 0 0 6px #272727;
+                color: inherit;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                transition: all .6s ease-in-out;
+
+
+                .btn{
+                    display: inline-block;
+                    width: 120px;
+                    padding: 12px;
+                    border: .8rem;
+                    /* background-color:  #c2c2c2; */
+
+                    --cor-btn: attr(data-btn-cor);
+                    background-color: if(
+                        style(--cor-btn: "dark"): #272727;
+                        style(--cor-btn: "light"): #e0e0e0;
+                    );
+
+                    color: if(
+                        style(--cor-btn: "dark"): #fff;
+                        style(--cor-btn: "light"): #000;
+                    );
+                }
+
+                /* .btn-dark { background-color: #272727; color: white; } */
+
+                /* .btn-light { background-color: #e0e0e0; color: black; } */
+            }
         }
 
-        input:checked ~ .btn-dark{
-            background-color: dark;
+        #dark-mode:checked ~ .container {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        
+        #dark-mode:checked ~ .container .box {
+            background-color: #1e1e1e;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        /* Quando o rádio LIGHT estiver marcado */
+        #light-mode:checked ~ .container {
+            background-color: #f0f0f0;
+            color: #333;
         }
     </style>
 </head>
 <body>
-    <input type="checkbox" id="dark-mode">
+    <input type="radio" name="theme" id="dark-mode">
+    <input type="radio" name="theme" id="light-mode">
 
     <div class="container" data-light="light">
-        <h1>Exemplo de <span>Dark-Mode</span></h1>
-        <p>
-            Este fundo muda de cor apenas com css!
-        </p>
-
-        <label for="dark-mode" class="btn btn-dark" data-color="dark">Dark</label>
-
-        <label for="dark-mode" class="btn" data-color="light">Light</label>
+        <div class="box">
+            <h1>Exemplo de <span>Dark-Mode</span></h1>
+            <p>
+                Este fundo muda de cor apenas com css!
+            </p>
+            <div class="btns">
+                <label for="dark-mode" class="btn btn-dark" data-btn-cor="dark">Dark</label>
+                <label for="light-mode" class="btn btn-light" data-btn-cor="light">Light</label>
+            </div>
+        </div>
     </div>
 </body>
 </html>
