@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popover</title>
+    <style>
+        :popover-open{
+            width: 250px;
+            height: 300px;
+            border: none;
+            border-radius: 18px;
+            text-align: center;
+            line-height: 300px;
+            box-shadow: 0 0 12px #bebebe;
+
+            &::backdrop{
+                background-image: linear-gradient(45deg, #864646, #3a3a7c);
+            }
+        }
+    </style>
+</head>
+<body>
+    <button popovertarget="myPopover">Toggle the opover</button>
+
+    <div class="popover" id="myPopover" popover>Popover content</div>
+    <!-- atributo popover = auto / hint / manual -->
+</body>
+</html>
