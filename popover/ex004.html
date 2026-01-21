@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            border: none;
+            border-radius: .8rem;
+            padding: 12px 18px;
+
+            &:interest-source{
+                background-color: hotpink;
+                color: purple;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button popovertarget="myPopover" interestfor="dicaPopover">Button</button>
+
+    <div id="dicaPopover" popover>click em mim</div>
+
+    <div class="popover" id="myPopover" popover>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit eveniet ut quae veritatis obcaecati voluptas cupiditate error autem repellat, explicabo fugiat expedita! Veniam voluptatem in voluptas, minus fuga praesentium odit!
+        </p>
+    </div>
+</body>
+</html>
