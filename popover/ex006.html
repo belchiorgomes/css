@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Menu circular animação</title>
     <style>
         *{
@@ -21,11 +22,12 @@
             display: none;
         }
 
-        input:checked + label{
+        /* input:checked + label{
             transform: rotate(135deg);
-        }
+        } */
         
         .btnOpen{
+            anchor-name: --btn-menu;
             inline-size: 80px;
             block-size: 80px;
             outline: none;
@@ -38,6 +40,7 @@
             justify-content: center;
             align-items: center;
             transition: all .6s ease-in-out;
+            z-index: 999;
 
             label{
                 display: flex;
@@ -62,8 +65,16 @@
             }
         }
 
-        .popover-open:popover-open{
-            background-color: aqua;
+        .popover-open{
+            position: fixed;
+            position-anchor: --btn-menu;
+            top: anchor(center);
+            left: anchor(center);
+            transform: translate(-50%,-50%);
+            background-color: transparent;
+            width: 200px;
+            height: 200px;
+            /* border-radius: 50%; */
         }
     </style>
 </head>
@@ -76,13 +87,14 @@
         </label>
     </button>
 
-    <div class="popover-open" id="menuPopover" popover="auto">
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor ullam voluptate vero sed nobis, quam aspernatur quos ea quia optio nostrum quidem nemo blanditiis perspiciatis eos ut nihil ex veniam.
-            Fugiat quaerat corrupti tempore laudantium odit a cupiditate itaque animi tempora error recusandae rerum delectus ullam omnis libero rem vel debitis illum unde consequatur, alias dicta distinctio. At, itaque tenetur!
-            Tempore in eius hic doloremque porro sint, molestias sapiente explicabo nemo, alias accusantium illum optio non neque suscipit, quod excepturi quae. Hic id qui repudiandae, vero ad minus sed consequatur!
-            Aperiam illo perspiciatis perferendis dolor, dolorum beatae. Quod possimus mollitia tempora, doloribus veritatis est optio quis harum neque placeat libero! Et optio quibusdam, labore accusantium vel laboriosam expedita repellendus architecto?
-        </p>
-    </div>
+    <ul >
+        <li class="popover-open" id="menuPopover" popover>
+            <a href="#"><i class="fa-regular fa-house"></i></a>
+        </li>
+
+        <li class="popover-open" id="menuPopover" popover>
+            <a href="#"><i class="fa-solid fa-image"></i></a>
+        </li>
+    </ul>
 </body>
 </html>
