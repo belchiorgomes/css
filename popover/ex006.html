@@ -12,88 +12,126 @@
             box-sizing: border-box;
         }
 
-        body{
-            min-height: 100vh;
-            display: grid;
-            place-content: center;
-        }
-
-        input{
-            display: none;
-        }
-
-        /* input:checked + label{
-            transform: rotate(135deg);
-        } */
-        
-        .btnOpen{
-            anchor-name: --btn-menu;
-            inline-size: 80px;
-            block-size: 80px;
-            outline: none;
+        .btn-menu{
+            position: fixed;
+            top: 80%;
+            left: 100px;
             border: none;
             border-radius: 50%;
+            outline: none;
+            inline-size: 50px;
+            block-size: 50px;
             background-color: transparent;
-            box-shadow: 0 0 8px #c2c2c2;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: all .6s ease-in-out;
-            z-index: 999;
+            box-shadow: 0 0 8px #b1b1b1;
+            cursor: pointer;
+            anchor-name: --menu-popover;
+            transition: all .6s ease;
 
-            label{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
+            &:focus{
+                transform: rotate(135deg);
+            }
 
-                span{
-                    display: block;
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    width: 40px;
-                    height: 5px;
-                    background-color: #000;
-                    border-radius: 12px;
+            span{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                display: inline-block;
+                width: 30px;
+                height: 3px;
+                border-radius: 18px;
+                background-color: black;
 
-                    &:nth-child(2){
-                        transform: rotate(90deg);
-                    }
+                &:nth-child(2){
+                    left: 50%;
+                    transform: translateX(-50%) rotate(90deg);
                 }
             }
         }
 
-        .popover-open{
+        .open-menu{
+            transition: all .6s ease-in-out;
             position: fixed;
-            position-anchor: --btn-menu;
-            top: anchor(center);
+            position-anchor: --menu-popover;
+            top: calc(anchor(top) - 320px);
             left: anchor(center);
-            transform: translate(-50%,-50%);
-            background-color: transparent;
-            width: 200px;
-            height: 200px;
-            /* border-radius: 50%; */
+            transform: translateX(-50%);
+
+            &:popover-open{
+                list-style-type: none;
+                padding-block: 12px;
+                border: none;
+                border-radius: 18px;
+                box-shadow: 0 0 4px #b1b1b1;
+            }
+
+            li{
+                width: 100%;
+                height: 40px;
+                padding-inline: 18px;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                cursor: pointer;
+
+                &:hover{
+                    transition: all .6s ease-in-out;
+                    background-color: #f1f1f1;
+                }
+
+                a{
+                    display: block;
+                    line-height: 40px;
+                    text-decoration: none;
+                    color: black;
+                    text-transform: capitalize;
+                    font-family: sans-serif;
+                    font-weight: bolder;
+                }
+            }
         }
     </style>
 </head>
 <body>
-    <button class="btnOpen" for="menu" popovertarget="menuPopover">
-        <input type="checkbox" id="menu">
-        <label for="menu">
-            <span></span>
-            <span></span>
-        </label>
+    <button class="btn-menu" popovertarget="menu-popover">
+        <span></span>
+        <span></span>
     </button>
 
-    <ul >
-        <li class="popover-open" id="menuPopover" popover>
-            <a href="#"><i class="fa-regular fa-house"></i></a>
+    <ul class="open-menu" id="menu-popover" popover="auto">
+        <li>
+            <i class="fa-solid fa-file"></i>
+            <a href="#">documento</a>
         </li>
 
-        <li class="popover-open" id="menuPopover" popover>
-            <a href="#"><i class="fa-solid fa-image"></i></a>
+        <li>
+            <i class="fa-solid fa-photo-film"></i>
+            <a href="#">fotos e vídeos</a>
+        </li>
+
+        <li>
+            <i class="fa-solid fa-camera"></i>
+            <a href="#">camera</a>
+        </li>
+
+        <li>
+            <i class="fa-solid fa-headphones"></i>
+            <a href="#">áudio</a>
+        </li>
+
+        <li>
+            <i class="fa-solid fa-user"></i>
+            <a href="#">contato</a>
+        </li>
+
+        <li>
+            <i class="fa-solid fa-calendar"></i>
+            <a href="#">evento</a>
+        </li>
+
+        <li>
+            <i class="fa-solid fa-circle-plus"></i>
+            <a href="#">nova figurinha</a>
         </li>
     </ul>
 </body>
