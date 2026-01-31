@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header{
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav{
+            padding: 18px;
+            width: auto;
+            left: auto;
+            bottom: auto;
+            background-color: rgb(36, 36, 52);
+            border: none;
+            height: 100vh;
+            translate: 100% 0;
+            transition: translate .5s, display .5s ease-in-out allow-discrete;
+
+            &:popover-open{
+                translate: 0 0;
+
+                @starting-style{
+                    translate: 100% 0;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button popovertarget="menu">Open popover</button>
+
+        <nav popover role="menu" id="menu">
+            <button popovertarget="menu" popovertargetaction="hide">Close popover</button>
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
