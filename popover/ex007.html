@@ -25,7 +25,9 @@
             border: none;
             height: 100vh;
             translate: 100% 0;
-            transition: translate .5s, display .5s ease-in-out allow-discrete;
+            transition: translate .5s ease-in-out, 
+            display .5s ease-in-out allow-discrete,
+            overlay .5s ease-in-out allow-discrete;
 
             &:popover-open{
                 translate: 0 0;
