@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Flex-Box</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #F2AD94;
+        }
+
+        header{
+            width: 100%;
+            background-color: #A63005;
+            /* padding: .8rem; */
+            display: flex;
+            flex-flow: column nowrap;
+
+            align-items: center;
+            /* gap: 2rem; */
+
+            nav{
+                background-color: transparent;
+                width: 100%;
+
+                ul{
+                    display: flex;
+                    flex-flow: column nowrap;
+                    align-items: center;
+                    gap: 1rem;
+                    list-style-type: none;
+                    margin-block: 1rem;
+
+                    li{
+                        width: 90%;
+                        padding: .8rem;
+                        border-radius: .8rem;
+                        background-color: #D9663D;
+
+                        a{
+                            width: 90%;
+                            display: block;
+                            text-decoration: none;
+                            text-align: center;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            @media screen and (min-width: 430px){
+                nav ul{
+                    flex-flow: row nowrap;
+                    justify-content: center;
+
+                    li{
+                        flex: 0 1 100px;
+                    }
+                }
+            }
+        }
+    </style>
+<body>
+    <header>
+        <h1>Meu Site</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Opção 01</a></li>
+                <li><a href="#">Opção 02</a></li>
+                <li><a href="#">Opção 03</a></li>
+                <li><a href="#">Opção 04</a></li>
+                <li><a href="#">Opção 05</a></li>
+                <li><a href="#">Opção 06</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Menu com Flex-box</h1>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, quod deserunt aspernatur modi cumque cupiditate libero harum in adipisci amet? Perspiciatis odio ab suscipit minima debitis. Cupiditate tempora ut ipsam?
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, autem unde praesentium iste obcaecati optio reiciendis libero totam, modi labore sapiente architecto suscipit exercitationem, magni doloribus possimus. A, ab voluptate Lorem ipsum, dolor sit amet consectetur adipisicing elit. A eaque minima explicabo error sequi tempore eos sed qui repellat. Aliquam sapiente necessitatibus aperiam quibusdam, corrupti quod numquam quas odit doloribus!
+        </p>
+    </main>
+</body>
+</html>
