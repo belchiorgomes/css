@@ -90,6 +90,28 @@
                     display: none;
                 }
             }
+
+            @media screen and (min-width: 430px){
+                .container{
+                    justify-content: flex-start;
+                    gap: 3rem;
+
+                    .menu-popover-open, .menu-popover{
+                        display: none;
+                    }
+
+                    .menu-normal{
+                        display: block;
+                        
+                        ul{
+                            display: flex;
+                            gap: 1rem;
+                            list-style-type: none;
+                        }
+
+                    }
+                }
+            }
         }
     </style>
 <body>
@@ -102,7 +124,7 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
 
-            <nav class="menu-popover" id="menu-popover" popover>
+            <nav class="menu-popover" id="menu-popover" popover="manual">
                 <ul>
                     <li><a href="#">Opção 01</a></li>
                     <li><a href="#">Opção 02</a></li>
