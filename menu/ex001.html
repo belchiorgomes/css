@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        input{
+            z-index: 999;
+            position: absolute;
+            left: 500px;
+        }
+
+        .container{
+            anchor-name: --menu-open;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 100vh;
+            border-radius: .8rem;
+            box-shadow: 0 0 8px #dfdede;
+            overflow: hidden;
+            transition: all .6s ease-in-out;
+
+            /* &:hover{
+                width: 200px;
+            } */
+
+            label{
+                position: fixed;
+                position-anchor: --menu-open;
+                left: calc(anchor(right) - 10px);
+                top: 12px;
+            }
+
+            nav{
+                width: 300px;
+                padding: 12px;
+
+                .logo{
+                    display: flex;
+                    align-items: center;
+                    gap: 1.8rem;
+
+                    .logo-icon{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: .8rem;
+                        background-color: black;
+                        color: #fff;
+                        text-align: center;
+                        line-height: 40px;
+                    }
+                }
+            }
+        }
+
+        input:checked ~ .container{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="menu">
+    <label for="menu">▶️</label>
+
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">
+                    <span>BG</span>
+                </div>
+
+                <div class="logo-text">
+                    <span>Logo Site</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>
