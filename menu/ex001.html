@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
     <style>
         *{
@@ -12,77 +13,99 @@
         }
 
         input{
-            z-index: 999;
-            position: absolute;
-            left: 500px;
+            display: none;
         }
 
-        .container{
-            anchor-name: --menu-open;
+        nav{
             position: fixed;
             top: 0;
             left: 0;
-            width: 80px;
-            height: 100vh;
+            margin: 18px;
+            width: 90px;
+            height: 95vh;
             border-radius: .8rem;
-            box-shadow: 0 0 8px #dfdede;
+            box-shadow: 0 0 8px #e7e7e7;
+            padding: 12px;
             overflow: hidden;
             transition: all .6s ease-in-out;
 
-            /* &:hover{
-                width: 200px;
-            } */
-
-            label{
-                position: fixed;
-                position-anchor: --menu-open;
-                left: calc(anchor(right) - 10px);
-                top: 12px;
-            }
-
-            nav{
-                width: 300px;
-                padding: 12px;
+            .container{
 
                 .logo{
                     display: flex;
                     align-items: center;
-                    gap: 1.8rem;
+                    gap: 2.6rem;
 
                     .logo-icon{
-                        width: 40px;
-                        height: 40px;
-                        border-radius: .8rem;
-                        background-color: black;
-                        color: #fff;
-                        text-align: center;
-                        line-height: 40px;
+                        flex: 0 0 60px;
+                        height: 60px;
+                        border-radius: 18px;
+                        background-color: #fff;
+                        box-shadow: 0 0 8px #e7e7e7;
+                        cursor: pointer;
+                        /* margin: 12px; */
+
+                        span{
+                            display: block;
+                            text-align: center;
+                            line-height: 60px;
+                        }
+                    }
+                }
+            }
+
+            ul{
+                list-style-type: none;
+                margin-block-start: 2rem;
+
+                li{
+                    display: flex;
+                    align-items: center;
+                    gap: 2.6rem;
+
+                    .menu-icon{
+                        flex: 0 0 60px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 60px;
+                        border-radius: 18px;
+                        background-color: #fff;
+                        box-shadow: 0 0 8px #e7e7e7;
                     }
                 }
             }
         }
 
-        input:checked ~ .container{
-            width: 300px;
+        input:checked ~ nav{
+            width: 200px;
         }
     </style>
 </head>
 <body>
     <input type="checkbox" id="menu">
-    <label for="menu">▶️</label>
-
-    <div class="container">
-        <nav>
+    
+    <nav>
+        <div class="container">
             <div class="logo">
-                <div class="logo-icon">
+                <label for="menu" class="logo-icon">
                     <span>BG</span>
-                </div>
+                </label>
 
                 <div class="logo-text">
                     <span>Logo Site</span>
                 </div>
             </div>
-        </nav>
-    </div>
+
+            <ul>
+                <li>
+                    <span class="menu-icon">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
+                    <span class="menu-text">HOME</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </body>
 </html>
