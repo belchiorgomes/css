@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <title>Document</title>
     <style>
         *{
@@ -12,9 +20,15 @@
             box-sizing: border-box;
         }
 
-        input{
-            display: none;
+        body{
+            font-family: "Poppins", sans-serif;
+            font-weight: 900;
+            font-style: normal;
         }
+
+        /* input{
+            display: none;
+        } */
 
         nav{
             position: fixed;
@@ -30,6 +44,9 @@
             transition: all .6s ease-in-out;
 
             .container{
+                display: flex;
+                flex-flow: column nowrap;
+                gap: 2rem;
 
                 .logo{
                     display: flex;
@@ -43,7 +60,6 @@
                         background-color: #fff;
                         box-shadow: 0 0 8px #e7e7e7;
                         cursor: pointer;
-                        /* margin: 12px; */
 
                         span{
                             display: block;
@@ -56,34 +72,58 @@
 
             ul{
                 list-style-type: none;
-                margin-block-start: 2rem;
+                /* margin-block-start: 2rem; */
+                display: flex;
+                flex-flow: column nowrap;
+                gap: 1rem;
 
                 li{
                     display: flex;
                     align-items: center;
                     gap: 2.6rem;
+                    cursor: pointer;
+                    border-radius: 8px;
+                    padding: 0 8px;
+                    transition: all .6s ease;
+                    color: #cfcfcf;
 
                     .menu-icon{
-                        flex: 0 0 60px;
+                        flex: 0 0 40px;
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        height: 60px;
-                        border-radius: 18px;
+                        height: 40px;
+                        border-radius: 8px;
                         background-color: #fff;
                         box-shadow: 0 0 8px #e7e7e7;
+                        margin-left: 2px;
                     }
+
+                    &:hover{
+                        background-color: #f3f3f3;
+                        box-shadow: 0 0 8px #e7e7e7;
+
+                        .menu-icon{
+                            background-color: transparent;
+                            box-shadow: 0 0 8px transparent;
+                        }
+                    }
+                }
+
+                .btn-logout{
+                    margin-block: 1.2rem;
                 }
             }
         }
 
         input:checked ~ nav{
-            width: 200px;
+            width: 230px;
         }
     </style>
 </head>
 <body>
     <input type="checkbox" id="menu">
+    <input type="checkbox" id="dark-mode">
     
     <nav>
         <div class="container">
@@ -104,8 +144,62 @@
                     </span>
                     <span class="menu-text">HOME</span>
                 </li>
+
+                <li>
+                    <span class="menu-icon">
+                        <i class="fa-solid fa-chart-bar"></i>
+                    </span>
+                    <span class="menu-text">Revenue</span>
+                </li>
+
+                <li>
+                    <span class="menu-icon">
+                        <i class="fa-solid fa-bell"></i>
+                    </span>
+                    <span class="menu-text">Notifications</span>
+                </li>
+
+                <li>
+                    <span class="menu-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </span>
+                    <span class="menu-text">Analytics</span>
+                </li>
+
+                <li>
+                    <span class="menu-icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </span>
+                    <span class="menu-text">Likes</span>
+                </li>
+
+                <li>
+                    <span class="menu-icon">
+                        <i class="fa-solid fa-wallet"></i>
+                    </span>
+                    <span class="menu-text">Wallets</span>
+                </li>
+
+                <li class="btn-logout">
+                    <span class="menu-icon">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </span>
+                    <span class="menu-text">Logout</span>
+                </li>
             </ul>
         </div>
+
+        <label for="dark-mode">
+                <div class="dark-mode-icon">
+                    <span class="icon icon-sun">
+                        <i class="bi bi-brightness-high-fill"></i>
+                    </span>
+
+                    <span class="icon icon-moon">
+                        <i class="bi bi-moon-stars-fill"></i>
+                    </span>
+                </div>
+            </label>
     </nav>
 </body>
 </html>
