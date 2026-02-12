@@ -18,6 +18,15 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            transition: all .6s ease;
+        }
+
+        :root{
+            --bg-nav: #fff;
+            --bg-item: #fafafa;
+            --shadow: #ececec;
+            --text-color: #cacaca;
+            --bg-hover: #ececec;
         }
 
         body{
@@ -26,11 +35,14 @@
             font-style: normal;
         }
 
-        /* input{
+        input{
             display: none;
-        } */
+        }
 
         nav{
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 1rem;
             position: fixed;
             top: 0;
             left: 0;
@@ -38,10 +50,10 @@
             width: 90px;
             height: 95vh;
             border-radius: .8rem;
-            box-shadow: 0 0 8px #e7e7e7;
+            box-shadow: 0 0 8px var(--shadow);
+            background-color: var(--bg-nav);
             padding: 12px;
             overflow: hidden;
-            transition: all .6s ease-in-out;
 
             .container{
                 display: flex;
@@ -57,15 +69,20 @@
                         flex: 0 0 60px;
                         height: 60px;
                         border-radius: 18px;
-                        background-color: #fff;
-                        box-shadow: 0 0 8px #e7e7e7;
+                        background-color: var(--bg-item);
+                        box-shadow: 0 0 8px var(--shadow);
                         cursor: pointer;
 
                         span{
                             display: block;
                             text-align: center;
                             line-height: 60px;
+                            color: var(--text-color);
                         }
+                    }
+
+                    .logo-text{
+                        color: var(--text-color);
                     }
                 }
             }
@@ -84,8 +101,7 @@
                     cursor: pointer;
                     border-radius: 8px;
                     padding: 0 8px;
-                    transition: all .6s ease;
-                    color: #cfcfcf;
+                    color: var(--text-color);
 
                     .menu-icon{
                         flex: 0 0 40px;
@@ -94,14 +110,14 @@
                         align-items: center;
                         height: 40px;
                         border-radius: 8px;
-                        background-color: #fff;
-                        box-shadow: 0 0 8px #e7e7e7;
+                        background-color: var(--bg-item);
+                        box-shadow: 0 0 8px var(--shadow);
                         margin-left: 2px;
                     }
 
                     &:hover{
-                        background-color: #f3f3f3;
-                        box-shadow: 0 0 8px #e7e7e7;
+                        background-color: var(--bg-hover);
+                        box-shadow: 0 0 8px var(--shadow);
 
                         .menu-icon{
                             background-color: transparent;
@@ -114,10 +130,75 @@
                     margin-block: 1.2rem;
                 }
             }
+
+            label{
+                /* display: flex;
+                align-items: center; */
+                cursor: pointer;
+                anchor-name: --name;
+
+                &::after{
+                    position: absolute;
+                    position-anchor: --name;
+                    top: anchor(center);
+                    transform: translateY(-50%);
+                    content: attr(data-name-light);
+                    margin-left: 90px;
+                    color: var(--text-color);
+                    
+                }
+            
+                .dark-mode-icon{
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    cursor: pointer;
+
+                    .icon{
+                        grid-area: 1 / 1;
+                        margin-left: 10px;
+                        text-align: center;
+                        line-height: 40px;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 8px;
+                        background-color: var(--bg-item);
+                        box-shadow: 0 0 8px var(--shadow);
+                        color: var(--text-color);
+                    }
+
+                    .icon-sun{
+                        transform: scale(1);
+                    }
+
+                    .icon-moon{
+                        transform: scale(0);
+                    }
+                }
+            }
         }
 
-        input:checked ~ nav{
+        #menu:checked ~ nav{
             width: 230px;
+        }
+
+        #dark-mode:checked ~ nav{
+            --bg-nav: #111111;
+            --bg-item: #2b2b2b;
+            --shadow: #202020;
+            --text-color: #cacaca;
+            --bg-hover: #202020;
+
+            .icon-sun{
+                transform: scale(0);
+            }
+
+            .icon-moon{
+                transform: scale(1);
+            }
+
+            label::after{
+                content: attr(data-name-dark);
+            }
         }
     </style>
 </head>
@@ -189,7 +270,7 @@
             </ul>
         </div>
 
-        <label for="dark-mode">
+        <label for="dark-mode" data-name-light="Light" data-name-dark="Dark">
                 <div class="dark-mode-icon">
                     <span class="icon icon-sun">
                         <i class="bi bi-brightness-high-fill"></i>
@@ -199,7 +280,7 @@
                         <i class="bi bi-moon-stars-fill"></i>
                     </span>
                 </div>
-            </label>
+        </label>
     </nav>
 </body>
 </html>
