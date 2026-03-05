@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mask-imagem css</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            width: 400px;
+            height: 400px;
+            border-radius: .8rem;
+            overflow: hidden;
+
+            img{
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                mask-size: contain;
+                -webkit-mask-size: contain;
+                mask-repeat: no-repeat;
+                mask-position: center;
+
+                mask-image: url("https://assets.codepen.io/5928893/star-mask.png");
+
+                /* Usando SVG */
+                /* -webkit-mask-image: url(#mask);
+                mask-image: url(#mask); */
+                
+
+                /* mask-image: linear-gradient(to top, black 2%, transparent 80%); */
+            }
+        }
+    </style>
+</head>
+<body>
+    <svg width="0" height="0" viewBox="0 0 400 300">
+        <defs>
+            <mask id="mask">
+            <rect fill="#000000" x="0" y="0" width="400" height="300"></rect>
+            <circle fill="#FFFFFF" cx="150" cy="150" r="100" />
+            <circle fill="#FFFFFF" cx="50" cy="50" r="150" />
+            </mask>
+        </defs>
+    </svg>
+
+    <div class="container">
+        <img src="imagem/img03.jpg" alt="foto">
+    </div>
+</body>
+</html>

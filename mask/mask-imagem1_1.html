@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mask-imagem css</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            width: 100%;
+            height: 100vh;
+            -webkit-mask-image: url(imagem/img03.png);
+    mask-image: url(imagem/img03.png);
+
+    /* Evita que a máscara se repita */
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    /* Faz a máscara cobrir a área ou ficar centralizada */
+    -webkit-mask-size: contain; 
+    mask-size: contain;
+
+    /* Centraliza a máscara */
+    -webkit-mask-position: center;
+    mask-position: center;
+        }
+
+        .container img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="imagem/img03.jpg" alt="foto">
+    </div>
+</body>
+</html>
