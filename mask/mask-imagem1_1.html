@@ -19,31 +19,18 @@
         }
 
         .container{
-            width: 100%;
-            height: 100vh;
-            -webkit-mask-image: url(imagem/img03.png);
-    mask-image: url(imagem/img03.png);
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            mask-image: url(imagem/img03.png);
+            mask-size: cover;
 
-    /* Evita que a máscara se repita */
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    /* Faz a máscara cobrir a área ou ficar centralizada */
-    -webkit-mask-size: contain; 
-    mask-size: contain;
-
-    /* Centraliza a máscara */
-    -webkit-mask-position: center;
-    mask-position: center;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
-
-        .container img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        
     </style>
 </head>
 <body>
