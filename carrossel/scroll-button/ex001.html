@@ -23,16 +23,30 @@
             display: flex;
             gap: .8rem;
             overflow-x: auto;
+            anchor-name: --btn;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
 
             &::-webkit-scrollbar{
                 display: none;
             }
 
-            &::scroll-button(right){
-                content: '::';
+            &::scroll-button(right), &::scroll-button(left){
+                content: '➡️';
+                position: fixed;
+                position-anchor: --btn;
+                position-area: right center;
+                translate: -50%;
+            }
+
+            &::scroll-button(left){
+                content: '⬅️';
+                position-area: left center;
+                translate: 50%;
             }
 
             .btn{
+                scroll-snap-align: start;
                 flex: 0 0 200px;
                 height: 200px;
                 text-align: center;
