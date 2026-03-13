@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .carrossel{
+            width: 600px;
+            display: flex;
+            gap: .8rem;
+            overflow-x: auto;
+
+            &::-webkit-scrollbar{
+                display: none;
+            }
+
+            &::scroll-button(right){
+                content: '::';
+            }
+
+            .btn{
+                flex: 0 0 200px;
+                height: 200px;
+                text-align: center;
+                line-height: 200px;
+                background-color: #b13200;
+                border-radius: .8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="carrossel">
+        <div class="btn">01</div>
+        <div class="btn">02</div>
+        <div class="btn">03</div>
+        <div class="btn">04</div>
+        <div class="btn">05</div>
+        <div class="btn">06</div>
+        <div class="btn">07</div>
+        <div class="btn">08</div>
+    </div>
+</body>
+</html>
