@@ -12,18 +12,23 @@ input{
 
 .container:has(#img01:checked){
     --atual: url('img/img01.jpg');
-    translate: 100%;
+    /* translate: 0; */
     
 }
 
 .container:has(#img02:checked){
     --atual: url('img/img02.jpg');
+    /* translate: 0; */
 }
 
-.container:has(#img03:checked){--atual: url('img/img03.jpg');}
+.container:has(#img03:checked){
+    --atual: url('img/img03.jpg');
+    /* translate: 0; */
+}
 
 .container{
-    translate: 200%;
+    /* translate: 100%; */
+    transition: all .6s ease;
     width: 100%;
     min-height: 100vh;
     padding: .8rem;
@@ -67,6 +72,11 @@ input{
                 object-fit: cover;
                 border-radius: .8rem;
                 box-shadow: 0 0 8px rgba(0, 0, 0, 0.301);
+                transition: scale .6s ease-in-out;
+
+                &:hover{
+                    scale: .8;
+                }
             }
         }
     }
