@@ -1,96 +1,294 @@
-@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ─── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header{
-    position: relative;
-    min-height: 100vh;
-    width: 100%;
+:root {
+  --black:   #0a0a0a;
+  --white:   #f5f2ee;
+  --cream:   #ede8e0;
+  --gold:    #c9a84c;
+  --muted:   #8a857d;
+  --nav-h:   72px;
+  --ease:    cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    nav{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 12px 18px;
-        display: flex;
-        justify-content: space-between;
-        background-color: antiquewhite;
-        z-index: 999;
+input[type=radio]{
+    display: none;
+}
 
-        & a{
-            text-decoration: none;
-            display: block;
-        }
+html { scroll-behavior: smooth; }
 
-        ul{
-            display: flex;
-            gap: .8rem;
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  height: 300vh;
+}
 
-            li{
-                flex: 0 0 120px;
-                list-style-type: none;
-            }
-        }
-    }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    .carrossel{
-        position: absolute;
-        width: 300%;
-        height: 100vh;
-        display: flex;
+/* ─── NAV ───────────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-h);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  background: linear-gradient(to bottom, rgba(10,10,10,0.95) 0%, transparent 100%);
+  backdrop-filter: blur(0px);
+  transition: background 0.4s var(--ease), backdrop-filter 0.4s var(--ease);
+}
 
-        .carrossel-card{
-            flex: 0 0 100vw;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            background-image: var(--bg);
-            background-repeat: no-repeat;
-            background-size: cover;
+nav.scrolled {
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
 
-            .carrossel-card-title{
-                flex: 0 0 300px;
-                margin-inline-start: 3rem;
-                padding: .8rem;
-                border-radius: .8rem;
-                box-shadow: 0 0 12px rgba(0, 0, 0, 0.438);
-                background-color: white;
-            }
-        }
-    }
+.logo a {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
 
-    .controle{
-        position: absolute;
-        right: 40px;
-        bottom: 40px;
-        width: 250px;
-        height: 350px;
-        display: flex;
-        border-radius: .8rem;
-        overflow: auto;
+.logo a:hover { color: var(--gold); }
 
-        & input{
-            display: none;
-        }
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
 
-        .controle-img{
-            flex: 0 0 100%;
-            display: flex;
+nav ul li a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245,242,238,0.7);
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s;
+}
 
-            label{
-                flex: 0 0 100%;
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.35s var(--ease);
+}
 
-                img{
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-            }
-        }
-    }
+nav ul li a:hover {
+  color: var(--white);
+}
+
+nav ul li a:hover::after { width: 100%; }
+
+/* ─── HEADER / CAROUSEL WRAPPER ────────────────────────────── */
+header {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ─── CAROUSEL ──────────────────────────────────────────────── */
+.carrossel {
+  display: flex;
+  width: 300%;           /* 3 cards × 100vw */
+  height: 100vh;
+  transition: transform 0.8s var(--ease);
+}
+
+/* Radio logic: move the strip */
+#img01:checked ~ .carrossel { transform: translateX(0%); }
+#img02:checked ~ .carrossel { transform: translateX(calc(-100vw)); }
+#img03:checked ~ .carrossel { transform: translateX(calc(-200vw)); }
+
+.carrossel-card {
+  position: relative;
+  width: 100vw;
+  flex-shrink: 0;
+  height: 100vh;
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Dark gradient overlay */
+.carrossel-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10,10,10,0.90) 0%,
+    rgba(10,10,10,0.40) 50%,
+    rgba(10,10,10,0.15) 100%
+  );
+}
+
+/* Subtle grain texture */
+.carrossel-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 200px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.carrossel-card-title {
+  position: relative;
+  z-index: 2;
+  padding: 0 80px 160px;
+  max-width: 780px;
+}
+
+.carrossel-card-title h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 20px;
+  text-shadow: 0 2px 40px rgba(0,0,0,0.5);
+}
+
+/* Gold accent line before title */
+.carrossel-card-title h1::before {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--gold);
+  margin-bottom: 20px;
+}
+
+.carrossel-card-title p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(245,242,238,0.72);
+  max-width: 520px;
+  font-weight: 300;
+}
+
+/* ─── CONTROLS ──────────────────────────────────────────────── */
+
+.controle {
+  position: absolute;
+  bottom: 40px;
+  right: 64px;
+  z-index: 10;
+}
+
+.controle-img {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.controle-img label {
+  cursor: pointer;
+  display: block;
+  width: 72px;
+  height: 48px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  opacity: 0.45;
+  transition: opacity 0.35s var(--ease), border-color 0.35s var(--ease), transform 0.35s var(--ease);
+  transform: scale(0.92);
+}
+
+.controle-img label img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.controle-img label:hover {
+  opacity: 0.75;
+  transform: scale(0.96);
+}
+
+/* Highlight active thumbnail */
+#img01:checked ~ .controle .controle-img label[for="img01"],
+#img02:checked ~ .controle .controle-img label[for="img02"],
+#img03:checked ~ .controle .controle-img label[for="img03"] {
+  opacity: 1;
+  border-color: var(--gold);
+  transform: scale(1);
+}
+
+/* ─── Dot indicators (bonus) ────────────────────────────────── */
+.controle::before {
+  content: '';
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Progress bar under active slide */
+.controle-img::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  height: 2px;
+  background: var(--gold);
+  width: 72px;
+  transition: transform 0.8s var(--ease);
+  transform-origin: left;
+}
+
+#img01:checked ~ .controle .controle-img::after { transform: translateX(0); }
+#img02:checked ~ .controle .controle-img::after { transform: translateX(84px); }
+#img03:checked ~ .controle .controle-img::after { transform: translateX(168px); }
+
+/* ─── Responsive ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  nav { padding: 0 24px; }
+
+  nav ul { gap: 20px; }
+  nav ul li a { font-size: 0.7rem; letter-spacing: 0.1em; }
+
+  .carrossel-card-title {
+    padding: 0 28px 200px;
+  }
+
+  .controle {
+    bottom: 28px;
+    right: 24px;
+  }
+
+  .controle-img label {
+    width: 54px;
+    height: 36px;
+  }
 }
