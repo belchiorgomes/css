@@ -24,9 +24,14 @@ input[type=radio]{
 }
 
 header{
+    position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
+
+    #img01:checked ~ .carrossel { transform: translateX(0%); }
+    #img02:checked ~ .carrossel { transform: translateX(calc(-100vw)); }
+    #img03:checked ~ .carrossel { transform: translateX(calc(-200vw)); }
 
     a{
         display: block;
@@ -46,6 +51,18 @@ header{
         align-items: center;
         height: 70px;
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.582), transparent);
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.041);
+
+        .nav-logo a{
+            font-size: 1.8em;
+            color: white;
+            font-weight: bold;
+            transition: all .6s ease-in-out;
+
+            &:hover{
+                color: gold;
+            }
+        }
 
         ul{
             display: flex;
@@ -54,7 +71,8 @@ header{
 
             li a{
                 position: relative;
-                font-size: 1.3em;
+                font-size: 1.2em;
+                font-weight: bold;
                 color: #c4c4c4;
                 transition: all .6s ease-in-out;
 
@@ -85,17 +103,78 @@ header{
         width: 300vw;
         height: 100vh;
         display: flex;
+        transition: all .6s ease-in-out;
 
         .box-carrossel{
-            flex-shrink: 0;
             position: relative;
-            background-image: var(--bg);
+            width: 100vw;
+            height: 100vh;
+            flex-shrink: 0;
+            /* background-image: var(--bg); */
+            background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--bg);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
 
             .carrossel-text{
-                width: 400px;
+                position: absolute;
+                top: 50%;
+                left: 10%;
+                transform: translateY(-50%);
+                width: 500px;
+
+                h1{
+                    position: relative;
+                    font-size: 5.8rem;
+                    font-weight: bold;
+                    color: white;
+
+                    &::after{
+                        position: absolute;
+                        left: 0;
+                        content: '';
+                        width: 30px;
+                        height: 3px;
+                        border-radius: 8px;
+                        background-color: gold;
+                    }
+                }
+
+                p{
+                    color: #c4c4c4;
+                    font-size: 1.2rem;
+                    font-family: sans-serif;
+                    line-height: 1.7rem;
+                }
+            }
+        }
+    }
+
+    .controle{
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        gap: 1rem;
+
+        label{
+            display: block;
+            width: 150px;
+            height: 90px;
+            border: 2px solid transparent;
+            border-radius: .8rem;
+            overflow: hidden;
+            scale: 1;
+            transition: all .6s ease-in-out;
+
+            &:hover{
+                scale: .9;
+            }
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         }
     }
