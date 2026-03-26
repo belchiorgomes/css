@@ -33,6 +33,13 @@ header{
     #img02:checked ~ .carrossel { transform: translateX(calc(-100vw)); }
     #img03:checked ~ .carrossel { transform: translateX(calc(-200vw)); }
 
+    #img01:checked ~ .controle label[for="img01"],
+    #img02:checked ~ .controle label[for="img02"],
+    #img03:checked ~ .controle label[for="img03"]{
+        border-color: gold;
+        scale: 1;
+    }
+
     a{
         display: block;
         text-decoration: none;
@@ -132,6 +139,7 @@ header{
                     &::after{
                         position: absolute;
                         left: 0;
+                        top: -2px;
                         content: '';
                         width: 30px;
                         height: 3px;
