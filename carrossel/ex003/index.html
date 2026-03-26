@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <input type="radio" name="slide" id="slide01" checked>
+        <input type="radio" name="slide" id="slide02">
+        <input type="radio" name="slide" id="slide03">
+
+        <nav>
+            <div class="logo">
+                <a href="#">logo</a>
+            </div>
+
+            <button class="btn-popover" popovertarget="menuPopover">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="menu-normal">
+                <li>
+                    <a href="#">home</a>
+                </li>
+
+                <li>
+                    <a href="#">blog</a>
+                </li>
+
+                <li>
+                    <a href="#">categories</a>
+                </li>
+
+                <li>
+                    <a href="#">about</a>
+                </li>
+
+                <li>
+                    <a href="#">contact</a>
+                </li>
+            </ul>
+
+            <ul class="menu-popover" id="menuPopover" popover="manual">
+                <li>
+                    <a href="#">home</a>
+                </li>
+
+                <li>
+                    <a href="#">blog</a>
+                </li>
+
+                <li>
+                    <a href="#">categories</a>
+                </li>
+
+                <li>
+                    <a href="#">about</a>
+                </li>
+
+                <li>
+                    <a href="#">contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header-carrossel">
+            <div class="carrossel" style="--bg: url('img/img01.jpg')"></div>
+
+            <div class="carrossel" style="--bg: url('img/img02.jpg')"></div>
+
+            <div class="carrossel" style="--bg: url('img/img03.jpg')"></div>
+        </div>
+    </header>
+</body>
+</html>
