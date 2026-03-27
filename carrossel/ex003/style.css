@@ -62,16 +62,51 @@ header{
         }
 
         .menu-popover{
-            position: absolute;
-            left: 100%;
+            position: fixed;
             top: 72px;
-            outline: none;
-            border: none;
-            height: calc(100% - 72px);
-            width: 100%;
+            right: 0;
             background-color: rgba(0, 0, 0, 0.048);
-            z-index: 111;
-            overflow: hidden;
+            border: none;
+            outline: none;
+            translate: 100% 0;
+            opacity: 0;
+            height: 100%;
+            width: 100%;
+            list-style-type: none;
+            transition: 
+            translate 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.6s ease,
+                display 0.6s allow-discrete,
+                overlay 0.6s allow-discrete;
+
+            &:popover-open{
+                translate: 0 0;
+                opacity: 1;
+            }
+
+            @starting-style {
+                &:popover-open {
+                    translate: 100% 0;
+                    opacity: 0;
+                }
+            }
+
+            li{
+                padding: 12px 2.5rem;
+                transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+                a{
+                    display: block;
+                    color: #d4d4d4;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+                }
+
+                &:hover{
+                    padding-inline: 2.9rem;
+                }
+            }
         }
     }
 
