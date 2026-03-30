@@ -8,10 +8,13 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <input type="radio" name="slide" id="slide01" checked>
+    <!-- <input type="radio" name="slide" id="slide01" checked>
         <input type="radio" name="slide" id="slide02">
-        <input type="radio" name="slide" id="slide03">
+        <input type="radio" name="slide" id="slide03"> -->
+    <header>
+        <!-- <input type="radio" name="slide" id="slide01" checked>
+        <input type="radio" name="slide" id="slide02">
+        <input type="radio" name="slide" id="slide03"> -->
 
         <nav>
             <div class="logo">
@@ -47,33 +50,75 @@
             <ul class="menu-popover" id="menuPopover" popover="manual">
                 <li>
                     <a href="#">home</a>
+                    <span><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
                 </li>
 
                 <li>
                     <a href="#">blog</a>
+                    <span><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
                 </li>
 
                 <li>
                     <a href="#">categories</a>
+                    <span><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
                 </li>
 
                 <li>
                     <a href="#">about</a>
+                    <span><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
                 </li>
 
                 <li>
                     <a href="#">contact</a>
+                    <span><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
                 </li>
             </ul>
         </nav>
 
         <div class="header-carrossel">
-            <div class="carrossel" style="--bg: url('img/img01.jpg')"></div>
+            <div class="carrossel" style="--bg: url('img/img01.jpg')">
+                <!-- <div class="controles">
+                    <label for="slide03">
+                        <span><i class="fa-solid fa-circle-arrow-left"></i></span>
+                    </label>
 
-            <div class="carrossel" style="--bg: url('img/img02.jpg')"></div>
+                    <label for="slide02">
+                        <span><i class="fa-solid fa-circle-arrow-right"></i></span>
+                    </label>
+                </div> -->
+            </div>
 
-            <div class="carrossel" style="--bg: url('img/img03.jpg')"></div>
+            <div class="carrossel" style="--bg: url('img/img02.jpg')">
+                <!-- <div class="controles">
+                    <label for="slide01">
+                        <span><i class="fa-solid fa-circle-arrow-left"></i></span>
+                    </label>
+
+                    <label for="slide03">
+                        <span><i class="fa-solid fa-circle-arrow-right"></i></span>
+                    </label>
+                </div> -->
+            </div>
+
+            <div class="carrossel" style="--bg: url('img/img03.jpg')">
+                <!-- <div class="controles">
+                    <label for="slide02">
+                        <span><i class="fa-solid fa-circle-arrow-left"></i></span>
+                    </label>
+
+                    <label for="slide01">
+                        <span><i class="fa-solid fa-circle-arrow-right"></i></span>
+                    </label>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="controle">
+            <button id="prevBtn"><i class="fa-solid fa-circle-arrow-left"></i></button>
+            <button id="nextBtn"><i class="fa-solid fa-circle-arrow-right"></i></button>
         </div>
     </header>
+
+    <script src="arquivo.js"></script>
 </body>
 </html>

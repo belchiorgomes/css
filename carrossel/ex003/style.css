@@ -10,6 +10,10 @@ input[type='radio']{
     display: none;
 }
 
+#slide01:checked ~ header .header-carrossel { transform: translateX(0); }
+#slide02:checked ~ header .header-carrossel { transform: translateX(-100vw); }
+#slide03:checked ~ header .header-carrossel { transform: translateX(-200vw); }
+
 header{
     position: relative;
     width: 100%;
@@ -22,7 +26,8 @@ header{
         left: 0;
         width: 100%;
         height: 72px;
-        padding-inline: 2.5rem;
+        /* padding-inline: 2.5rem; */
+        padding-inline: .8rem;
         background-color: rgba(0, 0, 0, 0.048);
         display: flex;
         align-items: center;
@@ -62,6 +67,10 @@ header{
         }
 
         .menu-popover{
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            gap: .8rem;
             position: fixed;
             top: 72px;
             right: 0;
@@ -92,7 +101,13 @@ header{
             }
 
             li{
-                padding: 12px 2.5rem;
+                display: flex;
+                justify-content: space-between;
+                width: 95%;
+                /* padding: .8rem; */
+                padding-block: .8rem;
+                border: 2px solid transparent;
+                border-radius: .8rem;
                 transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 
                 a{
@@ -103,17 +118,29 @@ header{
                     transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
                 }
 
+                span{
+                    color: #d4d4d4;
+                }
+
                 &:hover{
-                    padding-inline: 2.9rem;
+                    border-color: #d4d4d4;
+                    padding-inline: 1rem;
+                }
+
+                &:hover a{
+                    padding-inline: .8rem;
                 }
             }
         }
     }
 
     .header-carrossel{
+        position: relative;
+        overflow: hidden;
         width: 300vw;
         height: 100vh;
         display: flex;
+        transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 
         .carrossel{
             position: relative;
@@ -124,6 +151,38 @@ header{
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
+
+            /* .controles{
+                position: absolute;
+                bottom: 40px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 999;
+
+                label span{
+                    font-size: 2rem;
+                    color: gold;
+                }
+            } */
+        }
+    }
+
+    .controle{
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+
+        button{
+            background-color: transparent;
+            border: none;
+            outline: none;
+
+            i{
+                font-size: 2rem;
+                color: gold;
+            }
         }
     }
 }
