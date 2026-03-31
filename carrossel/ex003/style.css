@@ -32,7 +32,7 @@ header{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        z-index: 999;
+        z-index: 1;
 
         .menu-normal{
             display: none;
@@ -62,7 +62,8 @@ header{
             transition: all .6s ease;
 
             &:hover{
-                background-color: #272727;
+                background-color: gold;
+                color: white;
             }
         }
 
@@ -129,6 +130,7 @@ header{
 
                 &:hover a{
                     padding-inline: .8rem;
+                    color: gold;
                 }
             }
         }
@@ -151,19 +153,6 @@ header{
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
-
-            /* .controles{
-                position: absolute;
-                bottom: 40px;
-                left: 50%;
-                transform: translateX(-50%);
-                z-index: 999;
-
-                label span{
-                    font-size: 2rem;
-                    color: gold;
-                }
-            } */
         }
     }
 
@@ -172,7 +161,7 @@ header{
         bottom: 40px;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 999;
+        z-index: 2;
 
         button{
             background-color: transparent;

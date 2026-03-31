@@ -1,49 +1,32 @@
-const container = document.querySelector('.header-carrossel');
+// Seleciona o container que envolve todos os slides
+const carrossel = document.querySelector('.header-carrossel');
+// Seleciona cada slide individualmente
 const slides = document.querySelectorAll('.carrossel');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.querySelector('#prevBtn');
+const nextBtn = document.querySelector('#nextBtn');
 
 let index = 0;
-let autoSlide;
 
-function atualizarCarrossel() {
-    // Lógica de loop
-    if (index >= slides.length) {
-        index = 0;
-    } else if (index < 0) {
-        index = slides.length - 1;
-    }
-
-    // Move o container. 
-    // Como cada slide tem 100% da largura do container, 
-    // deslocamos 100% * o número do índice.
-    container.style.transform = `translateX(-${index * 100}%)`;
+function moverCarrossel() {
+    // Como seu container tem width: 300vw, cada slide ocupa 1/3 disso.
+    // O pulo deve ser de 100vw por slide.
+    carrossel.style.transform = `translateX(-${index * 100}vw)`;
 }
 
-// Funções para os botões
 nextBtn.addEventListener('click', () => {
     index++;
-    atualizarCarrossel();
-    reiniciarAutoPlay(); // Opcional: reseta o timer quando o usuário clica
+    // Se passar do último slide, volta para o primeiro
+    if (index >= slides.length) {
+        index = 0;
+    }
+    moverCarrossel();
 });
 
 prevBtn.addEventListener('click', () => {
     index--;
-    atualizarCarrossel();
-    reiniciarAutoPlay();
+    // Se estiver no primeiro e voltar, vai para o último
+    if (index < 0) {
+        index = slides.length - 1;
+    }
+    moverCarrossel();
 });
-
-// Timer Automático
-function iniciarAutoPlay() {
-    autoSlide = setInterval(() => {
-        index++;
-        atualizarCarrossel();
-    }, 5000);
-}
-
-function reiniciarAutoPlay() {
-    clearInterval(autoSlide);
-    iniciarAutoPlay();
-}
-
-iniciarAutoPlay();
