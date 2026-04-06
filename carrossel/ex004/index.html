@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
     <style>
-        *,*::before,*::after{
+        *,*::after,*::before{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -15,23 +14,55 @@
         body{
             min-height: 100vh;
             display: flex;
-            flex-flow: column nowrap;
             justify-content: center;
             align-items: center;
-            gap: .8rem;
         }
 
-        .container{
+        .carrossel{
+            position: relative;
             width: 600px;
-            height: 400px;
+            aspect-ratio: 16 / 9;
             border-radius: .8rem;
-            overflow: hidden;
             display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            anchor-name: --btn;
+
+            &::-webkit-scrollbar{
+                display: none;
+            }
+
+            &::scroll-button(left),
+            &::scroll-button(right){
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                background-color: transparent;
+                border-radius: 22px;
+                border: none;
+                outline: none;
+                font-size: 1.8rem;
+                background-color: coral;
+                position-anchor: --btn;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &::scroll-button(left){
+                content: '⬅';
+                left: anchor(left);
+            }
+
+            &::scroll-button(right){
+                content: '>';
+                right: anchor(right);
+            }
 
             .carrossel-img{
-                width: 100%;
+                flex: 1 0 100%;
                 height: 100%;
-                overflow: hidden;
+                scroll-snap-align: start;
 
                 img{
                     width: 100%;
@@ -43,63 +74,10 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="img/img01.jpg" alt="foto 01">
-        <img src="img/img02.jpg" alt="foto 02">
-        <img src="img/img03.jpg" alt="foto 03">
-    </div>
-
-    <div class="btns">
-        <button class="btn next"><i class="fa-solid fa-circle-arrow-left"></i></button>
-        <button class="btn prev"><i class="fa-solid fa-circle-arrow-right"></i></button>
-    </div>
-
-    <script>
-        const images = document.querySelector('.carousel-images');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-const dotsContainer = document.querySelector('.dots'); // opcional: adicione uma <div class="dots"> no HTML
-
-let index = 0;
-const total = images.children.length;
-
-// Cria os dots dinamicamente (opcional)
-for (let i = 0; i < total; i++) {
-  const dot = document.createElement('div');
-  dot.className = 'dot' + (i === 0 ? ' active' : '');
-  dot.addEventListener('click', () => goTo(i));
-  dotsContainer.appendChild(dot);
-}
-
-function updateDots() {
-  document.querySelectorAll('.dot').forEach((d, i) => {
-    d.classList.toggle('active', i === index);
-  });
-}
-
-function showImage() {
-  const itemWidth = images.parentElement.offsetWidth; // responsivo
-  images.style.transform = `translateX(${-index * itemWidth}px)`;
-  updateDots();
-}
-
-function goTo(i) {
-  index = i;
-  showImage();
-}
-
-nextBtn.addEventListener('click', () => {
-  index = (index + 1) % total; // forma mais curta de fazer o loop
-  showImage();
-});
-
-prevBtn.addEventListener('click', () => {
-  index = (index - 1 + total) % total;
-  showImage();
-});
-
-// Recalcula posição se a janela for redimensionada
-window.addEventListener('resize', showImage);
-    </script>
+    <section class="carrossel">
+        <div class="carrossel-img"><img src="img/img01.jpg" alt="imagem 01"></div>
+        <div class="carrossel-img"><img src="img/img02.jpg" alt="imagem 01"></div>
+        <div class="carrossel-img"><img src="img/img03.jpg" alt="imagem 01"></div>
+    </section>
 </body>
 </html>
