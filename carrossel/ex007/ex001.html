@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carrosel 3D</title>
+    <style>
+        *,*::after,*::before{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+
+            .slider{
+                position: absolute;
+                top: 30%;
+                left: calc(50% - 100px);
+                width: 250px;
+                height: 200px;
+                transform-style: preserve-3d;
+                transform: perspective(1000px);
+                animation: autoRun 20s linear infinite;
+
+                .item{
+                    position: absolute;
+                    inset: 0 0 0 0;
+                    border-radius: .8rem;
+                    background-color: coral;
+                    transform: 
+                        rotateY(calc((var(--position) - 1) * (360 / var(--quatit)) * 1deg))
+                        translateZ(450px);
+                }
+            }
+        }
+
+        @keyframes autoRun{
+            from{transform: perspective(1000px) rotateY(0deg);}
+            to{transform: perspective(1000px) rotateY(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="slider" style="--quatit: 10">
+            <div class="item" style="--position: 1"></div>
+            <div class="item" style="--position: 2"></div>
+            <div class="item" style="--position: 3"></div>
+            <div class="item" style="--position: 4"></div>
+            <div class="item" style="--position: 5"></div>
+            <div class="item" style="--position: 6"></div>
+            <div class="item" style="--position: 7"></div>
+            <div class="item" style="--position: 8"></div>
+            <div class="item" style="--position: 9"></div>
+            <div class="item" style="--position: 10"></div>
+        </div>
+    </div>
+</body>
+</html>
