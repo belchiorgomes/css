@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>carrossel 3d</title>
+    <title>carrossel 3D</title>
     <style>
         *,*::after,*::before{
             margin: 0;
@@ -12,22 +12,26 @@
         }
 
         :root{
-            --total-item: 6;
-            --angle: calc(360deg / var(--total-item));
-            --translate-z: 250px;
+            --larguta: 350px;
+            --altura: 180px;
+            --total-itens: 6;
+            --angle: calc(360deg / var(--total-itens));
+            --translateZ: 350px;
         }
 
         body{
             width: 100vw;
             height: 100vh;
             display: flex;
+            flex-flow: column nowrap;
             justify-content: center;
             align-items: center;
+            gap: 5rem;
         }
 
         .container{
-            width: 200px;
-            height: 350px;
+            width: var(--larguta);
+            height: var(--altura);
             perspective: 1200px;
 
             .carrossel{
@@ -35,27 +39,43 @@
                 width: 100%;
                 height: 100%;
                 transform-style: preserve-3d;
+                transition: all .6s ease-in-out;
+                backface-visibility: visible;
 
                 .item{
                     position: absolute;
-                    left: 0;
-                    bottom: 0;
                     inset: 0 0 0 0;
+                    background-color: rgb(75, 90, 104);
                     border-radius: .8rem;
-                    background-color: rgb(60, 72, 82);
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    backface-visibility: visible;
-                    color: white;
-                    font-size: 1.2rem;
 
-                    &:nth-child(1){transform: rotateY(calc(var(--angle) * 0)) translateZ(var(--translate-z));}
-                    &:nth-child(2){transform: rotateY(calc(var(--angle) * .6)) translateZ(var(--translate-z));}
-                    &:nth-child(3){transform: rotateY(calc(var(--angle) * .6)) translateZ(var(--translate-z));}
-                    &:nth-child(4){transform: rotateY(calc(var(--angle) * 3)) translateZ(var(--translate-z));}
-                    &:nth-child(5){transform: rotateY(calc(var(--angle) * 4)) translateZ(var(--translate-z));}
-                    &:nth-child(6){transform: rotateY(calc(var(--angle) * 5)) translateZ(var(--translate-z));}
+                    &:nth-child(1){transform: rotateY(calc(var(--angle) * 0)) translateZ(var(--translateZ));}
+                    &:nth-child(2){transform: rotateY(calc(var(--angle) * 1)) translateZ(var(--translateZ));}
+                    &:nth-child(3){transform: rotateY(calc(var(--angle) * 2)) translateZ(var(--translateZ));}
+                    &:nth-child(4){transform: rotateY(calc(var(--angle) * 3)) translateZ(var(--translateZ));}
+                    &:nth-child(5){transform: rotateY(calc(var(--angle) * 4)) translateZ(var(--translateZ));}
+                    &:nth-child(6){transform: rotateY(calc(var(--angle) * 5)) translateZ(var(--translateZ));}
+                }
+            }
+        }
+
+        .controle{
+            display: flex;
+            gap: 2rem;
+            z-index: 999;
+
+            button{
+                padding: 12px 18px;
+                border: 2px solid black;
+                border-radius: .8rem;
+                transition: all .6s ease-in-out;
+
+                &:hover{
+                    background-color: black;
+                    color: white;
+                    transform: translateY(-8px);
                 }
             }
         }
@@ -72,5 +92,33 @@
             <div class="item">6</div>
         </div>
     </div>
+
+    <div class="controle">
+        <button id="prev">Anterior</button>
+        <button id="next">Proximo</button> 
+    </div>
+
+    <script>
+        const carrossel = document.querySelector('.carrossel');
+        const btnNext = document.getElementById('next');
+        const btnPrev = document.getElementById('prev');
+
+        let rotacao = 0;
+        const step = 360 / 6;
+
+        btnNext.addEventListener('click', () => {
+            rotacao -= step;
+            updateRotation();
+        });
+
+        btnPrev.addEventListener('click', () => {
+            rotacao += step;
+            updateRotation();
+        });
+
+        function updateRotation(){
+            carrossel.style.transform = `rotateY(${rotacao}deg)`;
+        }
+    </script>
 </body>
 </html>
