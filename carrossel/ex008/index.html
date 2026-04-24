@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>carrossel 3D</title>
+    <title>Carrossel 3D</title>
     <style>
         *,*::after,*::before{
             margin: 0;
@@ -12,11 +12,11 @@
         }
 
         :root{
-            --larguta: 350px;
+            --largura: 250px;
             --altura: 180px;
             --total-itens: 6;
             --angle: calc(360deg / var(--total-itens));
-            --translateZ: 350px;
+            --translateZ: 250px;
         }
 
         body{
@@ -24,15 +24,15 @@
             height: 100vh;
             display: flex;
             flex-flow: column nowrap;
+            gap: 3rem;
             justify-content: center;
             align-items: center;
-            gap: 5rem;
         }
 
         .container{
-            width: var(--larguta);
+            width: var(--largura);
             height: var(--altura);
-            perspective: 1200px;
+            perspective: 1900px;
 
             .carrossel{
                 position: relative;
@@ -40,16 +40,14 @@
                 height: 100%;
                 transform-style: preserve-3d;
                 transition: all .6s ease-in-out;
-                backface-visibility: visible;
 
                 .item{
                     position: absolute;
                     inset: 0 0 0 0;
-                    background-color: rgb(75, 90, 104);
+                    background-color: rgb(84, 105, 122);
                     border-radius: .8rem;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    display: grid;
+                    place-items: center;
 
                     &:nth-child(1){transform: rotateY(calc(var(--angle) * 0)) translateZ(var(--translateZ));}
                     &:nth-child(2){transform: rotateY(calc(var(--angle) * 1)) translateZ(var(--translateZ));}
@@ -63,19 +61,18 @@
 
         .controle{
             display: flex;
-            gap: 2rem;
-            z-index: 999;
+            gap: 3rem;
 
             button{
-                padding: 12px 18px;
                 border: 2px solid black;
                 border-radius: .8rem;
+                padding: 12px 18px;
                 transition: all .6s ease-in-out;
 
                 &:hover{
                     background-color: black;
                     color: white;
-                    transform: translateY(-8px);
+                    transform: translateY(-3px);
                 }
             }
         }
@@ -95,30 +92,30 @@
 
     <div class="controle">
         <button id="prev">Anterior</button>
-        <button id="next">Proximo</button> 
+        <button id="next">Proximo</button>
     </div>
 
     <script>
         const carrossel = document.querySelector('.carrossel');
-        const btnNext = document.getElementById('next');
         const btnPrev = document.getElementById('prev');
+        const btnNext = document.getElementById('next');
 
         let rotacao = 0;
         const step = 360 / 6;
 
+        function movimentoCarrossel(){
+            carrossel.style.transform = `rotateY(${rotacao}deg)`;
+        }
+
         btnNext.addEventListener('click', () => {
             rotacao -= step;
-            updateRotation();
+            movimentoCarrossel();
         });
 
         btnPrev.addEventListener('click', () => {
             rotacao += step;
-            updateRotation();
-        });
-
-        function updateRotation(){
-            carrossel.style.transform = `rotateY(${rotacao}deg)`;
-        }
+            movimentoCarrossel();
+        })
     </script>
 </body>
 </html>
